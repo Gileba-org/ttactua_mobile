@@ -14,6 +14,7 @@
 		<filename>templateDetails.xml</filename>
 		<folder>images</folder>
 		<folder>less</folder>
+		<folder>css</folder>
 	</files>
 	<positions>
 		<position>breadcrumb</position>
