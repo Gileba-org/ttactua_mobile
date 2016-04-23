@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5.1" type="template">
+	<name>ttactua_mobile</name>
+	<creationDate>21/04/2016</creationDate>
+	<author>Gijs Lamon</author>
+	<authorEmail>info@gileba.be</authorEmail>
+	<authorUrl>http://www.gileba.be/</authorUrl>
+	<copyright>(c) 2016 by Gileba</copyright>
+	<license>GNU/GPL</license>
+	<version>0.0.1</version>
+	<description>Template for Tafeltennisactua.be</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+	</files>
+	<positions>
+		<position>breadcrumb</position>
+		<position>left</position>
+		<position>right</position>
+		<position>top</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>footer</position>
+	</positions>
+</extension>
