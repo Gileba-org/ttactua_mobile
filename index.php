@@ -9,8 +9,10 @@
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 	</head>
 	<body>
-		<jdoc:include type="modules" name="top" /> 
-		<jdoc:include type="component" />
-		<jdoc:include type="modules" name="bottom" />
+		<div id="wrapper">
+			<jdoc:include type="modules" name="top" /> 
+			<jdoc:include type="component" />
+			<jdoc:include type="modules" name="bottom" />
+		</div>
 	</body>
 </html>
