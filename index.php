@@ -11,9 +11,11 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<jdoc:include type="modules" name="top" /> 
-			<jdoc:include type="component" />
-			<jdoc:include type="modules" name="bottom" />
+			<div class="row">
+				<div class="col-3"><jdoc:include type="modules" name="sidebar-a" /></div>
+				<div class="col-6"><jdoc:include type="component" /></div>
+				<div class="col-3"><jdoc:include type="modules" name="sidebar-b" /></div>
+			</div>			 
 		</div>
 	</body>
 </html>
