@@ -7,10 +7,15 @@
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<jdoc:include type="modules" name="top" /> 
-		<jdoc:include type="component" />
-		<jdoc:include type="modules" name="bottom" />
+		<div id="wrapper">
+			<div class="row">
+				<div class="col-3 col-m-4"><jdoc:include type="modules" name="sidebar-a" /></div>
+				<div class="col-6 col-m-8"><jdoc:include type="component" /></div>
+				<div class="col-3 col-m-0"><jdoc:include type="modules" name="sidebar-b" /></div>
+			</div>			 
+		</div>
 	</body>
 </html>
