@@ -18,6 +18,8 @@
 	</files>
 	<positions>
 		<position>title</position>
+		<position>top</position>
+		<position>banners</position>
 		<position>header</position>
 		<position>left</position>
 		<position>right</position>
