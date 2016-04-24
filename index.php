@@ -14,6 +14,10 @@
 			<div class="row">
 				<div class="col-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
 			</div>
+<!--
+	//TODO: top
+	//TODO: banners
+--> 
 			<div class="row">
 				<div class="col-12 col-m-12"><jdoc:include type="modules" name="header" /></div>
 			</div>
