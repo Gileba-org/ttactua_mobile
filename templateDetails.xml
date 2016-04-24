@@ -23,4 +23,8 @@
 		<position>right</position>
 		<position>footer</position>
 	</positions>
+<!--
+	//TODO: Add Google AdSense code and banners
+	//TODO: Choose some colors in the template (in stead of hardcoded
+-->
 </extension>
