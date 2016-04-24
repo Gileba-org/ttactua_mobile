@@ -17,8 +17,10 @@
 		<folder>css</folder>
 	</files>
 	<positions>
-		<position>sidebar-a</position>
-		<position>sidebar-b</position>
 		<position>title</position>
+		<position>header</position>
+		<position>left</position>
+		<position>right</position>
+		<position>footer</position>
 	</positions>
 </extension>
