@@ -4,6 +4,7 @@
 
 body {
 	background-color: @background-site;
+    margin: 0px 10px;
 }
 
 img {
@@ -12,11 +13,14 @@ img {
 }
 
 #wrapper {
+	margin-top: 0px;
 	max-width: 1200px;
 	background-color: @background-component;
 	margin: auto;
-	border: 2px solid @border-site;
 	border-radius: 7px;
+	.row {
+		box-shadow: inset 5px 0 5px -5px #333, inset -5px 0 5px -5px #333;
+	}
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
