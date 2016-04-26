@@ -65,7 +65,7 @@
 				<div class="col-12 col-m-12"><jdoc:include type="modules" name="header" /></div>
 			</div>
 			<div class="row">
-				<div class="col-3 col-m-4"><jdoc:include type="modules" name="left" /></div>
+				<div class="col-3 col-m-4 col-p-0"><jdoc:include type="modules" name="left" /></div>
 				<div class="col-6 col-m-8"><jdoc:include type="component" /></div>
 				<div class="col-3 col-m-0"><jdoc:include type="modules" name="right" /></div>
 			</div>			 
