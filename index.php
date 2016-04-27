@@ -49,9 +49,20 @@
 			<div class="col-12"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
 		<div id="wrapper">
-		<div class="row">
-			<a id="simple-menu" href="#sidr">Menu</a>
-		</div>
+			<div class="row">
+				<div id="mobile-header">
+					<div class="col-p-1">
+						<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
+					</div>
+<!--
+					<div class="col-p-10">
+						<div class="col-12 col-m-12"><jdoc:include type="modules" name="mobile-header" /></div>
+					</div>
+					<div class="col-p-1">
+					</div>
+				</div>
+-->
+			</div>
 			<div class="row">
 				<div class="col-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
 			</div>
