@@ -1,9 +1,32 @@
-.blog {
+.blog, .blog-featured {
 	margin-right: 5px;
 	margin-left: 10px;
+	.items-leading, .items-row .item {
+		border-bottom: 4px solid @menu-background;
+		overflow: hidden;
+		padding-bottom: 10px;
+	}
 	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0.5em;
+		margin-bottom: 0px;
 		a {
 			color: #4d4d4d;
+		}
+	}
+	.article-info {
+		margin-top: 0.2em;
+		font-size: 0.8em;
+		.article-info-term {
+			display: none;
+		}
+		.createdby {
+			color: @menu-background;
+		}
+		.categoryname {
+			color: @color-link;
+		}
+		dd {
+			margin-left: 0px;
 		}
 	}
 	.item-image {
