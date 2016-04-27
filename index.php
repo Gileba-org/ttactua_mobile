@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/jquery.sidr.dark.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
+<?php	if ($this->params->get('fontsCss') != "") {?>
+		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
+<?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
 <?php

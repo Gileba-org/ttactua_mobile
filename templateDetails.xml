@@ -39,6 +39,9 @@
 				</field>
 				<field name="doubleClick" class="" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
 			</fieldset>
+			<fieldset name="fonts">
+				<field name="fontsCss" class="" type="textbox" default="" label="TPL_GILEBA_FONTS" description="TPL_GILEBA_FONTS_DESC" />
+			</fieldset>
 		</fields>
 	</config>
 <!--
