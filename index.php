@@ -51,7 +51,7 @@
 		<div id="wrapper">
 			<div class="row">
 				<div id="mobile-header">
-					<div class="col-p-1">
+					<div class="col-p-only">
 						<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
 					</div>
 <!--
