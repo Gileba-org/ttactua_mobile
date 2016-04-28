@@ -34,7 +34,7 @@ JHtml::_('behavior.caption');
 	?>
 
 	<?php // Todo Not that elegant would be nice to group the params ?>
-	<?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
+	<?php $useDefList = ($params->get('show_modify_date') || $params->get('show_create_date')
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') ); ?>
 
 	<?php if (!$useDefList && $this->print) : ?>
@@ -43,6 +43,15 @@ JHtml::_('behavior.caption');
 		</div>
 		<div class="clearfix"> </div>
 	<?php endif; ?>
+<?php if ($params->get('show_publish_date')) : ?>
+		<div class="date">
+			<dd class="published">
+				<div class="month"><?php echo JHtml::_('date', $this->item->publish_up, 'M'); ?></div>
+				<div class="day"><?php echo JHtml::_('date', $this->item->publish_up, 'd'); ?></div>
+				<div class="year"><?php echo JHtml::_('date', $this->item->publish_up, 'Y'); ?></div>
+			</dd>
+		</div>
+<?php endif; ?>
 	<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
 	<div class="page-header">
 		<?php if ($params->get('show_title')) : ?>
