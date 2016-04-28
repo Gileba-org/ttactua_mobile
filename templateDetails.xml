@@ -15,7 +15,9 @@
 		<folder>images</folder>
 		<folder>less</folder>
 		<folder>css</folder>
-		<folder>languages</folder>
+		<folder>language</folder>
+		<folder>html</folder>
+		<folder>js</folder>
 	</files>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_ttactua_mobile.ini</language>	
