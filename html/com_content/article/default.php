@@ -119,7 +119,12 @@ JHtml::_('behavior.caption');
 		echo $this->item->toc;
 	endif; ?>
 	<div itemprop="articleBody">
-		<?php echo $this->item->text; ?>
+		<div class="introtext">
+			<?php echo $this->item->introtext; ?>
+		</div>
+		<div class="fulltext">
+			<?php echo str_replace($this->item->introtext, '', $this->item->text); ?>
+		</div>
 	</div>
 
 	<?php if ($info == 1 || $info == 2) : ?>
