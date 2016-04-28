@@ -20,6 +20,15 @@ $info    = $params->get('info_block_position', 0);
 	<div class="system-unpublished">
 <?php endif; ?>
 
+<?php if ($params->get('show_publish_date')) : ?>
+		<div class="date">
+			<dd class="published">
+				<div class="month"><?php echo JHtml::_('date', $this->item->publish_up, 'M'); ?></div>
+				<div class="day"><?php echo JHtml::_('date', $this->item->publish_up, 'd'); ?></div>
+				<div class="year"><?php echo JHtml::_('date', $this->item->publish_up, 'Y'); ?></div>
+			</dd>
+		</div>
+<?php endif; ?>
 <?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
 
 <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
@@ -31,7 +40,7 @@ $info    = $params->get('info_block_position', 0);
 <?php endif; ?>
 
 <?php // Todo Not that elegant would be nice to group the params ?>
-<?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
+<?php $useDefList = ($params->get('show_publish_date') || $params->get('show_create_date')
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') ); ?>
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
