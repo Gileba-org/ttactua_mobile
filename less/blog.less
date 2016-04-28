@@ -94,3 +94,37 @@
 	float: right;
 	clear: both;
 }
+
+.pagination {
+	margin: 15px 0px;
+	width: 100%;
+	text-align: center;
+	.counter, .pagination-start, .pagination-prev, .pagination-next, .pagination-end {
+		display: none;
+	}
+	ul {
+		margin: auto;
+		padding-left: 0px;
+	}
+	li {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 0.6em;
+		margin: 0px 3px;
+		a.pagenav {
+			background: url("../images/pagination-inactive.png") no-repeat 50% 0;
+		}
+		span.pagenav {
+			color: white;
+			background: url("../images/pagination-active.png") no-repeat 50% 0;
+		}
+		.pagenav {
+			display: block;
+			height: 20px;
+			width: 20px;
+			padding-left: 1px;
+			padding-top: 2px;
+			text-align: center;
+		}
+	}
+}
