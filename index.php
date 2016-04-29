@@ -49,7 +49,7 @@
 	</head>
 	<body>
 		<div id="sidr">
-			<div class="col-12"><jdoc:include type="modules" name="mobile-menu" /></div>
+			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
 		<div id="wrapper">
 			<div class="row">
