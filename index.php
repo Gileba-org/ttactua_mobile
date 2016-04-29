@@ -53,7 +53,7 @@
 		</div>
 		<div id="mobile-header" class="col-p-only">
 			<div class="col-p-2">
-				<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
+				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></p>
 			</div>
 			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
