@@ -51,13 +51,12 @@
 		<div id="sidr">
 			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
-		<div id="wrapper">
-			<div class="row">
-				<div id="mobile-header">
-					<div class="col-p-only">
-						<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
-					</div>
+		<div id="mobile-header">
+			<div class="col-p-only">
+				<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
 			</div>
+		</div>
+		<div id="wrapper">
 			<div class="row" id="title">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
 			</div>
