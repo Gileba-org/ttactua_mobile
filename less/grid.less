@@ -7,11 +7,13 @@
 
 @media only screen and (max-width: 600px) {
 /* For phones: */
-	.col-p-0 {display: none;}
+	#mobile-header {padding: 1.1em;}
+	.col-p-0 {display:none;}
 }
 	
 @media only screen and (min-width: 600px) {
 /* For tablets: */
+	#mobile-header {padding: 0;}
 	.col-p-only {display: none;}
 	.col-m-0 {display: none;}
 	.col-m-1 {width: 8.33%;}
@@ -30,6 +32,7 @@
 
 @media only screen and (min-width: 720px) {
 /* For desktop */
+	#mobile-header {padding: 0;}
 	.col-p-only {display: none;}
 	.col-m-0 {display: block;}
 	.col-s-0 {display: none;}
@@ -48,6 +51,7 @@
 }
 @media only screen and (min-width: 960px) {
 /* For desktop */
+	#mobile-header {padding: 0;}
 	.col-p-only {display: none;}
 	.col-s-0 {display: block;}
 	.col-m-0 {display: block;}
