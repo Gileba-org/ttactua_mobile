@@ -51,10 +51,11 @@
 		<div id="sidr">
 			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
-		<div id="mobile-header">
-			<div class="col-p-only">
+		<div id="mobile-header" class="col-p-only">
+			<div class="col-p-2">
 				<p><a id="simple-menu" href="#sidr"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/menu.gif" height="31px" width="34px" /></a></p>
 			</div>
+			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
 		<div id="wrapper">
 			<div class="row" id="title">

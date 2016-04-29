@@ -5,15 +5,15 @@
 	display: block;
 }
 
-@media only screen and (max-width: 600px) {
-/* For phones: */
-	#mobile-header {padding: 1.1em;}
-	.col-p-0 {display:none;}
-}
+#wrapper {margin-top: 60px;}
+.col-p-0 {display:none;}
+.col-p-2 {width: 16.66%}
+.col-p-10 {width: 83.33%}
 	
 @media only screen and (min-width: 600px) {
 /* For tablets: */
-	#mobile-header {padding: 0;}
+	#wrapper {margin-top: 0px;}
+	.col-p-0 {display: block;}
 	.col-p-only {display: none;}
 	.col-m-0 {display: none;}
 	.col-m-1 {width: 8.33%;}
@@ -32,7 +32,8 @@
 
 @media only screen and (min-width: 720px) {
 /* For desktop */
-	#mobile-header {padding: 0;}
+	#wrapper {margin-top: 0px;}
+	.col-p-0 {display: block;}
 	.col-p-only {display: none;}
 	.col-m-0 {display: block;}
 	.col-s-0 {display: none;}
@@ -51,7 +52,8 @@
 }
 @media only screen and (min-width: 960px) {
 /* For desktop */
-	#mobile-header {padding: 0;}
+	#wrapper {margin-top: 0px;}
+	.col-p-0 {display: block;}
 	.col-p-only {display: none;}
 	.col-s-0 {display: block;}
 	.col-m-0 {display: block;}
