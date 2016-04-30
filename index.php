@@ -20,10 +20,8 @@
 <?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
-<?php
-		if ($this->params->get('doubleClickActivate')) {
-?>
 <!-- START Google DoubleClick Code -->
+<?php	if ($this->params->get('doubleClickActivate')) {	?>
 			<script type='text/javascript'>
 				(function() {
 					var useSSL = 'https:' == document.location.protocol;
@@ -34,17 +32,13 @@
 			</script>
 			<script type='text/javascript'>
 				googletag.cmd.push(function() {
-<?php
-				echo $this->params->get('doubleClick');
-?>
+<?php				echo $this->params->get('doubleClick');	?>
 			    	googletag.pubads().enableSingleRequest();
 			    	googletag.enableServices();
 				});
 			</script>		
+<?php	}	?>
 <!-- END Google DoubleClick Code -->
-<?php
-		}
-?>
 	</head>
 	<body>
 		<div id="sidr">
