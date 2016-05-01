@@ -64,12 +64,12 @@
 		<div id="sticky-anchor"></div>
 		<div id="sticky">
 			<div class="row" id="banners">
-				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="banners" /></div>
+				<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="banners" /></div>
 			</div>
 		</div>
 		<div id="wrapper">
 			<div class="row" id="header">
-				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="header" /></div>
+				<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
 			</div>
 		</div>
 		<div id="wrapper">

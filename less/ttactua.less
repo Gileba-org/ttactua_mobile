@@ -42,6 +42,7 @@ img {
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
 	z-index: 999;
 	width: 100%;
 	background-color: @menu-background;
@@ -79,10 +80,12 @@ h1, h2, h3, h4, h5, h6, h7 {
 	}
 }
 
-#header {
-	padding: 10px;
-	.search form.form-inline input {
-		float: right;
-		font-size: 1.5em;
+@media only screen and (min-width: 600px) {
+	#header {
+		padding: 10px;
+		.search form.form-inline input {
+			float: right;
+			font-size: 1.5em;
+		}
 	}
 }
