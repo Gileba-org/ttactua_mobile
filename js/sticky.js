@@ -5,10 +5,12 @@ function moveScroller() {
         var s = jQuery("#sticky");
         if(st > ot) {
             jQuery('#sticky').addClass('stick');
+			jQuery('#sticky-anchor').height(jQuery('#sticky').outerHeight());
         } else {
             if(st <= ot) {
                 jQuery('#sticky').removeClass('stick');
-            }
+				jQuery('#sticky-anchor').height(0);
+           }
         }
     };
     jQuery(window).scroll(move);
