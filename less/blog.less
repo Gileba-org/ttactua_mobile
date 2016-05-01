@@ -16,6 +16,11 @@
 	.article-info {
 		margin-top: 0.2em;
 		font-size: 0.8em;
+		dd:nth-child(n+3)::before { content: " • "}
+		dd {
+			margin-left: 0px;
+			display: inline;
+		}
 		.article-info-term {
 			display: none;
 		}
