@@ -20,7 +20,7 @@ img {
     display: block;
 }
 
-#wrapper {
+#wrapper, #sticky{
 	margin-top: 0px;
 	max-width: 1200px;
 	background-color: @background-component;
@@ -29,6 +29,11 @@ img {
 	.row {
 		box-shadow: inset 5px 0 5px -5px #333, inset -5px 0 5px -5px #333;
 	}
+}
+
+#sticky.stick {
+	position: fixed;
+	top: 0px;
 }
 
 #mobile-header {

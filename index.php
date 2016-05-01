@@ -46,7 +46,7 @@
 		</div>
 		<div id="mobile-header" class="col-p-only">
 			<div class="col-p-2">
-				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></p>
+				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></a></p>
 			</div>
 			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
