@@ -15,15 +15,14 @@
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
+<?php	$doc->addScript('templates/' . $this->template . '/js/sticky.js'); ?>
 <?php	if ($this->params->get('fontsCss') != "") {?>
 		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
 <?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
-<?php
-		if ($this->params->get('doubleClickActivate')) {
-?>
 <!-- START Google DoubleClick Code -->
+<?php	if ($this->params->get('doubleClickActivate')) {	?>
 			<script type='text/javascript'>
 				(function() {
 					var useSSL = 'https:' == document.location.protocol;
@@ -34,17 +33,13 @@
 			</script>
 			<script type='text/javascript'>
 				googletag.cmd.push(function() {
-<?php
-				echo $this->params->get('doubleClick');
-?>
+<?php				echo $this->params->get('doubleClick');	?>
 			    	googletag.pubads().enableSingleRequest();
 			    	googletag.enableServices();
 				});
 			</script>		
+<?php	}	?>
 <!-- END Google DoubleClick Code -->
-<?php
-		}
-?>
 	</head>
 	<body>
 		<div id="sidr">
@@ -52,7 +47,7 @@
 		</div>
 		<div id="mobile-header" class="col-p-only">
 			<div class="col-p-2">
-				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></p>
+				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></a></p>
 			</div>
 			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
@@ -60,15 +55,24 @@
 			<div class="row" id="title">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
 			</div>
+		</div>
+		<div id="wrapper">
 			<div class="row" id="top">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="top" /></div>
 			</div>
+		</div>
+		<div id="sticky-anchor"></div>
+		<div id="sticky">
 			<div class="row" id="banners">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="banners" /></div>
 			</div>
+		</div>
+		<div id="wrapper">
 			<div class="row" id="header">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="header" /></div>
 			</div>
+		</div>
+		<div id="wrapper">
 			<div class="row" id="main">
 				<div class="col-3 col-s-4 col-m-4 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 				<div class="col-6 col-s-8 col-m-8" id="component"><jdoc:include type="component" /></div>
@@ -78,14 +82,15 @@
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
 			</div>
 		</div>
-    <!-- Your code -->
-    <script>
-
-    jQuery(document).ready(function () {
-		jQuery('#simple-menu').sidr({
-      	});
-    });
-    </script>
-
+		<!-- Your code -->
+		<script>
+			jQuery(document).ready(function () {
+				jQuery('#simple-menu').sidr({
+				});
+    		});
+			jQuery(function() {
+				moveScroller();
+			});
+		</script>
 	</body>
 </html>

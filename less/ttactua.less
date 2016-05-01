@@ -20,7 +20,7 @@ img {
     display: block;
 }
 
-#wrapper {
+#wrapper, #sticky{
 	margin-top: 0px;
 	max-width: 1200px;
 	background-color: @background-component;
@@ -29,6 +29,13 @@ img {
 	.row {
 		box-shadow: inset 5px 0 5px -5px #333, inset -5px 0 5px -5px #333;
 	}
+}
+
+#sticky.stick {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
 }
 
 #mobile-header {
@@ -78,8 +85,4 @@ h1, h2, h3, h4, h5, h6, h7 {
 		float: right;
 		font-size: 1.5em;
 	}
-}
-
-#left {
-	margin: 16px 10px;
 }

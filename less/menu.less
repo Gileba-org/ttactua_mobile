@@ -1,13 +1,20 @@
 /* Dekstop */
-ul#mainmenu {
+ul#mainmenu:last-child{
+	margin-bottom: 16px;
+	margin-top: 0px;
+}
+
+ul#mainmenu:nth-child(1) {
+	margin-top: 16px;
+	margin-bottom: 0px;
+}
+
+#mainmenu {
 	padding: 10px 10px 20px 10px;
 	background-color: @menu-background;
 	color: white;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	li:nth-child(1) {
-		border-top: 1px solid white;
-	}
+	margin-left: 10px;
+	margin-right: 10px;
 	li {
 		list-style-type: none;
 		font-family: @font-title;
@@ -25,6 +32,9 @@ ul#mainmenu {
 		li:nth-child(1) {
 			border-top: none;
 		}
+	}
+	li:nth-child(1) {
+		border-top: 1px solid white;
 	}
 	a, a:hover, a:visited {
 		color: white;
