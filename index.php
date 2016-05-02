@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <?php	$doc->addScript('templates/' . $this->template . '/js/sticky.js'); ?>
+<?php	$doc->addScript('templates/' . $this->template . '/js/elementQuery.js'); ?>
 <?php	if ($this->params->get('fontsCss') != "") {?>
 		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
 <?php	}?>

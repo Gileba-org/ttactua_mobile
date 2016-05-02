@@ -38,6 +38,7 @@ $info    = $params->get('info_block_position', 0);
 	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
 <?php endif; ?>
 
+<?php echo JLayoutHelper::render('joomla.content.full_image', $this->item); ?>
 <?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
 
 

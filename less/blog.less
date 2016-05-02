@@ -1,6 +1,14 @@
 .blog, .blog-featured, .item-page {
 	margin-right: 5px;
 	margin-left: 10px;
+	.items-row[max-width~="480px"] {
+		.item-image.intro {
+			display:none;
+		}
+		.item-image.full {
+			display:block;
+		}
+	}
 	.items-leading .leading-0, .items-row .item {
 		border-bottom: 4px solid @menu-background;
 		overflow: hidden;
@@ -33,10 +41,16 @@
 	}
 	.item-image {
 		border: 4px solid @menu-background;
-		float: left;
 		margin-right: 10px;
 		border-radius: 5px;
 		margin-bottom: 10px;
+	}
+	.item-image.intro {
+		float: left;
+		display: block;
+	}
+	.item-image.full {
+		display: none;
 	}
 	p {
 		font-size: 0.9em;
