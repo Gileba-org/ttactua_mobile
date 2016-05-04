@@ -1,28 +1,28 @@
 .front {
-	margin: 0px 10px;
+	margin: 0 10px;
 	padding-bottom: 10px;
 	background-color: rgb(242,242,242);
 	.moduletitle {
 		background-color: #62696f;
 		h3 {
-			margin-left: 10px;
+			margin: 16px 0px 0px 10px;
 			color: white;
-			padding-bottom: 0px;
-			margin-bottom: 5px;
-			line-height: 1.8em;
+			padding-bottom: 5px;
+			line-height: 1.5em;
 		}
 	}
 	.modulecontent {
-		.mod_events_latest_table {
-			margin-top: 10px;
-			line-height: 1em;
-			tr {
-				height: 45px;
-				vertical-align: text-top;
+		.jevbootstrap {
+			.mod_events_latest_date, .mod_events_latest_content {
+				vertical-align: middle;
 			}
 		}
+		.mod_events_latest_table {
+			margin: 10px 0px;
+			line-height: 1em;
+		}
 		.mod_events_latest, .mod_events_latest_first {
-			margin-top: 10px;
+			padding: 7px 0px;
 			font-size: 0.9em;
 			text-transform: uppercase;
 			line-height: 12px;
@@ -40,6 +40,55 @@
 		.mod_events_latest_callink {
 			margin: auto;
 			width: 80%;
+		}
+	}
+	.jevcarousel {
+		.carousel-inner {
+			height: 278px;
+			color: @menu-background;
+			margin: 5px auto;
+			img {
+				border-radius: 5px;
+				margin: 0px auto;
+			}
+		}
+		.carousel-control {
+			top: 83%;
+		}
+		.carousel-control.left {
+			left: 5px;
+		}
+		.carousel-control.right {
+			right:5px;
+		}
+		.carousel-caption {
+			font-family: @font-title;
+			text-transform: uppercase;
+			bottom: -60px;
+			padding-left: 57px;
+			padding-bottom: 20px;
+			padding-top: 13px;
+			height: 60px;
+			background: inherit;
+			line-height: 1.5;
+			.carousel-content {
+				max-width: 155px;
+				.mod_events_latest_content {
+					clear:both;
+				}
+				.jevcstart {
+					float:none;
+				}
+			}
+		}
+		.carousel-indicators {
+			bottom: -30px;
+			li {
+				background-color: #AAAAAA;
+			}
+			.active {
+				background-color: #00398d;
+			}
 		}
 	}
 }
