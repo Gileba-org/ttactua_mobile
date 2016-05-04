@@ -78,7 +78,7 @@
 			<div class="row" id="main">
 				<div class="col-3 col-s-4 col-m-4 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 				<div class="col-6 col-s-8 col-m-8" id="component"><jdoc:include type="component" /></div>
-				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="html5" /></div>
+				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 			</div>			 
 			<div class="row" id="footer">
 				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
