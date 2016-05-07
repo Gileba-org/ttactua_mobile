@@ -51,9 +51,20 @@
 #jevents {
 	margin: 16px 10px;
 	#jevents_body {
-		font-size: 1em;		
+		font-size: 1em;
+		a {
+			color: @color-link;
+		}
 		.jev_edt, .jev_evdt {
 			padding: 0px;
+		}
+		.jev_evdt_creator {
+			color: #00398d;
+			font-size: 0.8em;
+			margin-bottom: 20px;
+		}
+		.jev_eventdetails_body {
+			font-size: 0.9em;
 		}
 	}
 }
@@ -64,5 +75,7 @@
 		line-height: 1em;
 		font-weight: normal;
 		font-family: @font-title;
+		margin-top: 0.5 em;
+		margin-bottom: 0px;
 	}
 }
