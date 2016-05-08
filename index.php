@@ -77,7 +77,11 @@
 		<div id="wrapper">
 			<div class="row" id="main">
 				<div class="col-3 col-s-4 col-m-4 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
-				<div class="col-6 col-s-8 col-m-8" id="component"><jdoc:include type="component" /></div>
+				<div class="col-6 col-s-8 col-m-8" id="component_wrapper">
+					<div id="component_header"><jdoc:include type="modules" name="component_header"/></div>
+					<div id="component"><jdoc:include type="component" /></div>
+					<div id="comonent_footer"><jdoc:include type="modules" name="component_footer"/></div>
+				</div>
 				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 			</div>			 
 			<div class="row" id="footer">
