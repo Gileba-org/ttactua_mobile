@@ -83,7 +83,7 @@
 <?php if ($menu->getActive() != $menu->getDefault()) : ?>
 					<div id="component"><jdoc:include type="component" /></div>
 <?php endif ?>
-					<div id="comonent_footer"><jdoc:include type="modules" name="component_footer"/></div>
+					<div id="component_footer"><jdoc:include type="modules" name="component_footer"/></div>
 				</div>
 				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 			</div>			 
