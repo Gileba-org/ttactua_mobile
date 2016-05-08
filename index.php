@@ -4,6 +4,7 @@
 	$app      = JFactory::getApplication();
 	$doc      = JFactory::getDocument();
 	$params	  = $app->getTemplate(true)->params;
+	$menu = $app->getMenu();
 	
 	JHtml::_('jquery.framework');
 ?>
@@ -79,7 +80,9 @@
 				<div class="col-3 col-s-4 col-m-4 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 				<div class="col-6 col-s-8 col-m-8" id="component_wrapper">
 					<div id="component_header"><jdoc:include type="modules" name="component_header"/></div>
+<?php if ($menu->getActive() != $menu->getDefault()) : ?>
 					<div id="component"><jdoc:include type="component" /></div>
+<?php endif ?>
 					<div id="comonent_footer"><jdoc:include type="modules" name="component_footer"/></div>
 				</div>
 				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
