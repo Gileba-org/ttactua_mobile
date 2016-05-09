@@ -8,10 +8,10 @@
  */
 
 defined('_JEXEC') or die;
-
 ?>
+<div id="slideContainer">
 	<?php foreach ($list as $item) : ?>
-		<div>
+		<div class="mySlide">
 			<?php if ($params->get('link_titles') == 1) : ?>
 				<h2><a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
 					<?php echo $item->title; ?></a></h2>
@@ -64,3 +64,21 @@ defined('_JEXEC') or die;
 			<?php endif; ?>
 		</div>
 	<?php endforeach; ?>
+</div>
+
+<script>
+	var myIndex = 0;
+	carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlide");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
