@@ -13,10 +13,8 @@ defined('_JEXEC') or die;
 	<?php foreach ($list as $item) : ?>
 		<div class="mySlide">
 			<?php if ($params->get('link_titles') == 1) : ?>
-				<h2><a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
-					<?php echo $item->title; ?></a></h2>
-					<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
-				</a>
+				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
+				<h4><?php echo $item->title; ?></h4>
 			<?php else : ?>
 				<?php echo $item->title; ?>
 			<?php endif; ?>
