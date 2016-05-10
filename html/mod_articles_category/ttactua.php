@@ -76,7 +76,7 @@ function carousel() {
     }
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
     setTimeout(carousel, 4000); // Change image every 2 seconds
+    x[myIndex-1].style.display = "inline-block";  
 }
 </script>
