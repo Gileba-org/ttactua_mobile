@@ -7,6 +7,7 @@
 	$menu = $app->getMenu();
 	
 	JHtml::_('jquery.framework');
+	JHtml::_('bootstrap.framework');
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
