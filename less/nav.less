@@ -48,7 +48,8 @@
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #333;
+  background-color: @color-link;
+  color: white;
 }
 
 // Prevent IE8 from misplacing imgs
@@ -99,9 +100,8 @@
 .nav-list > .active > a,
 .nav-list > .active > a:hover,
 .nav-list > .active > a:focus {
-  color: white;
+  color: #999999;
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
-  background-color: @color-link;
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
@@ -148,17 +148,21 @@
   padding-top: 8px;
   padding-bottom: 8px;
   border: 1px solid transparent;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
  }
 
 // Active state, and it's :hover/:focus to override normal :hover/:focus
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
-  color: white;
-  background-color: @color-link;
   border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border-bottom-color: white;
   cursor: default;
+}
+
+.nav-tabs > .active > a {
+	  color: #4d4d4d;
 }
 
 // Tab-content
