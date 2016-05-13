@@ -54,7 +54,7 @@ JFactory::getDocument()->addScriptDeclaration("
 				</button>
 			</div>
 			<div class="btn-group">
-				<button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')">
+				<button type="button" class="btn btn-danger" onclick="Joomla.submitbutton('article.cancel')">
 					<span class="icon-cancel"></span><?php echo JText::_('JCANCEL') ?>
 				</button>
 			</div>
