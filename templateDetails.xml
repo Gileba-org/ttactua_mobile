@@ -12,12 +12,13 @@
 	<files>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
-		<folder>images</folder>
-		<folder>less</folder>
+		<filename>component.php</filename>
 		<folder>css</folder>
-		<folder>language</folder>
 		<folder>html</folder>
+		<folder>images</folder>
 		<folder>js</folder>
+		<folder>language</folder>
+		<folder>less</folder>
 	</files>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_ttactua_mobile.ini</language>	
