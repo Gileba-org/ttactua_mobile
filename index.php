@@ -27,7 +27,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
 <!-- START Google DoubleClick Code -->
-<?php	if ($this->params->get('doubleClickActivate')) {	?>
+<?php	if ($this->params->get('doubleClick')) {	?>
 			<script type='text/javascript'>
 				(function() {
 					var useSSL = 'https:' == document.location.protocol;
