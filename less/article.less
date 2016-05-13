@@ -57,11 +57,28 @@
 }
 
 // Editor
+.btn-toolbar {
+	.btn-group {
+		display: inline-block;
+	}
+}
+	
 .icons {
 	float: right;
+	text-align: right;
 	margin-top: 0.2em;
+	.btn {
+		background-image: linear-gradient(to top, lightgrey, white);
+		color: #4d4d4d;
+		.icon-cog {
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+		.caret {
+			margin-top: 5px;
+		}
+	}
 	ul {
-		list-style-type: none;
 		margin: 0;
 		font-size: 0.8em;
 		.icon-edit {
@@ -72,10 +89,6 @@
 
 .edit {
 	margin-top: 16px;
-}
-
-.btn-group {
-	display: inline;
 }
 
 fieldset {
