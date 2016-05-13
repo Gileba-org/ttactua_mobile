@@ -175,3 +175,47 @@
 .pill-content > .active {
   display: block;
 }
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0; // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: white;
+  background-image: -webkit-linear-gradient(top, rgb(56, 160, 225), rgb(28, 126, 186));
+  border: 1px solid 1px solid #155d89;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+		background-color: #3ea1de;
+		background-image: linear-gradient(to bottom, #52ade5, #2090d4);
+  }
+
+  // Active state
+  &.active,
+  &:active {
+		box-shadow: 0 1px 0 @menu-background;
+		color: white;
+  }
+
+  // Disabled state
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    opacity: .65;
+    box-shadow:none;
+  }
+
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom, #46a546, #378137);
+}
