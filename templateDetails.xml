@@ -36,10 +36,6 @@
 	<config>
 		<fields name="params">
 			<fieldset name="google">
-				<field name="doubleClickActivate" class="" type="radio" default="0" label="TPL_GILEBA_DOUBLECLICKACTIVATE" description="TPL_GILEBA_DOUBLECLICKACTIVATE_DESC">
-					<option value="0">TPL_GILEBA_NO</option>
-					<option value="1">TPL_GILEBA_YES</option>
-				</field>
 				<field name="doubleClick" class="" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
 			</fieldset>
 			<fieldset name="fonts">
