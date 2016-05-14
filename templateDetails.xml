@@ -35,11 +35,14 @@
 	</positions>
 	<config>
 		<fields name="params">
+			<fieldset name="general">
+				<field name="componentFreeHome" type="checkbox" value="1" default="0" label="TPL_GILEBA_COMPONENTFREEHOME" description="TPL_GILEBA_COMPONENTFREEHOME_DESC" />
+			</fieldset>
 			<fieldset name="google">
-				<field name="doubleClick" class="" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
+				<field name="doubleClick" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
 			</fieldset>
 			<fieldset name="fonts">
-				<field name="fontsCss" class="" type="textbox" default="" label="TPL_GILEBA_FONTS" description="TPL_GILEBA_FONTS_DESC" />
+				<field name="fontsCss" type="textbox" default="" label="TPL_GILEBA_FONTS" description="TPL_GILEBA_FONTS_DESC" />
 			</fieldset>
 		</fields>
 	</config>
