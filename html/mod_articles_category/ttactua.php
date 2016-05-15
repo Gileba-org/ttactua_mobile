@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
 		<div class="mySlide<?php echo substr($moduleclass_sfx,0,1); ?>">
 			<?php if ($params->get('link_titles') == 1) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
-				<h4><a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"><?php echo $item->title; ?></a></h4>
+				<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"><h4><?php echo $item->title; ?></h4></a>
 			<?php else : ?>
 				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
 				<h4><?php echo $item->title; ?></h4>
