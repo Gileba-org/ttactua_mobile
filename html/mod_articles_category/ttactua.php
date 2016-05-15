@@ -16,7 +16,8 @@ defined('_JEXEC') or die;
 				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
 				<h4><a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"><?php echo $item->title; ?></a></h4>
 			<?php else : ?>
-				<?php echo $item->title; ?>
+				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
+				<h4><?php echo $item->title; ?></h4>
 			<?php endif; ?>
 					<?php if ($item->displayHits) : ?>
 				<span class="mod-articles-category-hits">
