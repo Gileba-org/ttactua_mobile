@@ -52,7 +52,8 @@ class DefaultModSlideshowView extends DefaultModLatestView
 			<div class="jevcarousel">
 				<div id="jevlatestcarousel" class="carousel slide jevlatest jevlatestcarousel" data-ride="carousel">
 					<!-- Indicators -->
-					<ol class="carousel-indicators">
+<!--
+						<ol class="carousel-indicators">
 						<?php
 						$count = 0;
 
@@ -72,6 +73,7 @@ class DefaultModSlideshowView extends DefaultModLatestView
 						}
 						?>
 					</ol>
+-->
 					<div class="carousel-inner">
 						<?php
 						$first = true;
@@ -148,8 +150,10 @@ class DefaultModSlideshowView extends DefaultModLatestView
 					</div>
 
 					<!-- Controls -->
+<!--
 					<a class="left carousel-control" href="#jevlatestcarousel" data-slide="prev"></a>
 					<a class="right carousel-control" href="#jevlatestcarousel" data-slide="next"></a>
+-->
 				</div>
 			</div>
 			<script>
