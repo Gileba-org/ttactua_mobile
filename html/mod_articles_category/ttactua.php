@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 ?>
 <div id="slideContainer">
 	<?php foreach ($list as $item) : ?>
-		<div class="mySlide<?php echo substr($moduleclass_sfx,0,1); ?>">
+		<div class="mySlide_<?php echo $module->id; ?>">
 			<?php if ($params->get('link_titles') == 1) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
 				<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"><h4><?php echo $item->title; ?></h4></a>
@@ -66,19 +66,19 @@ defined('_JEXEC') or die;
 </div>
 
 <script>
-	var myIndex<?php echo substr($moduleclass_sfx,0,1);?> = 0;
-	carousel<?php echo substr($moduleclass_sfx,0,1);?>();
+	var myIndex_<?php echo $module->id; ?> = 0;
+	carousel_<?php echo $module->id; ?>();
 
-function carousel<?php echo substr($moduleclass_sfx,0,1);?>() {
+function carousel_<?php echo $module->id; ?>() {
 	var i;
-	var x = document.getElementsByClassName("mySlide<?php echo substr($moduleclass_sfx,0,1);?>");
+	var x = document.getElementsByClassName("mySlide_<?php echo $module->id; ?>");
 	for (i = 0; i < x.length; i++) {
 		x[i].style.display = "none";  
 	}
-	myIndex<?php echo substr($moduleclass_sfx,0,1);?>++;
-	if (myIndex<?php echo substr($moduleclass_sfx,0,1);?> > x.length) {myIndex<?php echo substr($moduleclass_sfx,0,1);?> = 1}    
-	x[myIndex<?php echo substr($moduleclass_sfx,0,1);?>-1].style.display = "inline-block";  
-	setTimeout(carousel<?php echo substr($moduleclass_sfx,0,1);?>, 4000); // Change image every 4 seconds
+	myIndex_<?php echo $module->id; ?>++;
+	if (myIndex_<?php echo $module->id; ?> > x.length) {myIndex_<?php echo $module->id; ?> = 1}    
+	x[myIndex_<?php echo $module->id; ?>-1].style.display = "inline-block";  
+	setTimeout(carousel_<?php echo $module->id; ?>, 4000); // Change image every 4 seconds
 }
 
 </script>
