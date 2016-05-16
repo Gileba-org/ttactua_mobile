@@ -42,55 +42,6 @@
 			width: 80%;
 		}
 	}
-	.jevcarousel {
-		.carousel-inner {
-			height: 278px;
-			color: @menu-background;
-			margin: 5px auto;
-			img {
-				border-radius: 5px;
-				margin: 0px auto;
-			}
-		}
-		.carousel-control {
-			top: 83%;
-		}
-		.carousel-control.left {
-			left: 5px;
-		}
-		.carousel-control.right {
-			right:5px;
-		}
-		.carousel-caption {
-			font-family: @font-title;
-			text-transform: uppercase;
-			bottom: -60px;
-			padding-left: 57px;
-			padding-bottom: 20px;
-			padding-top: 13px;
-			height: 60px;
-			background: inherit;
-			line-height: 1.5;
-			.carousel-content {
-				max-width: 155px;
-				.mod_events_latest_content {
-					clear:both;
-				}
-				.jevcstart {
-					float:none;
-				}
-			}
-		}
-		.carousel-indicators {
-			bottom: -30px;
-			li {
-				background-color: #AAAAAA;
-			}
-			.active {
-				background-color: #00398d;
-			}
-		}
-	}
 }
 	
 // JoomSport
@@ -116,6 +67,41 @@
 		.blteamname {
 			padding-left: 5px;
 			width: 80%;
+		}
+	}
+	.jevcarousel {
+		img {
+			margin: auto;
+			border-radius: 0px;
+		}
+		.carousel-caption {
+			position: relative;
+			border-radius: 0px;
+			max-width: 272px;
+			margin: auto;
+			background-color: @menu-background;
+			padding: 15px;
+			.jevcstart {
+				float: none;
+				font-family: @font-title;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				a {
+					color: white;
+				}
+			}
+			.carousel_title {
+				margin-bottom: 10px;
+				height: 2em;
+				a {
+					color: white;
+				}
+			}
+			.carousel_category {
+				color: white;
+				font-style: italic;
+				font-size: 0.9em;
+			}
 		}
 	}
 }
