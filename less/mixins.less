@@ -3,3 +3,11 @@
 	width: -moz-max-content; // FF
 	width: -webkit-max-content; // Chrome
 }
+
+.bglineargradient(@direction, @topcolor, @bottomcolor) {
+	background: @topcolor;
+	background-image: -moz-linear-gradient(@direction, @topcolor, @bottomcolor);
+	background-image: -webkit-linear-gradient(@direction, @topcolor, @bottomcolor);
+	background-image: -o-linear-gradient(@direction, @topcolor, @bottomcolor);
+	background-image: linear-gradient(@direction, @topcolor, @bottomcolor);
+}
