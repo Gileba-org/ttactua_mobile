@@ -6,7 +6,9 @@
 	.item-image {
 		clear: both;
 		float: none;
-		width: intrinsic;
+		width: intrinsic; // Safari/Webkit
+		width: -moz-max-content; // FF
+		width: -webkit-max-content; // Chrome
 		margin: auto;
 	}
 	.introtext {
