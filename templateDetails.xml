@@ -36,6 +36,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="general">
+				<field name="specificDateFormat" type="textfield" default="" label="TPL_GILEBA_DATEFORMAT" description="TPL_GILEBA_DATEFORMAT_DESC" />
 				<field name="componentFreeHome" type="checkbox" value="1" default="0" label="TPL_GILEBA_COMPONENTFREEHOME" description="TPL_GILEBA_COMPONENTFREEHOME_DESC" />
 			</fieldset>
 			<fieldset name="google">
