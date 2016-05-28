@@ -31,6 +31,8 @@
 		<position>header</position>
 		<position>left</position>
 		<position>right</position>
+		<position>content-header</position>
+		<position>content-footer</position>
 		<position>footer</position>
 	</positions>
 	<config>

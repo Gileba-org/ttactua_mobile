@@ -82,11 +82,11 @@
 			<div class="row" id="main">
 				<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 				<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
-					<div id="cheader"><jdoc:include type="modules" name="cheader" /></div>
+					<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
 <?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
 					<div id="component"><jdoc:include type="component" /></div>
 <?php endif ?>
-					<div id="cfooter"><jdoc:include type="modules" name="cfooter" /></div>
+					<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
 				</div>
 				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 			</div>			 
