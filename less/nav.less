@@ -161,7 +161,7 @@
 }
 
 .nav-tabs > .active > a {
-	  color: #4d4d4d;
+	  color: @color-text;
 }
 
 // Tab-content
@@ -186,7 +186,7 @@
   cursor: pointer;
   .bglineargradient(to top, lightgrey, white);
   border: 1px solid grey;
-  color: #4d4d4d;
+  color: @color-text;
   border-radius: 4px;
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
 
@@ -253,7 +253,7 @@
   width: 0;
   height: 0;
   vertical-align: top;
-  border-top:   4px solid #4d4d4d;
+  border-top:   4px solid @color-text;
   border-right: 4px solid transparent;
   border-left:  4px solid transparent;
   content: "";
@@ -375,7 +375,7 @@
   // Reverse the caret
   .caret {
     border-top: 0;
-    border-bottom: 4px solid #4d4d4d;
+    border-bottom: 4px solid @color-text;
     content: "";
   }
   // Different positioning for bottom up menu
