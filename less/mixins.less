@@ -16,4 +16,10 @@
 	text-transform: uppercase;
 }
 
-// TODO: New mixins for box-shadow and border-radius (??)
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// TODO: New mixins for box-shadow (??)
