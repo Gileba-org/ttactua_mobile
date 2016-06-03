@@ -1,7 +1,7 @@
 #footer {
-	color: #999999;
+	.uppercase();
+	color: @color-text-footer;
 	font-size: 0.6em;
-	text-transform: uppercase;
 	.custom {
 		padding-right: 10px;
 	}
@@ -11,11 +11,11 @@
 			display: inline-block;
 			padding: 0px 3px;
 			a {
-				color: #999999;
+				color: @color-text-footer;
 			}
 		}
 		li:not(:first-child) {
-			border-left: 1px solid #999999;
+			border-left: 1px solid @color-text-footer;
 		}
 	}
 }
