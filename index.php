@@ -57,41 +57,37 @@
 			</div>
 			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
-		<div id="wrapper">
-			<div class="row" id="title">
-				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
-			</div>
-		</div>
-		<div id="wrapper">
-			<div class="row" id="top">
-				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="top" /></div>
-			</div>
-		</div>
-		<div id="sticky-anchor"></div>
-		<div id="sticky">
-			<div class="row" id="banners">
-				<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="banners" /></div>
-			</div>
-		</div>
-		<div id="wrapper">
-			<div class="row" id="header">
-				<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
-			</div>
-		</div>
-		<div id="wrapper">
-			<div class="row" id="main">
-				<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
-				<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
-					<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
-<?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
-					<div id="component"><jdoc:include type="component" /></div>
-<?php endif ?>
-					<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
+		<div id="container">
+			<div id="wrapper">
+				<div class="row" id="title">
+					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
 				</div>
-				<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
-			</div>			 
-			<div class="row" id="footer">
-				<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
+				<div class="row" id="top">
+					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="top" /></div>
+				</div>
+				<div id="sticky-anchor"></div>
+				<div id="sticky">
+					<div class="row" id="banners">
+						<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="banners" /></div>
+					</div>
+				</div>
+				<div class="row" id="header">
+					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
+				</div>
+				<div class="row" id="main">
+					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
+					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
+						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
+	<?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
+						<div id="component"><jdoc:include type="component" /></div>
+	<?php endif ?>
+						<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
+					</div>
+					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
+				</div>			 
+				<div class="row" id="footer">
+					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
+				</div>
 			</div>
 		</div>
 		<!-- Your code -->
