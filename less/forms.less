@@ -21,11 +21,11 @@ input[type="color"],
 .uneditable-input {
   display: inline-block;
   padding: 4px 6px;
-  border-radius: 4px;
+  .border-radius(4px);
   vertical-align: middle;
   height: 25px;
   line-height: 20px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+  .box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -58,14 +58,14 @@ input[type="color"],
 .uneditable-input {
   background-color: #fff;
   border: 1px solid grey;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+  .box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
 
   // Focus state
   &:focus {
     border-color: rgba(82,168,236,.8);
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
   }
 }
 
@@ -112,7 +112,7 @@ select[size] {
   color: lightgrey;
   background-color: #fff;
   border-color: grey;
-  box-shadow:inset 0 1px 2px rgba(0,0,0,.025);
+  .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
 }
 
@@ -146,7 +146,7 @@ select[size] {
     position: relative; // placed here by default so that on :focus we can place the input above the .add-on for full border and box-shadow goodness
     margin-bottom: 0; // prevent bottom margin from screwing up alignment in stacked forms
     vertical-align: top;
-    border-radius: none;
+    .border-radius(none);
     // Make input on top when focused so blue border and shadow always show
     &:focus {
       z-index: 2;
@@ -163,14 +163,14 @@ select[size] {
     text-shadow: 0 1px 0 white;
     border: 1px solid grey;
 	.bglineargradient(to top, lightgrey, white);
-  border-radius: 4px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+	.border-radius(4px);
+	.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
   }
   .add-on,
   .btn,
   .btn-group > .dropdown-toggle {
     vertical-align: top;
-    border-radius: 0;
+    .border-radius(0);
   }
   .active {
     background-color: lightgreen;
@@ -187,7 +187,7 @@ select[size] {
   .add-on:first-child,
   .btn:first-child {
     // FYI, `.btn:first-child` accounts for a button group that's prepended
-    border-radius:4px 0 0 4px;
+    .border-radius(4px 0 0 4px);
   }
 }
 
@@ -195,9 +195,9 @@ select[size] {
   input,
   select,
   .uneditable-input {
-    border-radius:4px 0 0 4px;
+    .border-radius(4px 0 0 4px);
     + .btn-group .btn:last-child {
-      border-radius:0 4px 4px 0;
+      .border-radius(0 4px 4px 0);
     }
   }
   .add-on,
@@ -208,7 +208,7 @@ select[size] {
   .add-on:last-child,
   .btn:last-child,
   .btn-group:last-child > .dropdown-toggle {
-    border-radius: 0 4px 4px 0;
+    .border-radius(0 4px 4px 0);
   }
 }
 
@@ -217,20 +217,20 @@ select[size] {
   input,
   select,
   .uneditable-input {
-    border-radius:0;
+    .border-radius(0);
     + .btn-group .btn {
-      border-radius: 0 4px 4px 0;
+      .border-radius(0 4px 4px 0);
     }
   }
   .add-on:first-child,
   .btn:first-child {
     margin-right: -5px;
-    border-radius: 4px 0 0 4px;
+    .border-radius(4px 0 0 4px);
   }
   .add-on:last-child,
   .btn:last-child {
     margin-left: -1px;
-    border-radius: 0 4px 4px 0;
+    .border-radius(0 4px 4px 0);
   }
   .btn-group:first-child {
     margin-left: 0;
