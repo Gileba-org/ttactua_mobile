@@ -2,7 +2,7 @@
 	margin: 0 10px;
 	background-color: rgb(242,242,242);
 	.moduletitle {
-		background-color: #62696f;
+		background-color: @color-bg-moduletitle;
 		h3 {
 			margin: 16px 0px 0px 10px;
 			color: white;
@@ -18,24 +18,23 @@
 			}
 		}
 		.mod_events_latest_table {
-			margin: 10px 0px;
+			margin: 10px 0px 10px 10px;
 			line-height: 1em;
+			padding-right: 20px;;
 		}
 		.mod_events_latest, .mod_events_latest_first {
+			.uppercase();
+			margin: 10px;
 			padding: 7px 0px;
 			font-size: 0.9em;
-			text-transform: uppercase;
 			line-height: 12px;
 			font-family: @font-title;
-			.mod_events_latest_date {
-				margin-left: 10px;
-			}
 		}
 		.mod_events_latest_category {
-			margin-left: 10px;
-			font-family: "Trebuchet";
-			color: @menu-background;
+			font-family: @font-body;
+			color: @color-bg-menu;
 			text-transform: none;
+			font-size: 0.9em;
 		}
 		.mod_events_latest_callink {
 			margin: auto;
@@ -72,14 +71,14 @@
 	.jevcarousel {
 		img {
 			margin: auto;
-			border-radius: 0px;
+			.border-radius(0px);
 		}
 		.carousel-caption {
 			position: relative;
-			border-radius: 0px;
+			.border-radius(0px);
 			max-width: 272px;
 			margin: auto;
-			background-color: @menu-background;
+			background-color: @color-bg-menu;
 			padding: 15px;
 			.jevcstart {
 				float: none;
