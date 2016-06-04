@@ -29,6 +29,7 @@
 		<position>top</position>
 		<position>banners</position>
 		<position>header</position>
+		<position>mobile-menu</position>
 		<position>left</position>
 		<position>right</position>
 		<position>content-header</position>
