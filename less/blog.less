@@ -85,8 +85,8 @@
 	float: right;
 	margin: 5px;
 	.btn {
-		.bglineargradient(top, rgb(56, 160, 225), rgb(28, 126, 186));
-		border: 1px solid #155d89;
+		.bglineargradient(top, rgb(56, 160, 225), @color-bg-menu);
+		border: 1px solid @color-bg-menu;
 		color: white;
 	}
 }
@@ -109,12 +109,13 @@
 		margin: 0px 3px;
 		a.pagenav {
 			.border-radius(50%);
+			color: @color-bg-menu;
 			background-color: lightgrey;
 		}
 		span.pagenav {
 			color: white;
 			.border-radius(50%);
-			background-color: @color-link;
+			background-color: @color-bg-menu;
 		}
 		.pagenav {
 			display: block;
