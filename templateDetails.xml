@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.5.1" type="template">
+<extension version="3.5.1" type="template" method="upgrade">
 	<name>ttactua_mobile</name>
 	<creationDate>04/06/2016</creationDate>
 	<author>Gijs Lamon</author>
