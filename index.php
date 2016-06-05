@@ -76,11 +76,15 @@
 				</div>
 				<div class="row" id="main">
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
+<?php if($this->countModules('right')) : ?>
 					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
+<?php else : ?>
+					<div class="col-9 col-s-8 col-m-7" id="component_wrapper">
+<?php endif ?>
 						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
-	<?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
+<?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
 						<div id="component"><jdoc:include type="component" /></div>
-	<?php endif ?>
+<?php endif ?>
 						<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
 					</div>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
