@@ -202,3 +202,34 @@ ul.manager.thumbnails {
 body #jfusionframeless {
 	margin-top: 15px;
 }
+
+// Cookie Accept
+#footer div#ca_banner {
+	p, div.accept {
+		text-transform: none;
+	}
+	div.accept {
+		border: 1px solid grey;
+		margin-top: 10px;
+		.border-radius(4px);
+		.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
+		background-color: @color-main;
+		.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
+
+		// Hover/focus state
+		&:hover,
+		&:focus {
+			background-color: @color-main;
+			.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+			color: white;
+			border: 1px solid grey;
+		}
+
+		// Active state
+		&.active,
+		&:active {
+			.box-shadow(0 1px 0 @color-main);
+			color: white;
+		}
+	}
+}
