@@ -194,8 +194,8 @@
   // Hover/focus state
   &:hover,
   &:focus {
-		background-color: @color-bg-menu;
-		.bglineargradient(to bottom, lighten(@color-bg-menu, 30%), @color-bg-menu);
+		background-color: @color-main;
+		.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
 		color: white;
 		border: 1px solid grey;
   }
@@ -203,7 +203,7 @@
   // Active state
   &.active,
   &:active {
-		.box-shadow(0 1px 0 @color-bg-menu);
+		.box-shadow(0 1px 0 @color-main);
 		color: white;
   }
 
