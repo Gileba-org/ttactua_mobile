@@ -10,7 +10,7 @@
 		}
 	}
 	.items-leading .leading-0, .items-row .item {
-		border-bottom: 4px solid @color-bg-menu;
+		border-bottom: 4px solid @color-main;
 		overflow: hidden;
 		padding-bottom: 10px;
 	}
@@ -37,7 +37,7 @@
 		}
 	}
 	.item-image {
-		border: 4px solid @color-bg-menu;
+		border: 4px solid @color-main;
 		margin-right: 10px;
 		.border-radius(5px);
 		margin-bottom: 10px;
@@ -59,23 +59,23 @@
 
 .mod_events_latest_callink {
 	line-height: 1.7em;
-	border: 1px solid #155d89;
+	border: 1px solid @color-main;
 	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
 	.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
 	padding: 3px 10px;
-	.bglineargradient(top, rgb(56, 160, 225), rgb(28, 126, 186));
+	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
 	.border-radius(4px);
-	background-color: #2d93d1;
+		background-color: @color-main;
 	text-align: center;
 	a {
 		color: white;
 	}
 	&:hover {
-		background-color: #3ea1de;
-		.bglineargradient(to bottom, #52ade5, #2090d4);
+			background-color: lighten(@color-main, 30%);
+		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 	}
 	&:active {
-		.box-shadow(0 1px 0 @color-bg-menu);
+		.box-shadow(0 1px 0 @color-main);
 		color: white;
 	}
 	clear: both;
@@ -85,9 +85,14 @@
 	float: right;
 	margin: 5px;
 	.btn {
-		.bglineargradient(top, rgb(56, 160, 225), @color-bg-menu);
-		border: 1px solid @color-bg-menu;
+		.bglineargradient(top, lighten(@color-main, 30%), @color-main);
+		border: 1px solid @color-main;
 		color: white;
+		background-color: @color-main;
+		&:hover {
+			background-color: lighten(@color-main, 30%);
+			.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+		}
 	}
 }
 
@@ -109,13 +114,13 @@
 		margin: 0px 3px;
 		a.pagenav {
 			.border-radius(50%);
-			color: @color-bg-menu;
+			color: @color-main;
 			background-color: lightgrey;
 		}
 		span.pagenav {
 			color: white;
 			.border-radius(50%);
-			background-color: @color-bg-menu;
+			background-color: @color-main;
 		}
 		.pagenav {
 			display: block;
