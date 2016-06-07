@@ -11,7 +11,7 @@
 		font-size: 1.2em;
 		border-bottom-width: 2px;
 		border-bottom-style: solid;
-		background-color: #cccccc;
+		background-color: @color-bg-module;
 		font-weight: bold;
 		width: 4%;
 	}
@@ -27,7 +27,7 @@
 		border-bottom-width: 0px;
 	}
 	.winner {
-		color: @color-bg-menu;
+		color: @color-main;
 		font-weight: bold;
 	}
 	.naam {
@@ -61,7 +61,7 @@
 			padding: 0px;
 		}
 		.jev_evdt_creator {
-			color: #00398d;
+			color: @color-text;
 			font-size: 0.8em;
 			margin-bottom: 20px;
 		}
@@ -101,6 +101,14 @@
 	.jev_daywithevents {
 		margin: 0px;
 		width: 100%;
+	}
+}
+
+#component {
+	#jevents {
+		#jevents_body {
+			font-size: 1em;
+		}
 	}
 }
 
@@ -165,7 +173,7 @@ ul.manager.thumbnails {
 
 // Follow us
 .custommainmenu {
-	background-color: @color-bg-menu;
+	background-color: @color-main;
 	margin-top: -16px; // TODO: Fix admin-menu to remove this?
 	margin-left: 10px;
 	margin-right: 10px;

@@ -34,21 +34,21 @@
 		list-style-type: none;
 		margin: 5px;
 		line-height: 1.7em;
-		border: 1px solid #155d89;
+		border: 1px solid @color-main;
 		text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
 		.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
 		padding: 3px 10px;
-		.bglineargradient(top, rgb(56, 160, 225), @color-bg-menu);
+		.bglineargradient(top, lighten(@color-main, 30%), @color-main);
 		.border-radius(4px);
-		background-color: @color-bg-menu;
+		background-color: @color-main;
 		a {
 			color: white;
 		}
 		&:hover {
-			.bglineargradient(to bottom, #52ade5, #2090d4);
+			.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 		}
 		&:active {
-			.box-shadow(0 1px 0 @color-bg-menu);
+			.box-shadow(0 1px 0 @color-main);
 			color: white;
 		}
 		float: right;
