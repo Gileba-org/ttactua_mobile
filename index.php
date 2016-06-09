@@ -76,10 +76,12 @@
 				</div>
 				<div class="row" id="main">
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
-<?php if($this->countModules('right')) : ?>
+<?php if($this->countModules('right') && $this->countModules('left')) : ?>
 					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
-<?php else : ?>
+<?php elseif ($this->countModules('right') || $this->countModules('left')): ?>
 					<div class="col-9 col-s-8 col-m-7" id="component_wrapper">
+<?php else : ?>
+					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
 <?php endif ?>
 						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
 <?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
