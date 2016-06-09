@@ -1,10 +1,10 @@
 <?php
 	defined( '_JEXEC' ) or die( 'Restricted access' );
 	
-	$app      = JFactory::getApplication();
-	$doc      = JFactory::getDocument();
-	$params	  = $app->getTemplate(true)->params;
-	$menu = $app->getMenu();
+	$app      	= JFactory::getApplication();
+	$doc      	= JFactory::getDocument();
+	$params	  	= $app->getTemplate(true)->params;
+	$menu 		= $app->getMenu();
 	
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
@@ -75,7 +75,11 @@
 					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
 				</div>
 				<div class="row" id="main">
+<?php if ($this->params->get('hideleft')) : ?>
+					<div class="col-3 col-s-0 col-m-0 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
+<?php else : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
+<?php endif ?>
 <?php if($this->countModules('right') && $this->countModules('left')) : ?>
 					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
 <?php elseif ($this->countModules('right') || $this->countModules('left')): ?>
@@ -89,7 +93,11 @@
 <?php endif ?>
 						<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
 					</div>
+<?php if ($this->params->get('hideleft')) : ?>
+					<div class="col-3 col-s-4 col-m-5 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
+<?php else : ?>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
+<?php endif ?>
 				</div>			 
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
