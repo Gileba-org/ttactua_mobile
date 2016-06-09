@@ -233,3 +233,67 @@ body #jfusionframeless {
 		}
 	}
 }
+
+// Twitter
+.front.twitter {
+	background-color: white;
+	.custom.twitter {
+		margin: 0px;
+		p {
+			margin: 0px;
+		}
+	}
+}
+
+// RSS-feed
+.light-rss-container {
+	margin: 10px;
+	.light-rss-list {
+		list-style: none;
+		font-family: @font-title;
+		.uppercase();
+		a {
+			color: @color-text;
+		}
+		li {
+			margin: 0px;
+			font-size: 0.9em;
+			line-height: 1em;
+		}
+		li:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// Forum module
+.forum ul {
+	margin: 10px 10px 0px 10px;
+	padding: 0px;
+	li {
+		margin-left: 0px;
+		color: @color-main;
+		font-size: 0.8em;
+		line-height: 1.1em;
+		a {
+			color: @color-text;
+			font-family: @font-title;
+			color: @color-text;
+			text-transform: uppercase;
+			font-size: 1.1em;
+		}
+		a:after { // Force date and replies on next line
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+	li:not(:last-child) {
+		margin-bottom: 10px !important;
+	}
+}
+
+// Video
+.yendif-video-share.front {
+	margin: 0px;
+}

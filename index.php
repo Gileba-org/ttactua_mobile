@@ -1,10 +1,10 @@
 <?php
 	defined( '_JEXEC' ) or die( 'Restricted access' );
 	
-	$app      = JFactory::getApplication();
-	$doc      = JFactory::getDocument();
-	$params	  = $app->getTemplate(true)->params;
-	$menu = $app->getMenu();
+	$app      	= JFactory::getApplication();
+	$doc      	= JFactory::getDocument();
+	$params	  	= $app->getTemplate(true)->params;
+	$menu 		= $app->getMenu();
 	
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
@@ -75,11 +75,17 @@
 					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
 				</div>
 				<div class="row" id="main">
-					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
-<?php if($this->countModules('right')) : ?>
-					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
+<?php if ($this->params->get('hideleft')) : ?>
+					<div class="col-3 col-s-0 col-m-0 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 <?php else : ?>
+					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
+<?php endif ?>
+<?php if($this->countModules('right') && $this->countModules('left')) : ?>
+					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
+<?php elseif ($this->countModules('right') || $this->countModules('left')): ?>
 					<div class="col-9 col-s-8 col-m-7" id="component_wrapper">
+<?php else : ?>
+					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
 <?php endif ?>
 						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
 <?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
@@ -87,14 +93,18 @@
 <?php endif ?>
 						<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
 					</div>
+<?php if ($this->params->get('hideleft')) : ?>
+					<div class="col-3 col-s-4 col-m-5 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
+<?php else : ?>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
+<?php endif ?>
 				</div>			 
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
 				</div>
 			</div>
 		</div>
-		<!-- Your code -->
+		<!-- Sidr -->
 		<script>
 			jQuery(document).ready(function () {
 				jQuery('#simple-menu').sidr({
@@ -105,5 +115,15 @@
 				moveScroller();
 			});
 		</script>
+		<! -- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})
+  			(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  			ga('create', '<?php	echo $this->params->get('analytics'); ?>', 'auto');
+  			ga('send', 'pageview');
+  		</script>
 	</body>
 </html>
