@@ -48,6 +48,7 @@
 				</field>
 			</fieldset>
 			<fieldset name="google">
+				<field name="analytics" type="textbox" default="" label="TPL_GILEBA_ANALYTICS" description="TPL_GILEBA_ANALYTICS_DESC" />
 				<field name="doubleClick" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
 			</fieldset>
 			<fieldset name="fonts">
