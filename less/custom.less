@@ -296,6 +296,9 @@ body #jfusionframeless {
 }
 
 // jFusion Discussion bot
+.jfusionButtonArea {
+	display: none;
+}
 .jfusionposts {
 	background-color: @color-bg-module;
 	.jfusionPostHeader {
@@ -310,28 +313,34 @@ body #jfusionframeless {
 	}
 	.jfusionPostArea {
 		width: 100%;
-		margin: 10px;
+		margin: 0px;
 		.jfusionNoPostMsg {
 			font-weight: normal;
 		}
+	}
+	.jfusionPostBody {
+		margin: 10px;
 	}
 	.jfusionQuickReply{
 		margin: 10px;
 		#submitpost {
 			margin-bottom: 10px;
 		}
+		.markItUp {
+			width: 100%;
+		}
 		.markItUpContainer {
 			background-color: #fafafa;
-			border: 1px solid rgba(217, 217, 217, 0.52);
+			border: 1px solid @color-text;
 			.markItUpButton {
 				margin: 5px 2px;
 				padding: 2px;
 			}
 			.markItUpSeparator {
-				height: 30px;
+				height: 32px;
 			}
-			li:hover {
-				border: 1px solid darkgrey;
+			li.markItUpButton:hover {
+				border: 1px solid @color-text;
 			}
 			.markItUpEditor {
 				font-family: @font-body;
@@ -347,7 +356,6 @@ body #jfusionframeless {
 		}
 	}
 }
-
 
 // phpBB
 #jfusionframeless #phpbb ul.linklist li {
