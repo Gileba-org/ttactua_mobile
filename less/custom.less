@@ -295,17 +295,58 @@ body #jfusionframeless {
 }
 
 // jFusion Discussion bot
-.markitUpContainer {
-	background-color: #f0f0f0;
-	.markItUpButton {
-		margin: 5px 2px;
+.jfusionposts {
+	background-color: @color-bg-module;
+	.jfusionPostHeader {
+		background-color: @color-bg-moduletitle;
+		padding: 5px 0px 5px 10px;
+		color: white;
+		line-height: 1em;
+		font-family: @font-title;
+		font-size: 1.17em;
+		.uppercase;
+		font-weight: normal;
 	}
-	.markItUpEditor {
-		font-family: @font-body;
-		padding: 5px 10px;
-		border-radius: 0;
+	.jfusionPostArea {
+		width: 100%;
+		margin: 10px;
+		.jfusionNoPostMsg {
+			font-weight: normal;
+		}
+	}
+	.jfusionQuickReply{
+		margin: 10px;
+		#submitpost {
+			margin-bottom: 10px;
+		}
+		.markItUpContainer {
+			background-color: #fafafa;
+			border: 1px solid rgba(217, 217, 217, 0.52);
+			.markItUpButton {
+				margin: 5px 2px;
+				padding: 2px;
+			}
+			.markItUpSeparator {
+				height: 30px;
+			}
+			li:hover {
+				border: 1px solid darkgrey;
+			}
+			.markItUpEditor {
+				font-family: @font-body;
+				padding: 5px 10px;
+				border-radius: 0;
+				width: 100%;
+				.box-shadow(none);
+				border: 1px solid rgba(217, 217, 217, 0.52);
+			}
+		}
+		br {
+			display: none;
+		}
 	}
 }
+
 
 // phpBB
 #jfusionframeless #phpbb ul.linklist li {
