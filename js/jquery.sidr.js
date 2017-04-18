@@ -527,7 +527,7 @@
 
     // Add transition to menu if are supported
     if (transitions.supported) {
-      $sideMenu.css(transitions.property, settings.side + ' ' + settings.speed / 1000 + "s " + settings.timing);
+      $sideMenu.css(transitions.property, settings.side + " " + settings.speed / 1000 + "s " + settings.timing);
     }
 
     // Adding styles and options
