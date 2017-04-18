@@ -23,13 +23,13 @@
 
         selector = trim(selector);
 
-        if (selector != "") {
+        if (selector !== "") {
             var parts;
             if (!number && !value) {
                 parts = /^([0-9]*.?[0-9]+)(px|em)$/.exec(pair)
-                if (parts != null) {
+                if (parts !== null) {
                     number = Number(parts[1]);
-                    if (number + "" != "NaN") {
+                    if (number + "" !== "NaN") {
                         value = parts[2];
                     }
                 }
@@ -58,10 +58,10 @@
         var i, j, k;
         for (i in data) {
             for (j in data[i]) {
-                if (typeof data[i][j] == "string") {
+                if (typeof data[i][j] === "string") {
                     addQueryDataValue(i, j, data[i][j]);
                 }
-                else if (typeof data[i][j] == "object") {
+                else if (typeof data[i][j] === "object") {
                     for (k = 0; k < data[i][j].length; k++) {
                         addQueryDataValue(i, j, data[i][j][k]);
                     }
@@ -69,7 +69,7 @@
             }
         }
 
-        if (doUpdate == true) {
+        if (doUpdate === true) {
             refresh();
         }
     };
@@ -88,9 +88,9 @@
                 selector = null;
                 prevIndex = 0;
                 k = 0;
-                while (k == 0 || result != null) {
+                while (k === 0 || result !== null) {
                     result = regex.exec(selectors[i]);
-                    if (result != null) {
+                    if (result !== null) {
 
                         // result[2] = min-width|max-width|min-height|max-height
                         // result[4] = number
@@ -99,9 +99,9 @@
 
                         // Ensure that it contains a valid numeric value to compare against
                         number = Number(result[4]);
-                        if (number + "" != "NaN") {
+                        if (number + "" !== "NaN") {
 
-                            if (selector == null) {
+                            if (selector === null) {
                                 // New set: update the current selector
                                 selector = selectors[i].substring(prevIndex, result.index);
 
@@ -110,7 +110,7 @@
                                 if (tail.length > 0) {
                                     
                                     t = tail.indexOf(" ");
-                                    if (t != 0) {
+                                    if (t !== 0) {
                                         if (t > 0) {
                                             // Take only the current part
                                             tail = tail.substring(0, t);
@@ -127,7 +127,7 @@
                             addQueryDataValue(selector, result[2], result[4] + result[5], number, result[5]);
                         }
 
-                        if (result[7] === undefined || result[7] == "") {
+                        if (result[7] === undefined || result[7] === "") {
                             // Reached the end of the set
                             prevIndex = result.index + result[1].length;
                             selector = null;
@@ -145,7 +145,7 @@
 
     var processStyleSheet = function (styleSheet, force) {
         
-        if (cssRules == null) {
+        if (cssRules === null) {
             setCssRules();
         }
         if (styleSheet[cssRules] && styleSheet[cssRules].length > 0) {
@@ -177,7 +177,7 @@
 
     // Refactor from jQuery.trim()
     var trim = function (text) {
-        if (text == null) {
+        if (text === null) {
             return "";
         }
         else {
@@ -203,7 +203,7 @@
 
         if (element.nodeType === 1) {
             var val = trim(value);
-            if (val != "") {
+            if (val !== "") {
                 var cur = clean(element, attr);
                 
                 if (cur.indexOf(" " + val + " ") < 0) {
@@ -219,7 +219,7 @@
 
         if (element.nodeType === 1) {
             var val = trim(value);
-            if (val != "") {
+            if (val !== "") {
                 var cur = clean(element, attr);
                 var updated = false;
                 while (cur.indexOf(" " + val + " ") >= 0) {
@@ -270,7 +270,7 @@
 
                             val = queryData[i][j][k][0];
 
-                            if (queryData[i][j][k][1] == "em") {
+                            if (queryData[i][j][k][1] === "em") {
                                 // Convert EMs to pixels
                                 val = val * (window.getEmPixels ? getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
                             }
@@ -278,10 +278,10 @@
                             /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
                             /* For Nested queries scrollWidth/Height or clientWidth/Height may sometime be desired but are not supported. */
 
-                            if ((j == "min-width" && element.offsetWidth >= val) ||
-                                (j == "max-width" && element.offsetWidth <= val) ||
-                                (j == "min-height" && element.offsetHeight >= val) ||
-                                (j == "max-height" && element.offsetHeight <= val)) {
+                            if ((j === "min-width" && element.offsetWidth >= val) ||
+                                (j === "max-width" && element.offsetWidth <= val) ||
+                                (j === "min-height" && element.offsetHeight >= val) ||
+                                (j === "max-height" && element.offsetHeight <= val)) {
                                 // Add matching attr value
                                 addTo(element, j, k);
                             }
@@ -306,12 +306,12 @@
     // Expose some public functions
     window.elementQuery = function (arg1, arg2) {
 
-        if (arg1 && typeof arg1 == "object") {
+        if (arg1 && typeof arg1 === "object") {
             if (arg1.cssRules || arg1.rules) {
                 // Process a new style sheet
                 processStyleSheet(arg1, true);
 
-                if (arg2 == true) {
+                if (arg2 === true) {
                     refresh();
                 }
             } else {
