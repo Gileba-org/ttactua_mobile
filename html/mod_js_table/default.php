@@ -108,7 +108,7 @@ if(isset($row->lists['columnsCell'])){
                                 if(isset($row->lists['columns']['emblem_chk']) && $params->get('emblem_chk') == '1'){
                                     echo ($partObj->getEmblem(true, 0, 'emblInline', 0, $cItemId));
                                 }
-                                echo $partObj->getName(true,$cItemId);
+                                echo $partObj->getName(false,$cItemId);
                                 ?>
                             </td>
                             <?php
