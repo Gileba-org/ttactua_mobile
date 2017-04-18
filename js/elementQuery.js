@@ -23,13 +23,13 @@
 
         selector = trim(selector);
 
-        if (selector != "") {
+        if (selector !== "") {
             var parts;
             if (!number && !value) {
                 parts = /^([0-9]*.?[0-9]+)(px|em)$/.exec(pair)
-                if (parts != null) {
+                if (parts !== null) {
                     number = Number(parts[1]);
-                    if (number + "" != "NaN") {
+                    if (number + "" !== "NaN") {
                         value = parts[2];
                     }
                 }
@@ -88,9 +88,9 @@
                 selector = null;
                 prevIndex = 0;
                 k = 0;
-                while (k == 0 || result != null) {
+                while (k == 0 || result !== null) {
                     result = regex.exec(selectors[i]);
-                    if (result != null) {
+                    if (result !== null) {
 
                         // result[2] = min-width|max-width|min-height|max-height
                         // result[4] = number
@@ -99,7 +99,7 @@
 
                         // Ensure that it contains a valid numeric value to compare against
                         number = Number(result[4]);
-                        if (number + "" != "NaN") {
+                        if (number + "" !== "NaN") {
 
                             if (selector == null) {
                                 // New set: update the current selector
@@ -110,7 +110,7 @@
                                 if (tail.length > 0) {
                                     
                                     t = tail.indexOf(" ");
-                                    if (t != 0) {
+                                    if (t !== 0) {
                                         if (t > 0) {
                                             // Take only the current part
                                             tail = tail.substring(0, t);
@@ -203,7 +203,7 @@
 
         if (element.nodeType === 1) {
             var val = trim(value);
-            if (val != "") {
+            if (val !== "") {
                 var cur = clean(element, attr);
                 
                 if (cur.indexOf(" " + val + " ") < 0) {
@@ -219,7 +219,7 @@
 
         if (element.nodeType === 1) {
             var val = trim(value);
-            if (val != "") {
+            if (val !== "") {
                 var cur = clean(element, attr);
                 var updated = false;
                 while (cur.indexOf(" " + val + " ") >= 0) {
