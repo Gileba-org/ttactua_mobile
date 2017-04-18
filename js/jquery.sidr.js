@@ -84,7 +84,7 @@
         supported = true;
       } else {
         (function () {
-          var prefixes = ['moz', 'webkit', 'o', 'ms'],
+          var prefixes = ["moz", "webkit", "o", "ms"],
               prefix = undefined,
               i = undefined;
 
@@ -112,10 +112,10 @@
 
   var $$2 = jQuery;
 
-  var bodyAnimationClass = 'sidr-animating';
-  var openAction = 'open';
-  var closeAction = 'close';
-  var transitionEndEvent = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+  var bodyAnimationClass = "sidr-animating";
+  var openAction = "open";
+  var closeAction = "close";
+  var transitionEndEvent = "webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend";
   var Menu = function () {
     function Menu(name) {
       babelHelpers.classCallCheck(this, Menu);
@@ -342,6 +342,7 @@
         // Lock sidr
         sidrStatus.moving = true;
 
+
         this.prepareBody(action);
         this.moveBody(action);
         this.moveMenu(action, callback);
@@ -421,7 +422,7 @@
 
   var i;
   var $ = jQuery;
-  var publicMethods = ['open', 'close', 'toggle'];
+  var publicMethods = ["open", "close", "toggle"];
   var methodName;
   var methods = {};
   var getMethod = function getMethod(methodName) {
@@ -467,7 +468,7 @@
         $sideMenu.html(data);
       });
     } else if (typeof settings.source === 'string') {
-      var htmlContent = '',
+      var htmlContent = "",
           selectors = settings.source.split(',');
 
       $$3.each(selectors, function (index, element) {
