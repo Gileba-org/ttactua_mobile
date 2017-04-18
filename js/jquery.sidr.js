@@ -43,12 +43,12 @@
     // From : http://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-an-url
 
     isUrl: function isUrl(str) {
-      var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+      var pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$", "i"); // fragment locator
 
       if (pattern.test(str)) {
         return true;
@@ -60,15 +60,15 @@
 
     // Add sidr prefixes
     addPrefixes: function addPrefixes($element) {
-      this.addPrefix($element, 'id');
-      this.addPrefix($element, 'class');
-      $element.removeAttr('style');
+      this.addPrefix($element, "id");
+      this.addPrefix($element, "class");
+      $element.removeAttr("style");
     },
     addPrefix: function addPrefix($element, attribute) {
       var toReplace = $element.attr(attribute);
 
-      if (typeof toReplace === 'string' && toReplace !== '' && toReplace !== 'sidr-inner') {
-        $element.attr(attribute, toReplace.replace(/([A-Za-z0-9_.\-]+)/g, 'sidr-' + attribute + '-$1'));
+      if (typeof toReplace === "string" && toReplace !== "" && toReplace !== "sidr-inner") {
+        $element.attr(attribute, toReplace.replace(/([A-Za-z0-9_.\-]+)/g, "sidr-" + attribute + "-$1"));
       }
     },
 
@@ -78,7 +78,7 @@
       var body = document.body || document.documentElement,
           style = body.style,
           supported = false,
-          property = 'transition';
+          property = "transition";
 
       if (property in style) {
         supported = true;
@@ -99,7 +99,7 @@
 
             return false;
           }();
-          property = supported ? '-' + prefix.toLowerCase() + '-' + property.toLowerCase() : null;
+          property = supported ? "-" + prefix.toLowerCase() + "-" + property.toLowerCase() : null;
         })();
       }
 
@@ -121,31 +121,31 @@
       babelHelpers.classCallCheck(this, Menu);
 
       this.name = name;
-      this.item = $$2('#' + name);
-      this.openClass = name === 'sidr' ? 'sidr-open' : 'sidr-open ' + name + '-open';
+      this.item = $$2("#" + name);
+      this.openClass = name === "sidr" ? "sidr-open" : "sidr-open " + name + "-open";
       this.menuWidth = this.item.outerWidth(true);
-      this.speed = this.item.data('speed');
-      this.side = this.item.data('side');
-      this.displace = this.item.data('displace');
-      this.timing = this.item.data('timing');
-      this.method = this.item.data('method');
-      this.onOpenCallback = this.item.data('onOpen');
-      this.onCloseCallback = this.item.data('onClose');
-      this.onOpenEndCallback = this.item.data('onOpenEnd');
-      this.onCloseEndCallback = this.item.data('onCloseEnd');
-      this.body = $$2(this.item.data('body'));
+      this.speed = this.item.data("speed");
+      this.side = this.item.data("side");
+      this.displace = this.item.data("displace");
+      this.timing = this.item.data("timing");
+      this.method = this.item.data("method");
+      this.onOpenCallback = this.item.data("onOpen");
+      this.onCloseCallback = this.item.data("onClose");
+      this.onOpenEndCallback = this.item.data("onOpenEnd");
+      this.onCloseEndCallback = this.item.data("onCloseEnd");
+      this.body = $$2(this.item.data("body"));
     }
 
     babelHelpers.createClass(Menu, [{
-      key: 'getAnimation',
+      key: "getAnimation",
       value: function getAnimation(action, element) {
         var animation = {},
             prop = this.side;
 
-        if (action === 'open' && element === 'body') {
-          animation[prop] = this.menuWidth + 'px';
-        } else if (action === 'close' && element === 'menu') {
-          animation[prop] = '-' + this.menuWidth + 'px';
+        if (action === "open" && element === "body") {
+          animation[prop] = this.menuWidth + "px";
+        } else if (action === "close" && element === "menu") {
+          animation[prop] = "-" + this.menuWidth + "px";
         } else {
           animation[prop] = 0;
         }
@@ -153,37 +153,37 @@
         return animation;
       }
     }, {
-      key: 'prepareBody',
+      key: "prepareBody",
       value: function prepareBody(action) {
-        var prop = action === 'open' ? 'hidden' : '';
+        var prop = action === "open" ? "hidden" : "";
 
         // Prepare page if container is body
-        if (this.body.is('body')) {
-          var $html = $$2('html'),
+        if (this.body.is("body")) {
+          var $html = $$2("html"),
               scrollTop = $html.scrollTop();
 
-          $html.css('overflow-x', prop).scrollTop(scrollTop);
+          $html.css("overflow-x", prop).scrollTop(scrollTop);
         }
       }
     }, {
-      key: 'openBody',
+      key: "openBody",
       value: function openBody() {
         if (this.displace) {
           var transitions = helper.transitions,
               $body = this.body;
 
           if (transitions.supported) {
-            $body.css(transitions.property, this.side + ' ' + this.speed / 1000 + 's ' + this.timing).css(this.side, 0).css({
+            $body.css(transitions.property, this.side + " " + this.speed / 1000 + "s " + this.timing).css(this.side, 0).css({
               width: $body.width(),
-              position: 'absolute'
+              position: "absolute"
             });
-            $body.css(this.side, this.menuWidth + 'px');
+            $body.css(this.side, this.menuWidth + "px");
           } else {
-            var bodyAnimation = this.getAnimation(openAction, 'body');
+            var bodyAnimation = this.getAnimation(openAction, "body");
 
             $body.css({
               width: $body.width(),
-              position: 'absolute'
+              position: "absolute"
             }).animate(bodyAnimation, {
               queue: false,
               duration: this.speed
@@ -192,24 +192,24 @@
         }
       }
     }, {
-      key: 'onCloseBody',
+      key: "onCloseBody",
       value: function onCloseBody() {
         var transitions = helper.transitions,
             resetStyles = {
-          width: '',
-          position: '',
-          right: '',
-          left: ''
+          width: "",
+          position: "",
+          right: "",
+          left: ""
         };
 
         if (transitions.supported) {
-          resetStyles[transitions.property] = '';
+          resetStyles[transitions.property] = "";
         }
 
         this.body.css(resetStyles).unbind(transitionEndEvent);
       }
     }, {
-      key: 'closeBody',
+      key: "closeBody",
       value: function closeBody() {
         var _this = this;
 
@@ -219,7 +219,7 @@
               _this.onCloseBody();
             });
           } else {
-            var bodyAnimation = this.getAnimation(closeAction, 'body');
+            var bodyAnimation = this.getAnimation(closeAction, "body");
 
             this.body.animate(bodyAnimation, {
               queue: false,
@@ -232,7 +232,7 @@
         }
       }
     }, {
-      key: 'moveBody',
+      key: "moveBody",
       value: function moveBody(action) {
         if (action === openAction) {
           this.openBody();
@@ -241,7 +241,7 @@
         }
       }
     }, {
-      key: 'onOpenMenu',
+      key: "onOpenMenu",
       value: function onOpenMenu(callback) {
         var name = this.name;
 
@@ -254,12 +254,12 @@
 
         this.onOpenEndCallback();
 
-        if (typeof callback === 'function') {
+        if (typeof callback === "function") {
           callback(name);
         }
       }
     }, {
-      key: 'openMenu',
+      key: "openMenu",
       value: function openMenu(callback) {
         var _this2 = this;
 
@@ -270,9 +270,9 @@
             _this2.onOpenMenu(callback);
           });
         } else {
-          var menuAnimation = this.getAnimation(openAction, 'menu');
+          var menuAnimation = this.getAnimation(openAction, "menu");
 
-          $item.css('display', 'block').animate(menuAnimation, {
+          $item.css("display", "block").animate(menuAnimation, {
             queue: false,
             duration: this.speed,
             complete: function complete() {
@@ -282,13 +282,13 @@
         }
       }
     }, {
-      key: 'onCloseMenu',
+      key: "onCloseMenu",
       value: function onCloseMenu(callback) {
         this.item.css({
-          left: '',
-          right: ''
+          left: "",
+          right: ""
         }).unbind(transitionEndEvent);
-        $$2('html').css('overflow-x', '');
+        $$2("html").css("overflow-x", "");
 
         sidrStatus.moving = false;
         sidrStatus.opened = false;
@@ -298,23 +298,23 @@
         this.onCloseEndCallback();
 
         // Callback
-        if (typeof callback === 'function') {
+        if (typeof callback === "function") {
           callback(name);
         }
       }
     }, {
-      key: 'closeMenu',
+      key: "closeMenu",
       value: function closeMenu(callback) {
         var _this3 = this;
 
         var item = this.item;
 
         if (helper.transitions.supported) {
-          item.css(this.side, '').one(transitionEndEvent, function () {
+          item.css(this.side, "").one(transitionEndEvent, function () {
             _this3.onCloseMenu(callback);
           });
         } else {
-          var menuAnimation = this.getAnimation(closeAction, 'menu');
+          var menuAnimation = this.getAnimation(closeAction, "menu");
 
           item.animate(menuAnimation, {
             queue: false,
@@ -326,7 +326,7 @@
         }
       }
     }, {
-      key: 'moveMenu',
+      key: "moveMenu",
       value: function moveMenu(action, callback) {
         this.body.addClass(bodyAnimationClass);
 
@@ -337,7 +337,7 @@
         }
       }
     }, {
-      key: 'move',
+      key: "move",
       value: function move(action, callback) {
         // Lock sidr
         sidrStatus.moving = true;
@@ -348,7 +348,7 @@
         this.moveMenu(action, callback);
       }
     }, {
-      key: 'open',
+      key: "open",
       value: function open(callback) {
         var _this4 = this;
 
@@ -368,26 +368,26 @@
           return;
         }
 
-        this.move('open', callback);
+        this.move("open", callback);
 
         // onOpen callback
         this.onOpenCallback();
       }
     }, {
-      key: 'close',
+      key: "close",
       value: function close(callback) {
         // Check if is already closed or moving
         if (sidrStatus.opened !== this.name || sidrStatus.moving) {
           return;
         }
 
-        this.move('close', callback);
+        this.move("close", callback);
 
         // onClose callback
         this.onCloseCallback();
       }
     }, {
-      key: 'toggle',
+      key: "toggle",
       value: function toggle(callback) {
         if (sidrStatus.opened === this.name) {
           this.close(callback);
@@ -405,17 +405,17 @@
     var sidr = new Menu(name);
 
     switch (action) {
-      case 'open':
+      case "open":
         sidr.open(callback);
         break;
-      case 'close':
+      case "close":
         sidr.close(callback);
         break;
-      case 'toggle':
+      case "toggle":
         sidr.toggle(callback);
         break;
       default:
-        $$1.error('Method ' + action + ' does not exist on jQuery.sidr');
+        $$1.error("Method " + action + " does not exist on jQuery.sidr");
         break;
     }
   }
@@ -428,11 +428,11 @@
   var getMethod = function getMethod(methodName) {
     return function (name, callback) {
       // Check arguments
-      if (typeof name === 'function') {
+      if (typeof name === "function") {
         callback = name;
-        name = 'sidr';
+        name = "sidr";
       } else if (!name) {
-        name = 'sidr';
+        name = "sidr";
       }
 
       execute(methodName, name, callback);
@@ -444,14 +444,14 @@
   }
 
   function sidr(method) {
-    if (method === 'status') {
+    if (method === "status") {
       return sidrStatus;
     } else if (methods[method]) {
       return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } else if (typeof method === 'function' || typeof method === 'string' || !method) {
+    } else if (typeof method === "function" || typeof method === "string" || !method) {
       return methods.toggle.apply(this, arguments);
     } else {
-      $.error('Method ' + method + ' does not exist on jQuery.sidr');
+      $.error("Method " + method + " does not exist on jQuery.sidr");
     }
   }
 
@@ -459,27 +459,27 @@
 
   function fillContent($sideMenu, settings) {
     // The menu content
-    if (typeof settings.source === 'function') {
+    if (typeof settings.source === "function") {
       var newContent = settings.source(name);
 
       $sideMenu.html(newContent);
-    } else if (typeof settings.source === 'string' && helper.isUrl(settings.source)) {
+    } else if (typeof settings.source === "string" && helper.isUrl(settings.source)) {
       $$3.get(settings.source, function (data) {
         $sideMenu.html(data);
       });
-    } else if (typeof settings.source === 'string') {
+    } else if (typeof settings.source === "string") {
       var htmlContent = "",
-          selectors = settings.source.split(',');
+          selectors = settings.source.split(",");
 
       $$3.each(selectors, function (index, element) {
-        htmlContent += '<div class="sidr-inner">' + $$3(element).html() + '</div>';
+        htmlContent += "<div class=\"sidr-inner\">" + $$3(element).html() + "</div>";
       });
 
       // Renaming ids and classes
       if (settings.renaming) {
-        var $htmlContent = $$3('<div />').html(htmlContent);
+        var $htmlContent = $$3("<div />").html(htmlContent);
 
-        $htmlContent.find('*').each(function (index, element) {
+        $htmlContent.find("*").each(function (index, element) {
           var $element = $$3(element);
 
           helper.addPrefixes($element);
@@ -489,7 +489,7 @@
 
       $sideMenu.html(htmlContent);
     } else if (settings.source !== null) {
-      $$3.error('Invalid Sidr Source');
+      $$3.error("Invalid Sidr Source");
     }
 
     return $sideMenu;
@@ -498,16 +498,16 @@
   function fnSidr(options) {
     var transitions = helper.transitions,
         settings = $$3.extend({
-      name: 'sidr', // Name for the 'sidr'
+      name: "sidr", // Name for the 'sidr'
       speed: 200, // Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
-      side: 'left', // Accepts 'left' or 'right'
+      side: "left", // Accepts 'left' or 'right'
       source: null, // Override the source of the content.
       renaming: true, // The ids and classes will be prepended with a prefix when loading existent content
-      body: 'body', // Page container selector,
+      body: "body", // Page container selector,
       displace: true, // Displace the body content or not
-      timing: 'ease', // Timing function for CSS transitions
-      method: 'toggle', // The method to call when element is clicked
-      bind: 'touchstart click', // The event(s) to trigger the menu
+      timing: "ease", // Timing function for CSS transitions
+      method: "toggle", // The method to call when element is clicked
+      bind: "touchstart click", // The event(s) to trigger the menu
       onOpen: function onOpen() {},
       // Callback when sidr start opening
       onClose: function onClose() {},
@@ -518,20 +518,20 @@
 
     }, options),
         name = settings.name,
-        $sideMenu = $$3('#' + name);
+        $sideMenu = $$3("#" + name);
 
     // If the side menu do not exist create it
     if ($sideMenu.length === 0) {
-      $sideMenu = $$3('<div />').attr('id', name).appendTo($$3('body'));
+      $sideMenu = $$3("<div />").attr("id", name).appendTo($$3("body"));
     }
 
     // Add transition to menu if are supported
     if (transitions.supported) {
-      $sideMenu.css(transitions.property, settings.side + ' ' + settings.speed / 1000 + 's ' + settings.timing);
+      $sideMenu.css(transitions.property, settings.side + ' ' + settings.speed / 1000 + "s " + settings.timing);
     }
 
     // Adding styles and options
-    $sideMenu.addClass('sidr').addClass(settings.side).data({
+    $sideMenu.addClass("sidr").addClass(settings.side).data({
       speed: settings.speed,
       side: settings.side,
       body: settings.body,
@@ -548,7 +548,7 @@
 
     return this.each(function () {
       var $this = $$3(this),
-          data = $this.data('sidr'),
+          data = $this.data("sidr"),
           flag = false;
 
       // If the plugin hasn't been initialized yet
@@ -556,7 +556,7 @@
         sidrStatus.moving = false;
         sidrStatus.opened = false;
 
-        $this.data('sidr', name);
+        $this.data("sidr", name);
 
         $this.bind(settings.bind, function (event) {
           event.preventDefault();
