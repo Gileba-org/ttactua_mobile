@@ -17,7 +17,7 @@
         if (document.styleSheets[0]) {
             cssRules = (document.styleSheets[0].cssRules !== undefined) ? "cssRules" : "rules";
         }
-    }
+    };
 
     var addQueryDataValue = function (selector, type, pair, number, value) {
 
@@ -26,7 +26,7 @@
         if (selector !== "") {
             var parts;
             if (!number && !value) {
-                parts = /^([0-9]*.?[0-9]+)(px|em)$/.exec(pair)
+                parts = /^([0-9]*.?[0-9]+)(px|em)$/.exec(pair);
                 if (parts !== null) {
                     number = Number(parts[1]);
                     if (number + "" !== "NaN") {
