@@ -3,7 +3,7 @@
  * Copyright (c) 2013-2016 Alberto Varela; Licensed MIT */
 
 (function () {
-  'use strict';
+  "use strict";
 
   var babelHelpers = {};
 
