@@ -181,9 +181,9 @@
             return "";
         }
         else {
-            var core_trim = "".trim;
-            if (core_trim && !core_trim.call("\uFEFF\xA0")) {
-                return core_trim.call(text);
+            var coreTrim = "".trim;
+            if (coreTrim && !coreTrim.call("\uFEFF\xA0")) {
+                return coreTrim.call(text);
             }
             else {
                 return (text + "").replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
