@@ -314,7 +314,7 @@
 
                             if (queryData[i][j][k][1] === "em") {
                                 // Convert EMs to pixels
-                                val = val * (window.getEmPixels ? getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
+                                val = val * (window.getEmPixels ? window.getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
                             }
 
                             /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
