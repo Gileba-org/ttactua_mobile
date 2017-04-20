@@ -41,7 +41,7 @@
 }(document, document.documentElement));
 
 /*! elementQuery | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
-(function (window, document, undefined) {
+(function (window, document) {
     // Enable strict mode
     "use strict";
 
@@ -57,7 +57,7 @@
 
     var setCssRules = function () {
         if (document.styleSheets[0]) {
-            cssRules = (document.styleSheets[0].cssRules !== undefined) ? "cssRules" : "rules";
+            cssRules = (typeof document.styleSheets[0].cssRules !== undefined) ? "cssRules" : "rules";
         }
     };
 
@@ -84,10 +84,10 @@
                 }
 
                 // Update the queryData object
-                if (queryData[selector] === undefined) {
+                if (typeof queryData[selector] === undefined) {
                     queryData[selector] = {};
                 }
-                if (queryData[selector][type] === undefined) {
+                if (typeof queryData[selector][type] === undefined) {
                     queryData[selector][type] = {};
                 }
                 queryData[selector][type][pair] = [number, value];
@@ -169,7 +169,7 @@
                             addQueryDataValue(selector, result[2], result[4] + result[5], number, result[5]);
                         }
 
-                        if (result[7] === undefined || result[7] === "") {
+                        if (typeof result[7] === undefined || result[7] === "") {
                             // Reached the end of the set
                             prevIndex = result.index + result[1].length;
                             selector = null;
@@ -286,7 +286,7 @@
         }
 
         refresh();
-    }
+    };
 
     var refresh = function () {
 
@@ -381,10 +381,10 @@
                 // For each number px|em value pair
                 for (k in queryData[i][j]) {
 
-                    if (data[i] === undefined) {
+                    if (typeof data[i] === undefined) {
                         data[i] = {};
                     }
-                    if (data[i][j] === undefined) {
+                    if (typeof data[i][j] === undefined) {
                         data[i][j] = [];
                     }
                     data[i][j][data[i][j].length] = k;
@@ -403,5 +403,5 @@
         window.attachEvent("onresize", refresh);
         window.attachEvent("onload", init);
     }
-}(this, document, undefined));
+}(this, document));
 
