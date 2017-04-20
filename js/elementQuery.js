@@ -77,6 +77,43 @@
         }
     };
 
+    // Refactor from jquery().addClass()
+    var addTo = function (element, attr, value) {
+
+        if (element.nodeType === 1) {
+            var val = trim(value);
+            if (val !== "") {
+                var cur = clean(element, attr);
+                
+                if (cur.indexOf(" " + val + " ") < 0) {
+                    // Add the value if its not already there
+                    element.setAttribute(attr, trim(cur + val));
+                }
+            }
+        }
+    };
+
+    // Refactor from jquery().removeClass()
+    var removeFrom = function (element, attr, value) {
+
+        if (element.nodeType === 1) {
+            var val = trim(value);
+            if (val !== "") {
+                var cur = clean(element, attr);
+                var updated = false;
+                while (cur.indexOf(" " + val + " ") >= 0) {
+                    // Remove the value
+                    cur = cur.replace(" " + val + " ", " ");
+                    updated = true;
+                }
+                if (updated) {
+                    // Update the attribute
+                    element.setAttribute(attr, trim(cur));
+                }
+            }
+        }
+    };
+
     var refresh = function () {
 
         var i, ei, j, k, elements, element, val;
@@ -295,43 +332,6 @@
         // This expression is here for better compressibility
         var val = element.getAttribute(attr);
         return val ? (" " + val + " ").replace(/[\t\r\n]/g, " ") : " ";
-    };
-
-    // Refactor from jquery().addClass()
-    var addTo = function (element, attr, value) {
-
-        if (element.nodeType === 1) {
-            var val = trim(value);
-            if (val !== "") {
-                var cur = clean(element, attr);
-                
-                if (cur.indexOf(" " + val + " ") < 0) {
-                    // Add the value if its not already there
-                    element.setAttribute(attr, trim(cur + val));
-                }
-            }
-        }
-    };
-
-    // Refactor from jquery().removeClass()
-    var removeFrom = function (element, attr, value) {
-
-        if (element.nodeType === 1) {
-            var val = trim(value);
-            if (val !== "") {
-                var cur = clean(element, attr);
-                var updated = false;
-                while (cur.indexOf(" " + val + " ") >= 0) {
-                    // Remove the value
-                    cur = cur.replace(" " + val + " ", " ");
-                    updated = true;
-                }
-                if (updated) {
-                    // Update the attribute
-                    element.setAttribute(attr, trim(cur));
-                }
-            }
-        }
     };
 
     var init = function () {
