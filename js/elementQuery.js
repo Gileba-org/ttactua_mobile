@@ -61,6 +61,79 @@
         }
     };
 
+    // Refactor from jQuery.trim()
+    var trim = function (text) {
+        if (text === null) {
+            return "";
+        }
+        else {
+            var coreTrim = "".trim;
+            if (coreTrim && !coreTrim.call("\uFEFF\xA0")) {
+                return coreTrim.call(text);
+            }
+            else {
+                return (text + "").replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+            }
+        }
+    };
+
+    var refresh = function () {
+
+        var i, ei, j, k, elements, element, val;
+
+        // For each selector
+        for (i in queryData) {
+
+            // Get the items matching the selector
+            elements = sizzle(i);
+
+            if (elements.length > 0) {
+
+                // For each matching element
+                for (ei = 0; ei < elements.length; ei++) {
+                    element = elements[ei];
+
+                    // For each min|max-width|height string
+                    for (j in queryData[i]) {
+
+                        // For each number px|em value pair
+                        for (k in queryData[i][j]) {
+
+                            val = queryData[i][j][k][0];
+
+                            if (queryData[i][j][k][1] === "em") {
+                                // Convert EMs to pixels
+                                val = val * (window.getEmPixels ? window.getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
+                            }
+
+                            /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
+                            /* For Nested queries scrollWidth/Height or clientWidth/Height may sometime be desired but are not supported. */
+
+                            if ((j === "min-width" && element.offsetWidth >= val) ||
+                                (j === "max-width" && element.offsetWidth <= val) ||
+                                (j === "min-height" && element.offsetHeight >= val) ||
+                                (j === "max-height" && element.offsetHeight <= val)) {
+                                // Add matching attr value
+                                addTo(element, j, k);
+                            }
+                            else {
+                                // Remove non-matching attr value
+                                removeFrom(element, j, k);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!window.addEventListener && window.attachEvent) {
+            // Force a repaint in IE7 and IE8
+            var className = document.documentElement.className;
+            document.documentElement.className = " " + className;
+            document.documentElement.className = className;
+        }
+    }
+
     var addQueryDataValue = function (selector, type, pair, number, value) {
 
         selector = trim(selector);
@@ -217,22 +290,6 @@
         }
     };
 
-    // Refactor from jQuery.trim()
-    var trim = function (text) {
-        if (text === null) {
-            return "";
-        }
-        else {
-            var coreTrim = "".trim;
-            if (coreTrim && !coreTrim.call("\uFEFF\xA0")) {
-                return coreTrim.call(text);
-            }
-            else {
-                return (text + "").replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
-            }
-        }
-    };
-
     // Refactor from jquery().addClass() and jquery().removeClass()
     var clean = function (element, attr) {
         // This expression is here for better compressibility
@@ -287,63 +344,6 @@
 
         refresh();
     };
-
-    var refresh = function () {
-
-        var i, ei, j, k, elements, element, val;
-
-        // For each selector
-        for (i in queryData) {
-
-            // Get the items matching the selector
-            elements = sizzle(i);
-
-            if (elements.length > 0) {
-
-                // For each matching element
-                for (ei = 0; ei < elements.length; ei++) {
-                    element = elements[ei];
-
-                    // For each min|max-width|height string
-                    for (j in queryData[i]) {
-
-                        // For each number px|em value pair
-                        for (k in queryData[i][j]) {
-
-                            val = queryData[i][j][k][0];
-
-                            if (queryData[i][j][k][1] === "em") {
-                                // Convert EMs to pixels
-                                val = val * (window.getEmPixels ? window.getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
-                            }
-
-                            /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
-                            /* For Nested queries scrollWidth/Height or clientWidth/Height may sometime be desired but are not supported. */
-
-                            if ((j === "min-width" && element.offsetWidth >= val) ||
-                                (j === "max-width" && element.offsetWidth <= val) ||
-                                (j === "min-height" && element.offsetHeight >= val) ||
-                                (j === "max-height" && element.offsetHeight <= val)) {
-                                // Add matching attr value
-                                addTo(element, j, k);
-                            }
-                            else {
-                                // Remove non-matching attr value
-                                removeFrom(element, j, k);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        if (!window.addEventListener && window.attachEvent) {
-            // Force a repaint in IE7 and IE8
-            var className = document.documentElement.className;
-            document.documentElement.className = " " + className;
-            document.documentElement.className = className;
-        }
-    }
 
     // Expose some public functions
     window.elementQuery = function (arg1, arg2) {
