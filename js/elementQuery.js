@@ -57,7 +57,7 @@
 
     var setCssRules = function () {
         if (document.styleSheets[0]) {
-            cssRules = (typeof document.styleSheets[0].cssRules !== undefined) ? "cssRules" : "rules";
+            cssRules = (typeof document.styleSheets[0].cssRules !== "undefined") ? "cssRules" : "rules";
         }
     };
 
@@ -157,10 +157,10 @@
                 }
 
                 // Update the queryData object
-                if (typeof queryData[selector] === undefined) {
+                if (typeof queryData[selector] === "undefined") {
                     queryData[selector] = {};
                 }
-                if (typeof queryData[selector][type] === undefined) {
+                if (typeof queryData[selector][type] === "undefined") {
                     queryData[selector][type] = {};
                 }
                 queryData[selector][type][pair] = [number, value];
@@ -242,7 +242,7 @@
                             addQueryDataValue(selector, result[2], result[4] + result[5], number, result[5]);
                         }
 
-                        if (typeof result[7] === undefined || result[7] === "") {
+                        if (typeof result[7] === "undefined" || result[7] === "") {
                             // Reached the end of the set
                             prevIndex = result.index + result[1].length;
                             selector = null;
@@ -381,10 +381,10 @@
                 // For each number px|em value pair
                 for (k in queryData[i][j]) {
 
-                    if (typeof data[i] === undefined) {
+                    if (typeof data[i] === "undefined") {
                         data[i] = {};
                     }
-                    if (typeof data[i][j] === undefined) {
+                    if (typeof data[i][j] === "undefined") {
                         data[i][j] = [];
                     }
                     data[i][j][data[i][j].length] = k;
