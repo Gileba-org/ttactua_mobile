@@ -91,8 +91,8 @@
 			} else {
 				(function () {
 					var prefixes = ["moz", "webkit", "o", "ms"],
-							prefix = undefined,
-							i = undefined;
+							prefix = void 0,
+							i = void 0;
 
 					property = property.charAt(0).toUpperCase() + property.substr(1);
 					supported = (function () {
