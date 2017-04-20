@@ -106,7 +106,7 @@
 						return false;
 					}());
 					property = supported ? "-" + prefix.toLowerCase() + "-" + property.toLowerCase() : null;
-				})();
+				}());
 			}
 
 			return {
