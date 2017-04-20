@@ -29,7 +29,7 @@
 		return function (Constructor, protoProps, staticProps) {
 			if (protoProps) {
 				defineProperties(Constructor.prototype, protoProps);
-		 }
+		}
 			if (staticProps) {
 				defineProperties(Constructor, staticProps);
 		}
