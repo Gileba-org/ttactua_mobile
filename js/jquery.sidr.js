@@ -13,7 +13,7 @@
 		}
 	};
 
-	babelHelpers.createClass = function () {
+	babelHelpers.createClass = (function () {
 		function defineProperties(target, props) {
 			for (var i = 0; i < props.length; i++) {
 				var descriptor = props[i];
@@ -35,7 +35,7 @@
 		}
 			return Constructor;
 		};
-	}();
+	}());
 
 	babelHelpers;
 
@@ -80,7 +80,7 @@
 
 
 		// Check if transitions is supported
-		transitions: function () {
+		transitions: (function () {
 			var body = document.body || document.documentElement,
 					style = body.style,
 					supported = false,
@@ -95,7 +95,7 @@
 							i = undefined;
 
 					property = property.charAt(0).toUpperCase() + property.substr(1);
-					supported = function () {
+					supported = (function () {
 						for (i = 0; i < prefixes.length; i++) {
 							prefix = prefixes[i];
 							if (prefix + property in style) {
@@ -104,7 +104,7 @@
 						}
 
 						return false;
-					}();
+					}());
 					property = supported ? "-" + prefix.toLowerCase() + "-" + property.toLowerCase() : null;
 				})();
 			}
@@ -113,7 +113,7 @@
 				supported,
 				property
 			};
-		}()
+		}())
 	};
 
 	var $$2 = jQuery;
@@ -122,7 +122,7 @@
 	var openAction = "open";
 	var closeAction = "close";
 	var transitionEndEvent = "webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend";
-	var Menu = function () {
+	var Menu = (function () {
 		function Menu(name) {
 			babelHelpers.classCallCheck(this, Menu);
 
@@ -403,7 +403,7 @@
 			}
 		}]);
 		return Menu;
-	}();
+	}());
 
 	var $$1 = jQuery;
 
