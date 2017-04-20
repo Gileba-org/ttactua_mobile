@@ -110,8 +110,8 @@
 			}
 
 			return {
-				supported: supported,
-				property: property
+				supported,
+				property
 			};
 		}()
 	};
