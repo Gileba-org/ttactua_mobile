@@ -176,7 +176,7 @@
             document.documentElement.className = " " + className;
             document.documentElement.className = className;
         }
-    }
+    };
 
     var addQueryDataValue = function (selector, type, pair, number, value) {
 
