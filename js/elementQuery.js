@@ -77,6 +77,13 @@
         }
     };
 
+    // Refactor from jquery().addClass() and jquery().removeClass()
+    var clean = function (element, attr) {
+        // This expression is here for better compressibility
+        var val = element.getAttribute(attr);
+        return val ? (" " + val + " ").replace(/[\t\r\n]/g, " ") : " ";
+    };
+
     // Refactor from jquery().addClass()
     var addTo = function (element, attr, value) {
 
@@ -325,13 +332,6 @@
                 ownerNode.setAttribute("data-elementquery-processed", "");
             }
         }
-    };
-
-    // Refactor from jquery().addClass() and jquery().removeClass()
-    var clean = function (element, attr) {
-        // This expression is here for better compressibility
-        var val = element.getAttribute(attr);
-        return val ? (" " + val + " ").replace(/[\t\r\n]/g, " ") : " ";
     };
 
     var init = function () {
