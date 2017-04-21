@@ -215,14 +215,16 @@
 
         var i, j, k;
         for (i in data) {
-	        if ({}.hasOwnProperty.call(data, i)) {
+            if ({}.hasOwnProperty.call(data, i)) {
 
                 for (j in data[i]) {
-                    if (typeof data[i][j] === "string") {
-                        addQueryDataValue(i, j, data[i][j]);
-                    } else if (typeof data[i][j] === "object") {
-                        for (k = 0; k < data[i][j].length; k++) {
-                            addQueryDataValue(i, j, data[i][j][k]);
+                    if ({}.hasOwnProperty.call(data[i], j)) {
+                        if (typeof data[i][j] === "string") {
+                            addQueryDataValue(i, j, data[i][j]);
+                        } else if (typeof data[i][j] === "object") {
+                            for (k = 0; k < data[i][j].length; k++) {
+                                addQueryDataValue(i, j, data[i][j][k]);
+                            }
                         }
                     }
                 }
@@ -373,19 +375,25 @@
         // For each selector
         for (i in queryData) {
 
-            // For each min|max-width|height string
-            for (j in queryData[i]) {
+            if ({}.hasOwnProperty.call(queryData, i)) {
+                // For each min|max-width|height string
+                for (j in queryData[i]) {
+                    if ({}.hasOwnProperty.call(queryData[i], j)) {
 
-                // For each number px|em value pair
-                for (k in queryData[i][j]) {
+                        // For each number px|em value pair
+                        for (k in queryData[i][j]) {
+                        if ({}.hasOwnProperty.call(queryData[i][j], k)) {
 
-                    if (typeof data[i] === "undefined") {
-                        data[i] = {};
+                                if (typeof data[i] === "undefined") {
+                                    data[i] = {};
+                                }
+                                if (typeof data[i][j] === "undefined") {
+                                    data[i][j] = [];
+                                }
+                                data[i][j][data[i][j].length] = k;
+                            }
+                        }
                     }
-                    if (typeof data[i][j] === "undefined") {
-                        data[i][j] = [];
-                    }
-                    data[i][j][data[i][j].length] = k;
                 }
             }
         }
