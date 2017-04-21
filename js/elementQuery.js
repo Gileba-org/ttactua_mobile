@@ -390,8 +390,7 @@
         window.addEventListener("resize", refresh, false);
         window.addEventListener("DOMContentLoaded", init, false);
         window.addEventListener("load", init, false);
-    }
-    else if (window.attachEvent) {
+    } else if (window.attachEvent) {
         window.attachEvent("onresize", refresh);
         window.attachEvent("onload", init);
     }
