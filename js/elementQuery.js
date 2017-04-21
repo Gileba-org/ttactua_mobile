@@ -29,8 +29,7 @@
         if (extraBody) {
             // Remove the extra body element
             documentElement.removeChild(extraBody);
-        }
-        else {
+        } else {
             // Remove the test element
             element.removeChild(testElement);
         }
