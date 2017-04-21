@@ -124,41 +124,44 @@
 
         // For each selector
         for (i in queryData) {
+            if ({}.hasOwnProperty.call(queryData, i)) {
+                // Get the items matching the selector
+                elements = sizzle(i);
 
-            // Get the items matching the selector
-            elements = sizzle(i);
+                if (elements.length > 0) {
 
-            if (elements.length > 0) {
+                    // For each matching element
+                    for (ei = 0; ei < elements.length; ei++) {
+                        element = elements[ei];
 
-                // For each matching element
-                for (ei = 0; ei < elements.length; ei++) {
-                    element = elements[ei];
+                        // For each min|max-width|height string
+                        for (j in queryData[i]) {
+                            if ({}.hasOwnProperty.call(queryData[i], j)) {
+                                 // For each number px|em value pair
+                                for (k in queryData[i][j]) {
+                                    if ({}.hasOwnProperty.call(queryData[i][j], k)) {
+                                        val = queryData[i][j][k][0];
 
-                    // For each min|max-width|height string
-                    for (j in queryData[i]) {
+                                        if (queryData[i][j][k][1] === "em") {
+                                            // Convert EMs to pixels
+                                            val = val * (window.getEmPixels ? window.getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
+                                        }
 
-                        // For each number px|em value pair
-                        for (k in queryData[i][j]) {
+                                        /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
+                                        /* For Nested queries scrollWidth/Height or clientWidth/Height may sometime be desired but are not supported. */
 
-                            val = queryData[i][j][k][0];
-
-                            if (queryData[i][j][k][1] === "em") {
-                                // Convert EMs to pixels
-                                val = val * (window.getEmPixels ? window.getEmPixels(element) : 16); // NOTE: Using getEmPixels() has a small performance impact
-                            }
-
-                            /* NOTE: Using offsetWidth/Height so an element can be adjusted when it reaches a specific size.
-                            /* For Nested queries scrollWidth/Height or clientWidth/Height may sometime be desired but are not supported. */
-
-                            if ((j === "min-width" && element.offsetWidth >= val) ||
-                                (j === "max-width" && element.offsetWidth <= val) ||
-                                (j === "min-height" && element.offsetHeight >= val) ||
-                                (j === "max-height" && element.offsetHeight <= val)) {
-                                // Add matching attr value
-                                addTo(element, j, k);
-                            } else {
-                                // Remove non-matching attr value
-                                removeFrom(element, j, k);
+                                        if ((j === "min-width" && element.offsetWidth >= val) ||
+                                            (j === "max-width" && element.offsetWidth <= val) ||
+                                            (j === "min-height" && element.offsetHeight >= val) ||
+                                            (j === "max-height" && element.offsetHeight <= val)) {
+                                            // Add matching attr value
+                                            addTo(element, j, k);
+                                        } else {
+                                            // Remove non-matching attr value
+                                            removeFrom(element, j, k);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -212,12 +215,15 @@
 
         var i, j, k;
         for (i in data) {
-            for (j in data[i]) {
-                if (typeof data[i][j] === "string") {
-                    addQueryDataValue(i, j, data[i][j]);
-                } else if (typeof data[i][j] === "object") {
-                    for (k = 0; k < data[i][j].length; k++) {
-                        addQueryDataValue(i, j, data[i][j][k]);
+	        if ({}.hasOwnProperty.call(data, i)) {
+
+                for (j in data[i]) {
+                    if (typeof data[i][j] === "string") {
+                        addQueryDataValue(i, j, data[i][j]);
+                    } else if (typeof data[i][j] === "object") {
+                        for (k = 0; k < data[i][j].length; k++) {
+                            addQueryDataValue(i, j, data[i][j][k]);
+                        }
                     }
                 }
             }
