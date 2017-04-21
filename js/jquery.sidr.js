@@ -452,13 +452,14 @@
 	function sidr(method) {
 		if (method === "status") {
 			return sidrStatus;
-		} else if (methods[method]) {
-			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-		} else if (typeof method === "function" || typeof method === "string" || !method) {
-			return methods.toggle.apply(this, arguments);
-		} else {
-			$.error("Method " + method + " does not exist on jQuery.sidr");
 		}
+		if (methods[method]) {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		}
+		if (typeof method === "function" || typeof method === "string" || !method) {
+			return methods.toggle.apply(this, arguments);
+		}
+		$.error("Method " + method + " does not exist on jQuery.sidr");
 	}
 
 	var $$3 = jQuery;
@@ -469,11 +470,13 @@
 			var newContent = settings.source(name);
 
 			$sideMenu.html(newContent);
-		} else if (typeof settings.source === "string" && helper.isUrl(settings.source)) {
+		}
+		if (typeof settings.source === "string" && helper.isUrl(settings.source)) {
 			$$3.get(settings.source, function (data) {
 				$sideMenu.html(data);
 			});
-		} else if (typeof settings.source === "string") {
+		}
+		if (typeof settings.source === "string") {
 			var htmlContent = "",
 					selectors = settings.source.split(",");
 
@@ -494,7 +497,8 @@
 			}
 
 			$sideMenu.html(htmlContent);
-		} else if (settings.source !== null) {
+		}
+		if (settings.source !== null) {
 			$$3.error("Invalid Sidr Source");
 		}
 
