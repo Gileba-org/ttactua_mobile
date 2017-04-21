@@ -64,13 +64,11 @@
     var trim = function (text) {
         if (text === null) {
             return "";
-        }
-        else {
+        } else {
             var coreTrim = "".trim;
             if (coreTrim && !coreTrim.call("\uFEFF\xA0")) {
                 return coreTrim.call(text);
-            }
-            else {
+            } else {
                 return (text + "").replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
             }
         }
@@ -158,8 +156,7 @@
                                 (j === "max-height" && element.offsetHeight <= val)) {
                                 // Add matching attr value
                                 addTo(element, j, k);
-                            }
-                            else {
+                            } else {
                                 // Remove non-matching attr value
                                 removeFrom(element, j, k);
                             }
@@ -218,8 +215,7 @@
             for (j in data[i]) {
                 if (typeof data[i][j] === "string") {
                     addQueryDataValue(i, j, data[i][j]);
-                }
-                else if (typeof data[i][j] === "object") {
+                } else if (typeof data[i][j] === "object") {
                     for (k = 0; k < data[i][j].length; k++) {
                         addQueryDataValue(i, j, data[i][j][k]);
                     }
@@ -289,8 +285,7 @@
                             // Reached the end of the set
                             prevIndex = result.index + result[1].length;
                             selector = null;
-                        }
-                        else {
+                        } else {
                             // Update result index to process next item in the set
                             regex.lastIndex = result.index + result[1].length;
                         }
@@ -321,8 +316,7 @@
                         for (j = 0; j < rule[cssRules].length; j++) {
                             processSelector(rule[cssRules][j].selectorText);
                         }
-                    }
-                    else {
+                    } else {
                         processSelector(rule.selectorText);
                     }
                 }
@@ -359,8 +353,7 @@
                 // Add new selector queries
                 updateQueryData(arg1, arg2);
             }
-        }
-        else if (!arg1 && !arg2) {
+        } else if (!arg1 && !arg2) {
             refresh();
         }
     };
