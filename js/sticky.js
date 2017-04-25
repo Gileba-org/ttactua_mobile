@@ -4,12 +4,12 @@ function moveScroller() {
         var ot = jQuery("#sticky-anchor").offset().top;
         var s = jQuery("#sticky");
         if(st > ot) {
-            jQuery('#sticky').addClass('stick');
-			jQuery('#sticky-anchor').height(jQuery('#sticky').outerHeight());
+            jQuery("#sticky").addClass("stick");
+			jQuery("#sticky-anchor").height(jQuery("#sticky").outerHeight());
         } else {
             if(st <= ot) {
-                jQuery('#sticky').removeClass('stick');
-				jQuery('#sticky-anchor').height(0);
+                jQuery("#sticky").removeClass("stick");
+				jQuery("#sticky-anchor").height(0);
            }
         }
     };
