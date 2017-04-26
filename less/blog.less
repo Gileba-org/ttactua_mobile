@@ -1,6 +1,16 @@
 .blog, .blog-featured, .item-page {
 	margin-right: 5px;
 	margin-left: 10px;
+	.item {
+		position: relative;
+		.icons {
+			margin-top: -3px;
+			position: absolute; 
+			z-index: 1;
+			right: 5px;
+		}
+	}
+	
 	.items-row[max-width~="480px"] {
 		.item-image.intro {
 			display:none;
