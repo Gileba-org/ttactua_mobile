@@ -20,7 +20,7 @@ ul#mainmenu:nth-child(1) {
 		font-family: @font-title;
 		text-weight: bold;
 		border-bottom: 1px solid white;
-		padding-left: 5px;
+		padding-left: 15px;
 		line-height: 1.5em;
 		ul {
 			padding-left: 10px;
@@ -48,6 +48,19 @@ ul#mainmenu:nth-child(1) {
 	li.active.current .nav-child a {
 		color: white;
 		opacity: 1;
+	}
+	li.parent:before {
+		content: "+ ";
+		width: 15px;
+		display: inline-block;
+	}
+	li.parent.deeper:before {
+		content: "- ";
+		width: 15px;
+		display: inline-block;
+	}
+	li.parent, li.parent.deeper {
+		padding-left: 0px;
 	}
 }
 
