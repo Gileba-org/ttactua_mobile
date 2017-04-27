@@ -1,5 +1,7 @@
 // TODO: Reference the .item-page lesscode (based on the blogcode) here
 .item-page {
+	/* Needed to have the editmenu hover over the image */
+	position: relative;
 	.item-image {
 		clear: both;
 		float: none;
@@ -24,6 +26,12 @@
 	}
 	.article-info {
 		margin-bottom: 5px;
+	}
+	/* Needed to have the editmenu hover over the image */
+	.icons {
+		position: absolute; 
+		z-index: 1;
+		right: 20px;
 	}
 }
 
