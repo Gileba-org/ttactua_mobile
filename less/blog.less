@@ -1,7 +1,17 @@
 .blog, .blog-featured, .item-page {
 	margin-right: 5px;
 	margin-left: 10px;
-	.items-row[max-width~="480px"] {
+	.item, .items-leading [class^="leading-"], .items-leading [class*=" leading-"] {
+		position: relative;
+		.icons {
+			margin-top: -2px;
+			position: absolute; 
+			z-index: 1;
+			right: 5px;
+		}
+	}
+	
+	.items-row[max-width~="480px"], .items-leading[max-width~="480px"] {
 		.item-image.intro {
 			display:none;
 		}
