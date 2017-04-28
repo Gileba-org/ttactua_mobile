@@ -27,7 +27,10 @@ $document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.mi
 	jQuery(document).on("swipeleft", function(event){    
 		if(event.handled !== true) // This will prevent event triggering more then once
 		{    
-			window.location = jQuery('a[rel="next"]').attr('href');
+			if (jQuery('a[rel="next"]').attr('href') !== undefined)
+			{
+				window.location = jQuery('a[rel="next"]').attr('href');
+			}
 			event.handled = true;
 		}
 		return false;         
@@ -36,7 +39,10 @@ $document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.mi
 	jQuery(document).on("swiperight", function(event){     
 		if(event.handled !== true) // This will prevent event triggering more then once
 		{      
-			window.location = jQuery('a[rel="prev"]').attr('href');
+			if (jQuery('a[rel="prev"]').attr('href') !== undefined)
+			{
+				window.location = jQuery('a[rel="prev"]').attr('href');
+			}
 			event.handled = true;
 		}
 		return false;            
