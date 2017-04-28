@@ -23,6 +23,7 @@ $document = JFactory::getDocument();
 $document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
 ?>
 <script>
+	jQuery.mobile.loading().hide();
 	jQuery(document).on("swipeleft", function(event){    
 		if(event.handled !== true) // This will prevent event triggering more then once
 		{    
