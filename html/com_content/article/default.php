@@ -19,6 +19,8 @@ $canEdit = $params->get('access-edit');
 $user    = JFactory::getUser();
 $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
+$document = JFactory::getDocument();
+$document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
 ?>
 <div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
