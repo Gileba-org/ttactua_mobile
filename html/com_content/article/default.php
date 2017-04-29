@@ -24,6 +24,7 @@ $document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.mi
 ?>
 <script>
 	jQuery.mobile.loading().hide();
+	jQuery.mobile.linkBindingEnabled = false;
 	jQuery(document).on("swipeleft", function(event){    
 		if(event.handled !== true) // This will prevent event triggering more then once
 		{    
