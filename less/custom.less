@@ -368,3 +368,15 @@ body #jfusionframeless {
 .yendif-video-share.front {
 	margin: 0px;
 }
+
+// Ajax Infinity
+.ai-next {
+	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
+	border: 1px solid @color-main;
+	color: white;
+	background-color: @color-main;
+	&:hover {
+		background-color: lighten(@color-main, 30%);
+		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+	}
+}
