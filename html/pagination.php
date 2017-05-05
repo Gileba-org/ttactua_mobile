@@ -94,7 +94,7 @@ function pagination_item_inactive(&$item)
 	// Check if the item is the active page
 	if (isset($item->active) && $item->active)
 	{
-		return '<li class="active hidden-phone"><a>' . $item->text . '</a></li>';
+		return '<li class="active hidden-phone"><span class="pagenav">' . $item->text . '</span></li>';
 	}
 
 	// Doesn't match any other condition, render a normal item
