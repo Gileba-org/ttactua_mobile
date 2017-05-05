@@ -31,11 +31,14 @@ function _reduce_displayed_pages($pages, $displayedPages) {
 	$midPoint = ceil($displayedPages / 2);
 	if ($currentPageIndex >= $displayedPages) {
 		$pages = array_slice($pages, -$displayedPages);
-	} else {
-		$startIndex = max($currentPageIndex - $midPoint, 0); 	
-		$pages = array_slice($pages, $startIndex, $displayedPages);
-	}
+		return $pages;
+	} 
+	
+	$startIndex = max($currentPageIndex - $midPoint, 0); 	
+	$pages = array_slice($pages, $startIndex, $displayedPages);
+	
 	return $pages;
+	}
 }
 /**
  * Get current page index
