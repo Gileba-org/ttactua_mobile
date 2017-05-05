@@ -29,7 +29,7 @@ function pagination_list_render($list) {
 function _reduce_displayed_pages($pages, $displayedPages) {
 	$currentPageIndex = _get_current_page_index($pages);
 	$midPoint = ceil($displayedPages / 2);
-	if ($currentPageIndex >= 6) {
+	if ($currentPageIndex >= $displayedPages) {
 		$pages = array_slice($pages, -$displayedPages);
 	} else {
 		$startIndex = max($currentPageIndex - $midPoint, 0); 	
