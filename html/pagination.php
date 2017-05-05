@@ -38,7 +38,6 @@ function _reduce_displayed_pages($pages, $displayedPages) {
 	$pages = array_slice($pages, $startIndex, $displayedPages);
 	
 	return $pages;
-	}
 }
 /**
  * Get current page index
