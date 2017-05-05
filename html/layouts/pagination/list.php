@@ -12,11 +12,11 @@ defined('JPATH_BASE') or die;
 $list = $displayData['list'];
 ?>
 <ul>
-	<li class="pagination-start"><span class="icon-first"><?php echo $list['start']['data']; ?></span></li>
-	<li class="pagination-prev"><span class="icon-previous"><?php echo $list['previous']['data']; ?></span></li>
+	<li class="pagination-start"><?php echo $list['start']['data']; ?></li>
+	<li class="pagination-prev"><?php echo $list['previous']['data']; ?></li>
 	<?php foreach ($list['pages'] as $page) : ?>
 		<?php echo '<li>' . $page['data'] . '</li>'; ?>
 	<?php endforeach; ?>
-	<li class="pagination-next"><span class="icon-next"><?php echo $list['next']['data']; ?></span></li>
-	<li class="pagination-end"><span class="icon-last"><?php echo $list['end']['data']; ?></span></li>
+	<li class="pagination-next"><?php echo $list['next']['data']; ?></li>
+	<li class="pagination-end"><?php echo $list['end']['data']; ?></li>
 </ul>
