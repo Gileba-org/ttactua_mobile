@@ -19,7 +19,7 @@ before_deploy:
 - zip -r tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
 - git clone https://github.com/ndeet/plg_system_less.git plg_system_less
 - zip -r plg_system_less.zip plg_system_less -x \*.git\* *.gitignore*
-- zip pkg_ttactua_mobile '*.zip'
+- zip pkg_ttactua_mobile tpl_ttactua_mobile.zip plg_system_less.zip
 deploy:
   provider: releases
   file: 
