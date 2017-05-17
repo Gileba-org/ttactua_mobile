@@ -16,10 +16,10 @@ script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
 - cd ..
-- zip -r tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
+- zip -r tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml* *.travis.yml* *pkg_ttactua_mobile.xml*
 - git clone https://github.com/ndeet/plg_system_less.git plg_system_less
 - zip -r plg_system_less.zip plg_system_less -x \*.git\* *.gitignore*
-- zip pkg_ttactua_mobile tpl_ttactua_mobile.zip plg_system_less.zip
+- zip -j pkg_ttactua_mobile tpl_ttactua_mobile.zip plg_system_less.zip ttactua_mobile/pkg_ttactua_mobile.xml
 deploy:
   provider: releases
   file: 
