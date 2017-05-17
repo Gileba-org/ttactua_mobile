@@ -7,6 +7,9 @@ php:
 env:
   matrix:
   - DB=mysql
+  global:
+  - secure: bm/qwzrtDLgCJGonNxhO9C+sDvuw6zWAzP0zWtTgFVT9iaPsJXkzfWevvZbHfH0ePV3N3Tf43ZAmzk5IYkwSlKD8uphJQ5JVFDyp1YRexlu/rJC/tRJ8wkKnwOvHX5zyWOl3ZuJ18Re2yiDg8kT+qE1WCwee3vhtmXlZaYo/ZeYrPcGasuooULNYlIaNv7+1OT94ioesaMZO4P5yGSCW7vWqSLNyYGIHqrKSIo6YA2O1JLMm1uEc8Gsxf0K95QlWWRs5alydW59/eXfZaLO94BpmIASfBjd2YW147UKY9l5SLMVNmYOdA49pwKcvLcPDfJLi1V+q+9RG7ootyMKAhD5TMaTPpTrfLYl7NOrOnHihYNckf/STwwOslDQMr+VQT5vS8c9m3vtHIyZSw/8e/8QrnghF81TeAHAySPhdOG8/m/bWmKxMTMYSYHHyI54Y6/bT3Z3f1sXPOrTr+9s6PFnIfw0U0pmt1BRgLnKW1d7ekKuW170f20EFkKWTs8UUFeyp/gbGyybhw/MUE5RzyMVdqPw62WVm1qYASXhJXmmhxPeuenSCda5r1XjVKq3WfIuLAHuBOInjO6Pm9ql0yarSajfE9ZAfUVdfDKq4p3tiXRVJDNPbYxmNosR9+hcjQfPKKrl6jZ930Krm6lFiG878Rkfb1vNKWUfoIdPFyEM=
+  - secure: nwLjhdaPNJHwlnLQ0ixsEZHA3TdSWqXHADltGynusncbapEEZPko7fFLv0jXyLff31jeu2Z4mOqLmwYbggl48noribE6VITK1vPi6KGkawoi+7Jpgmn29NMt0m9aiLtcrvkBZO63kR93PaShGVfh0tLdBnP04N+cs4hRhWq9kxbyK3gdX159OyshUo0CAnniD/MoAG3gMzwNVVWHyTsrbxuybBciLkhbnFitaTAcpcLXN6Sh8u+xC50CUQhBjgS+uzhB3mQeub2APc0/xM77cS6zoFWim/MaQRFa8TWv3np32DH1TdCW3Npv6xPWfsHdGLcGd7jeUHqXL2amM80xB+DsgqwhfrFsAHeI1MvzEwKjavI3zbzeqTS+8L069DQszmKK6FP4AeHMGIS9sLlRg/wh9OYnzD+Y/A90JQkJNduqC8Toesu5jvwWWvcaVjtogKxhhoOYT+2/uMLbNpoi6Fig14ThFzq0oTQH111Rwx8oZVp2xRLrNkETUf8w9l6iGuLGtWu8bV+GtC3lUEEmkyBzmbmJaRfLhE9KFydeeMzkXl8XcQzQEVooRx2tZIjIsStokPLt3dYj0mxWpA+6XdZY8tSNwiyT/WeA03Z7i6L6rg2jvuXR+o8wNjOwllERrlI9NbU4M2FPCEOtD2a7BmOy7SJ8yXRfmKi0CoA/vko=
 matrix:
   allow_failures:
   - php: nightly
@@ -22,8 +25,8 @@ before_deploy:
 - zip -j pkg_ttactua_mobile tpl_ttactua_mobile.zip plg_system_less.zip ttactua_mobile/pkg_ttactua_mobile.xml
 deploy:
   provider: releases
-  file: 
-  - tpl_ttactua_mobile.zip 
+  file:
+  - tpl_ttactua_mobile.zip
   - plg_system_less.zip
   - pkg_ttactua_mobile.zip
   skip_cleanup: true
@@ -31,3 +34,5 @@ deploy:
     tags: true
   api_key:
     secure: YFNRm57erCp0zwqM813pmMP0Y70vjW57ILQ8wf0b601Jfjc58g+5DhpO8CTIVjnB6uqbhqcr0mJQhlBgFUTMFy8DqQ0jR58elIjtE6fFxjtJ+1aL2j+DlM4Bd2AaKxtxCnRrrDXJB3zWDHpDgvvhNImphSCkbuTvcR4MlGMrQvtHqHc6RTUp+k98ir1PS0ShLXincMiJzidwAr8UVd/qS1SPNPjCFXSSPK6qPtigslFBAUxqMs4EjshQZj0oD7okAXviKmQar02T9ydy/+04IHb+71UGITQl2L3RqtzSRPef4fH2w+kI1qQ6NdgjsDjQN8q4yYx97viWkcYys9Dr9MrUn2Q8Lg0OP+2X1hpeab3KuATg2E/5NK2Fagj5CCsu2WOtpzODTMPt9zklPBzpx5R/HoyfW8nFrZqITMlE1RqCg8XDWIoVyrs7qsezEw67FGS0brzIRjTsgUMkexBG3ELsc+7tBCmrw83WVNJU2ywQ3r1BvFwFJ84Or70vlLTCT/hH1yfU3kG2OtvYjJtX800htJ3nVwyhIIz7HE2bzNq+1Jaxf1ul/o8NLsopRuqFdRu9ee1J5DQYpxzly3qlD8McnEnP3xZdpLEQqHkXupdpJKbhuVH/um2CWSQA15YPrEZ6Japsmq+tl2msVpOdpgZwTybQzKFlOM2wQhU+8B4=
+after_deploy:
+  "curl -T pkg_ttactua_mobile.zip -u $FTP_USER:$FTP_PASSWORD ftp://ftp.gileba.be/"
