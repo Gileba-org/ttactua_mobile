@@ -15,7 +15,8 @@ before_script:
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
-- cd .. && zip -r tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml* *.travis.yml*
+- cd .. && zip -r tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml*
+  *.travis.yml*
 deploy:
   provider: releases
   file: tpl_ttactua_mobile.zip
@@ -23,4 +24,4 @@ deploy:
   on:
     tags: true
   api_key:
-    secure: HVboK8WrSbnaxG1dHbPuGKLkYMnXaD8nxY2H4zuIACxQz4+60ByUtTb1Az4KT9xdM6wBQWEBU3vvKVcx3FmTyCJuVdpimqlzB2RiWUW3aLpNWr2ZSROyPwgoK1BfCKoILULp+0JP1gaThSwSw4YTqVLOnDlnWLj5fBU6ZMHEAAEHJZ/ZYoqt+7EVeHjvbl/tvEgUcNQApuNfEEOH3GQRqPNlyg91ICsrbqhDKG5iBjemU17kP5Wtc/XgGjpSrB8FQSVIAH9U4cgu9CVzklcOB8bX0Wlu1qa8B6bFlWiijbLOPggHmUvTgcaAWmTtRsY/L/wMZTaHlnDEhGPV/lPzJ9hTctRRt5U6cPQcxCOte1mN3jw2Hk8hTdjbuH2neGeDs4n8hT90qEtSkqDl++3mMaJsHna1g4mzF833qs56+KwUc/aFdbezE5sdI3+HAGDUjU8MDUiN/TaJcGmLo6QHLQtLsGOx61SfE0U3BP4f5tbGljtgstpExuSxPp+ZL+NNvj+mAbBD1HEjAVAdkiKofb3N8zerooHEJAl4Sh7kQjXR5aykyc/KirTuBk+adr/bulOtcTPKvVAi5gaSIHXM4kbfRx1JJHVxVXOeh6heDyoLtWiOVBw9RZ7SlZZgm/8z/BR6amfbObi8btT6/GD1ayWbi52ZnR8KhoZA2fguppE=
+    secure: YFNRm57erCp0zwqM813pmMP0Y70vjW57ILQ8wf0b601Jfjc58g+5DhpO8CTIVjnB6uqbhqcr0mJQhlBgFUTMFy8DqQ0jR58elIjtE6fFxjtJ+1aL2j+DlM4Bd2AaKxtxCnRrrDXJB3zWDHpDgvvhNImphSCkbuTvcR4MlGMrQvtHqHc6RTUp+k98ir1PS0ShLXincMiJzidwAr8UVd/qS1SPNPjCFXSSPK6qPtigslFBAUxqMs4EjshQZj0oD7okAXviKmQar02T9ydy/+04IHb+71UGITQl2L3RqtzSRPef4fH2w+kI1qQ6NdgjsDjQN8q4yYx97viWkcYys9Dr9MrUn2Q8Lg0OP+2X1hpeab3KuATg2E/5NK2Fagj5CCsu2WOtpzODTMPt9zklPBzpx5R/HoyfW8nFrZqITMlE1RqCg8XDWIoVyrs7qsezEw67FGS0brzIRjTsgUMkexBG3ELsc+7tBCmrw83WVNJU2ywQ3r1BvFwFJ84Or70vlLTCT/hH1yfU3kG2OtvYjJtX800htJ3nVwyhIIz7HE2bzNq+1Jaxf1ul/o8NLsopRuqFdRu9ee1J5DQYpxzly3qlD8McnEnP3xZdpLEQqHkXupdpJKbhuVH/um2CWSQA15YPrEZ6Japsmq+tl2msVpOdpgZwTybQzKFlOM2wQhU+8B4=
