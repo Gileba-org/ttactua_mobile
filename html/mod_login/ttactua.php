@@ -40,7 +40,7 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 		</div>
 		<div id="form-login-submit" class="control-group">
 			<div class="controls">
-				<button type="submit" tabindex="0" name="Submit" class="btn login-button"><?php echo JText::_('MOD_LOGIN_LOGIN'); ?></button>
+				<button type="submit" tabindex="0" name="Submit" class="btn login-button"><?php echo JText::_('JLOGIN'); ?></button>
 			</div>
 		</div>
 		<?php
