@@ -24,12 +24,12 @@ before_deploy:
   *.travis.yml* *pkg_ttactua_mobile.xml* *tpl_ttactua_mobile.xml*
 - git clone https://github.com/ndeet/plg_system_less.git plg_system_less
 - zip -r packages/plg_system_less.zip plg_system_less -x \*.git\* *.gitignore*
-- zip pkg_ttactua_mobile pacakges/tpl_ttactua_mobile.zip packages/plg_system_less.zip -j ttactua_mobile/pkg_ttactua_mobile.xml
+- zip pkg_ttactua_mobile packages/tpl_ttactua_mobile.zip packages/plg_system_less.zip -j ttactua_mobile/pkg_ttactua_mobile.xml
 deploy:
   provider: releases
   file:
-  - tpl_ttactua_mobile.zip
-  - plg_system_less.zip
+  - packages/tpl_ttactua_mobile.zip
+  - packages/plg_system_less.zip
   - pkg_ttactua_mobile.zip
   skip_cleanup: true
   on:
