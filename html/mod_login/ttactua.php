@@ -3,13 +3,13 @@
  * @package     Joomla.Site
  * @subpackage  mod_login
  *
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-require_once JPATH_SITE . '/components/com_users/helpers/route.php';
+JLoader::register('UsersHelperRoute', JPATH_SITE . '/components/com_users/helpers/route.php');
 
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
@@ -17,7 +17,7 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 
 ?>
 <div id="ttactua-login">
-	<form action="<?php echo JRoute::_(htmlspecialchars(JUri::getInstance()->toString()), true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-inline">
+	<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-inline">
 	<?php if ($params->get('pretext')) : ?>
 		<div class="pretext">
 			<p><?php echo $params->get('pretext'); ?></p>
@@ -27,20 +27,20 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 		<div id="form-login-username" class="control-group">
 			<div class="controls">
 					<div class="input-prepend">
-						<input id="modlgn-username" type="text" name="username" class="input-medium ttactua" tabindex="0" size="18" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
+						<input id="modlgn-username" type="text" name="username" class="input-medium ttactua" tabindex="0" size="18" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?>" />
 					</div>
 			</div>
 		</div>
 		<div id="form-login-password" class="control-group">
 			<div class="controls">
 					<div class="input-prepend">
-						<input id="modlgn-passwd" type="password" name="password" class="input-medium" tabindex="0" size="18" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
+						<input id="modlgn-passwd" type="password" name="password" class="input-medium" tabindex="0" size="18" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
 					</div>
 			</div>
 		</div>
 		<div id="form-login-submit" class="control-group">
 			<div class="controls">
-				<button type="submit" tabindex="0" name="Submit" class="btn"><?php echo JText::_('JLOGIN') ?></button>
+				<button type="submit" tabindex="0" name="Submit" class="btn login-button"><?php echo JText::_('MOD_LOGIN_LOGIN'); ?></button>
 			</div>
 		</div>
 		<?php
