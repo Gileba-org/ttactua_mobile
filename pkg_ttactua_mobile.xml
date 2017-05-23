@@ -2,7 +2,7 @@
 <extension type="package" version="3.7" method="upgrade">
 	<name>TTactua Mobile Package</name>
 	<author>Gijs Lamon</author>
-	<creationDate>May 23rd 2017</creationDate>
+	<creationDate>2017-05-23</creationDate>
 	<packagename>ttactua_mobile</packagename>
 	<version>1.4.3</version>
 	<packager>Gijs Lamon</packager>
