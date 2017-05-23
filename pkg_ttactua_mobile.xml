@@ -4,7 +4,7 @@
 	<author>Gijs Lamon</author>
 	<creationDate>2017-05-23</creationDate>
 	<packagename>ttactua_mobile</packagename>
-	<version>1.4.5</version>
+	<version>1.4.6</version>
 	<packager>Gijs Lamon</packager>
 	<description>Package containing the template and its dependancies for Tafeltennisactua</description>
 	<files folder="packages">
