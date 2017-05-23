@@ -11,4 +11,7 @@
 		<file type="template" id="ttactua_mobile" client="site">tpl_ttactua_mobile.zip</file>
 		<file type="plugin" id="less" group="system">plg_system_less.zip</file>
 	</files>
+	<updateservers>
+		<server type="package">http://www.gileba.be/updates/tpl_ttactua_mobile.xml</server>
+	</updateservers>
 </extension>
