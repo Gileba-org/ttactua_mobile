@@ -42,9 +42,15 @@
 			<fieldset name="general">
 				<field name="specificDateFormat" type="textfield" default="" label="TPL_GILEBA_DATEFORMAT" description="TPL_GILEBA_DATEFORMAT_DESC" />
 				<field name="componentFreeHome" type="checkbox" value="1" default="0" label="TPL_GILEBA_COMPONENTFREEHOME" description="TPL_GILEBA_COMPONENTFREEHOME_DESC" />
-				<field name="hideleft" type="radio" default="0" label="TPL_GILEBA_HIDELEFTRIGHT" description="TPL_GILEBA_HIDELEFTRIGHT_DESC">
+				<field name="hideleft" type="radio" default="0" label="TPL_GILEBA_HIDELEFTRIGHT" description="TPL_GILEBA_HIDELEFTRIGHT_DESC" class="btn-group">
 					<option value="1">TPL_GILEBA_HIDELEFT</option>
 					<option value="0">TPL_GILEBA_HIDERIGHT</option>
+				</field>
+			</fieldset>
+			<fieldset name="scripts">
+				<field name="swipe" type="radio" default="1" label="TPL_GILEBA_SWIPE" description="TPL_GILEBA_SWIPE_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 			</fieldset>
 			<fieldset name="google">
