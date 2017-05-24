@@ -113,8 +113,13 @@
 	margin: 15px 0px;
 	width: 100%;
 	text-align: center;
-	.counter, .pagination-start, .pagination-prev, .pagination-next, .pagination-end {
+	.counter, .disabled {
 		display: none;
+	}
+	.pagination-start, .pagination-end, .pagination-prev, .pagination-next {
+		span.pagenav {
+			display: none;
+		}
 	}
 	ul {
 		margin: auto;

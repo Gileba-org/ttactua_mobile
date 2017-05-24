@@ -120,6 +120,7 @@ function pagination_list_render($list) {
 	$list['pages'] = _reduce_displayed_pages($list['pages'], $displayedPages);
 	return _list_render($list);
 }
+
 /**
  * Reduce number of displayed pages in pagination
  * @param  array	$pages			Pagination pages raw data
@@ -139,6 +140,7 @@ function _reduce_displayed_pages($pages, $displayedPages) {
 	
 	return $pages;
 }
+
 /**
  * Get current page index
  * @param  array	$pages	Pagination pages raw data
@@ -151,6 +153,7 @@ function _get_current_page_index($pages) {
 		$counter++;
 	}
 }
+
 /**
  * Function copied from joomla html pagination to render pagination data into html string
  * @param  array	$list	Pagination raw data
