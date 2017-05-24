@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $app      	= JFactory::getApplication();
-$params	  	= $app->getTemplate(true)->params;
+$tplParams	= $app->getTemplate(true)->params;
 
 // Create shortcuts to some parameters.
 $params  = $this->item->params;
@@ -24,11 +24,11 @@ $info    = $params->get('info_block_position', 0);
 // Check if associations are implemented. If they are, define the parameter.
 $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
  
-JHtml::_('behavior.caption');
-$document = JFactory::getDocument();
-$document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
+if ($tplParams->get('swipe')) {
+	JHtml::_('behavior.caption');
+	$document = JFactory::getDocument();
+	$document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
 
-if ($this->params->get('swipe')) {
 ?>
 <script>
 	jQuery.mobile.loading().hide();
