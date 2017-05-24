@@ -47,6 +47,12 @@
 					<option value="0">TPL_GILEBA_HIDERIGHT</option>
 				</field>
 			</fieldset>
+			<fieldset name="scripts">
+				<field name="swipe" type="radio" default="1" label="TPL_GILEBA_SWIPE" description="TPL_GILEBA_SWIPE_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
 			<fieldset name="google">
 				<field name="analytics" type="textbox" default="" label="TPL_GILEBA_ANALYTICS" description="TPL_GILEBA_ANALYTICS_DESC" />
 				<field name="doubleClick" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
