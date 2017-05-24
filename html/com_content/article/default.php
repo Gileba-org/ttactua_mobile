@@ -10,6 +10,8 @@
 defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
+$app      	= JFactory::getApplication();
+$tplParams	= $app->getTemplate(true)->params;
 
 // Create shortcuts to some parameters.
 $params  = $this->item->params;
@@ -22,9 +24,40 @@ $info    = $params->get('info_block_position', 0);
 // Check if associations are implemented. If they are, define the parameter.
 $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
  
-JHtml::_('behavior.caption');
+if ($tplParams->get('swipe')) {
+	JHtml::_('behavior.caption');
+	$document = JFactory::getDocument();
+	$document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
 
 ?>
+<script>
+	jQuery.mobile.loading().hide();
+	jQuery.mobile.linkBindingEnabled = false;
+	jQuery(document).on("swipeleft", function(event){    
+		if(event.handled !== true) // This will prevent event triggering more then once
+		{    
+			if (jQuery('a[rel="next"]').attr('href') !== undefined)
+			{
+				window.location = jQuery('a[rel="next"]').attr('href');
+			}
+			event.handled = true;
+		}
+		return false;         
+	});
+
+	jQuery(document).on("swiperight", function(event){     
+		if(event.handled !== true) // This will prevent event triggering more then once
+		{      
+			if (jQuery('a[rel="prev"]').attr('href') !== undefined)
+			{
+				window.location = jQuery('a[rel="prev"]').attr('href');
+			}
+			event.handled = true;
+		}
+		return false;            
+	});
+</script>
+<?php } ?>
 <div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
