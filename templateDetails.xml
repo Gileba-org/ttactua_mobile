@@ -47,6 +47,9 @@
 					<option value="0">TPL_GILEBA_HIDERIGHT</option>
 				</field>
 			</fieldset>
+			<fieldset name="variables">
+				<field name="ltc_color-main" type="color" default="#145CAE" label="TPL_GILEBA_COLOR_MAIN" description="TPL_GILEBA_COLOR_MAIN_DESC" />
+			</fieldset>
 			<fieldset name="scripts">
 				<field name="swipe" type="radio" default="1" label="TPL_GILEBA_SWIPE" description="TPL_GILEBA_SWIPE_DESC" class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
