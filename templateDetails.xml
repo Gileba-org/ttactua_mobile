@@ -49,6 +49,10 @@
 			</fieldset>
 			<fieldset name="variables">
 				<field name="ltc_color-main" type="color" default="#145CAE" label="TPL_GILEBA_COLOR_MAIN" description="TPL_GILEBA_COLOR_MAIN_DESC" />
+				<field name="ltc_color-bg-site" type="color" default="#DBEFFF" label="TPL_GILEBA_COLOR_BACKGROUND_SITE" description="TPL_GILEBA_COLOR_BACKGROUND_SITE_DESC" />
+				<field name="ltc_color-border-site" type="color" default="#224e6b" label="TPL_GILEBA_COLOR_BORDER_SITE" description="TPL_GILEBA_COLOR_BORDER_SITE_DESC" />
+				<field name="ltc_color-link" type="color" default="#145CAE" label="TPL_GILEBA_COLOR_LINK" description="TPL_GILEBA_COLOR_LINK_DESC" />
+				<field name="ltc_color-link-active" type="color" default="#4B75B8" label="TPL_GILEBA_COLOR_LINK_ACTIVE" description="TPL_GILEBA_COLOR_LINK_ACTIVE_DESC" />
 			</fieldset>
 			<fieldset name="scripts">
 				<field name="swipe" type="radio" default="1" label="TPL_GILEBA_SWIPE" description="TPL_GILEBA_SWIPE_DESC" class="btn-group btn-group-yesno">
