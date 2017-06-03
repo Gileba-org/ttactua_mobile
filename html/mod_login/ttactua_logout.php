@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 ?>
-<form action="<?php echo JRoute::_('index.php'), true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-vertical">
+<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-vertical">
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="btn" value="<?php echo JText::_('JLOGOUT'); ?>" />
 		<input type="hidden" name="option" value="com_users" />
