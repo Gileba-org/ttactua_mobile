@@ -46,6 +46,10 @@
 					<option value="1">TPL_GILEBA_HIDELEFT</option>
 					<option value="0">TPL_GILEBA_HIDERIGHT</option>
 				</field>
+				<field name="showSearchForm" type="radio" default="1" label="TPL_GILEBA_SHOWSEARCHFORM" description="TPL_GILEBA_SHOWSEARCHFORM_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 			</fieldset>
 			<fieldset name="variables">
 				<field name="useLESS" type="hidden" default="true" />

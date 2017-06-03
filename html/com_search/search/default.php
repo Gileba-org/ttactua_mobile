@@ -8,6 +8,10 @@
  */
 
 defined('_JEXEC') or die;
+
+$app      	= JFactory::getApplication();
+$params	  	= $app->getTemplate(true)->params;
+
 JHtml::_('formbehavior.chosen', 'select');
 ?>
 
@@ -22,7 +26,7 @@ JHtml::_('formbehavior.chosen', 'select');
 </h1>
 <?php endif; ?>
 
-<?php echo $this->loadTemplate('form'); ?>
+<?php if ($this->params->get('showSearchForm') === "1") : echo $this->loadTemplate('form'); ?>
 <?php if ($this->error == null && count($this->results) > 0) :
 	echo $this->loadTemplate('results');
 else :
