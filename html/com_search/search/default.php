@@ -26,8 +26,10 @@ JHtml::_('formbehavior.chosen', 'select');
 </h1>
 <?php endif; ?>
 
-<?php if ($this->params->get('showSearchForm') === "1") : echo $this->loadTemplate('form'); ?>
-<?php if ($this->error == null && count($this->results) > 0) :
+<?php if ($params->get('showSearchForm')) {
+	 echo $this->loadTemplate('form'); 
+}
+if ($this->error == null && count($this->results) > 0) :
 	echo $this->loadTemplate('results');
 else :
 	echo $this->loadTemplate('error');
