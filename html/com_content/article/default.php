@@ -84,7 +84,7 @@ if ($tplParams->get('swipe')) {
 	<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
 	<div class="page-header">
 		<?php if ($params->get('show_title')) : ?>
-			<h2 itemprop="headline"">
+			<h2 itemprop="headline>
 				<?php echo $this->escape($this->item->title); ?>
 			</h2>
 		<?php endif; ?>
