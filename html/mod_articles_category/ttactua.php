@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 ?>
 <div class="slideContainer">
 	<?php foreach ($list as $item) : ?>
-		<div class="mySlide_<?php echo $module->id; ?>" style="max-width: 100%;">
+		<div class="mySlide_<?php echo $module->id; ?>" style="max-width: 100%;" itemscope>
 			<?php if ($params->get('link_titles') == 1) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.full_image', $item) ?>
 				<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"><h4><?php echo $item->title; ?></h4></a>
