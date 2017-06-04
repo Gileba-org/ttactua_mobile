@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 ?>
-<div id="slideContainer">
+<div class="slideContainer">
 	<?php foreach ($list as $item) : ?>
 		<div class="mySlide_<?php echo $module->id; ?>" style="max-width: 100%;">
 			<?php if ($params->get('link_titles') == 1) : ?>
