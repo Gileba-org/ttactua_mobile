@@ -53,7 +53,7 @@ function pagination_item_active(&$item)
 		$class   = ' class="hidden-phone"';
 	}
 
-	return '<li' . $class . '><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $display . '</a></li>';
+	return '<span' . $class . '><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $display . '</a></span>';
 }
 
 /**
@@ -70,35 +70,35 @@ function pagination_item_inactive(&$item)
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="disabled"><a><span class="icon-first"></span></a></li>';
+		return '<span class="disabled"><a><span class="icon-first"></span></a></span>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="disabled"><a><span class="icon-previous"></span></a></li>';
+		return '<span class="disabled"><a><span class="icon-previous"></span></a></span>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="disabled"><a><span class="icon-next"></span></a></li>';
+		return '<span class="disabled"><a><span class="icon-next"></span></a></span>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="disabled"><a><span class="icon-last"></span></a></li>';
+		return '<span class="disabled"><a><span class="icon-last"></span></a></span>';
 	}
 
 	// Check if the item is the active page
 	if (isset($item->active) && $item->active)
 	{
-		return '<li class="active hidden-phone"><span class="pagenav">' . $item->text . '</span></li>';
+		return '<span class="active hidden-phone"><span class="pagenav">' . $item->text . '</span></span>';
 	}
 
 	// Doesn't match any other condition, render a normal item
-	return '<li class="disabled hidden-phone"><a>' . $item->text . '</a></li>';
+	return '<span class="disabled hidden-phone"><a>' . $item->text . '</a></span>';
 }
 
 /**
