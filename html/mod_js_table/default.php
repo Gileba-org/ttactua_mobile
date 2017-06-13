@@ -39,7 +39,7 @@ if(isset($row->lists['columnsCell'])){
                 <table class="table table-striped cansorttbl" id="jstable_<?php echo $intM;?>">
                     <thead>
                         <tr>
-                            <th width="5%" class="jsalcenter jsNoWrap">
+                            <th style="width=5%;" class="jsalcenter jsNoWrap">
                                 
                                     <?php echo classJsportLanguage::get("MTBL_RANK");?>
                                 
@@ -57,7 +57,7 @@ if(isset($row->lists['columnsCell'])){
                                     if($key != 'emblem_chk'){
                                        if($key != 'curform_chk'){
                                     ?>
-                                        <th class="jsalcenter jsNoWrap" width="5%">
+                                        <th style="width: 5%" class="jsalcenter jsNoWrap">
                                             
                                                 <?php echo $row->lists['available_options'][$key];?>
                                             
