@@ -12,4 +12,4 @@ Download the full package from the [release section](https://github.com/Gileba/t
 ## Usage
 This template was created for a former [Belgian Tabletennisblog](http://www.tafeltennisactua.be) and it's [Dutch sistersite](http://www.tafeltennis.nu/).
 
-Further development is used as a personal course for later projects
+Further development is used as a personal course for later projects, including the Joomla-plugin [plg_system_lesstemplatecompanion](http://www.github.com/gileba/plg_system_lesstemplatecompanion)
