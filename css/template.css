@@ -1,13 +1,3 @@
-/** COLORS **/
-/** FONTS **/
-/* For mobile phones: */
-/* For tablets: */
-/* For desktop */
-/* For desktop */
-/* Dekstop */
-/* Sidr */
-/* Hide Clear Text by jQueryMobile */
-/* jFusion */
 .intrinsicwidth {
   width: intrinsic;
   width: -moz-max-content;
@@ -526,7 +516,6 @@ ul#mainmenu:nth-child(1) {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   margin-bottom: 10px;
 }
 .blog p,
@@ -558,13 +547,14 @@ ul#mainmenu:nth-child(1) {
   padding: 3px 10px;
   background: #6da9ee;
   background-image: -moz-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -webkit-gradient(top,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(top,#6da9ee,#145cae);
   background-image: -o-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(top,#6da9ee,#145cae);
   background-image: linear-gradient(top,#6da9ee,#145cae);
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   background-color: #145cae;
   text-align: center;
   clear: both;
@@ -576,8 +566,10 @@ ul#mainmenu:nth-child(1) {
   background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -o-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
 }
 .mod_events_latest_callink:active {
@@ -593,8 +585,10 @@ ul#mainmenu:nth-child(1) {
 .readmore .btn {
   background: #6da9ee;
   background-image: -moz-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -webkit-gradient(top,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(top,#6da9ee,#145cae);
   background-image: -o-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(top,#6da9ee,#145cae);
   background-image: linear-gradient(top,#6da9ee,#145cae);
   border: 1px solid #145cae;
   color: white;
@@ -604,8 +598,10 @@ ul#mainmenu:nth-child(1) {
   background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -o-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
 }
 .pagination {
@@ -637,7 +633,6 @@ ul#mainmenu:nth-child(1) {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   color: #145cae;
   background-color: lightgrey;
 }
@@ -646,7 +641,6 @@ ul#mainmenu:nth-child(1) {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   background-color: #145cae;
 }
 .pagination li .pagenav {
@@ -690,9 +684,7 @@ ul#mainmenu:nth-child(1) {
   border-left: 1px solid #999999;
 }
 .item-page {
-  /* Needed to have the editmenu hover over the image */
   position: relative;
-  /* Needed to have the editmenu hover over the image */
 }
 .item-page .item-image {
   clear: both;
@@ -702,7 +694,6 @@ ul#mainmenu:nth-child(1) {
   width: -webkit-max-content;
   margin: auto;
   max-width: 100%;
-  /* Fallback for IE */
   display: table;
 }
 .item-page .introtext {
@@ -742,13 +733,14 @@ ul#mainmenu:nth-child(1) {
   padding: 3px 10px;
   background: #6da9ee;
   background-image: -moz-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -webkit-gradient(top,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(top,#6da9ee,#145cae);
   background-image: -o-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(top,#6da9ee,#145cae);
   background-image: linear-gradient(top,#6da9ee,#145cae);
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   background-color: #145cae;
   float: right;
 }
@@ -758,8 +750,10 @@ ul#mainmenu:nth-child(1) {
 .pagenav li:hover {
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -o-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
 }
 .pagenav li:active {
@@ -989,15 +983,16 @@ body #jfusionframeless {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   background-color: #145cae;
   background: #6da9ee;
   background-image: -moz-linear-gradient(to bottom,#6da9ee,#145cae);
+  background-image: -webkit-gradient(to bottom,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: -o-linear-gradient(to bottom,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: linear-gradient(to bottom,#6da9ee,#145cae);
 }
 #footer div#ca_banner div.accept:hover,
@@ -1005,8 +1000,10 @@ body #jfusionframeless {
   background-color: #145cae;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -o-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
   color: white;
   border: 1px solid grey;
@@ -1149,8 +1146,10 @@ body #jfusionframeless {
   width: auto;
   background: #6da9ee;
   background-image: -moz-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -webkit-gradient(top,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(top,#6da9ee,#145cae);
   background-image: -o-linear-gradient(top,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(top,#6da9ee,#145cae);
   background-image: linear-gradient(top,#6da9ee,#145cae);
   border: 1px solid #145cae;
   color: white;
@@ -1160,8 +1159,10 @@ body #jfusionframeless {
   background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -o-linear-gradient(to bottom,#145cae,#6da9ee);
+  background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
 }
 #component #searchForm {
@@ -1288,14 +1289,12 @@ body #jfusionframeless {
   -webkit-border-radius: 0px;
   border-radius: 0px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .calendarslideshow .jevcarousel .carousel-caption {
   position: relative;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   max-width: 272px;
   margin: auto;
   background-color: #145cae;
@@ -1522,15 +1521,16 @@ body #jfusionframeless {
   cursor: pointer;
   background: lightgrey;
   background-image: -moz-linear-gradient(to top,lightgrey,white);
+  background-image: -webkit-gradient(to top,lightgrey,white);
   background-image: -webkit-linear-gradient(to top,lightgrey,white);
   background-image: -o-linear-gradient(to top,lightgrey,white);
+  background-image: -ms-linear-gradient(to top,lightgrey,white);
   background-image: linear-gradient(to top,lightgrey,white);
   border: 1px solid grey;
   color: #4d4d4d;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -1540,8 +1540,10 @@ body #jfusionframeless {
   background-color: #145cae;
   background: #6da9ee;
   background-image: -moz-linear-gradient(to bottom,#6da9ee,#145cae);
+  background-image: -webkit-gradient(to bottom,#6da9ee,#145cae);
   background-image: -webkit-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: -o-linear-gradient(to bottom,#6da9ee,#145cae);
+  background-image: -ms-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: linear-gradient(to bottom,#6da9ee,#145cae);
   color: white;
   border: 1px solid grey;
@@ -1565,8 +1567,10 @@ body #jfusionframeless {
 .btn-primary {
   background: #46a546;
   background-image: -moz-linear-gradient(to bottom,#46a546,#378137);
+  background-image: -webkit-gradient(to bottom,#46a546,#378137);
   background-image: -webkit-linear-gradient(to bottom,#46a546,#378137);
   background-image: -o-linear-gradient(to bottom,#46a546,#378137);
+  background-image: -ms-linear-gradient(to bottom,#46a546,#378137);
   background-image: linear-gradient(to bottom,#46a546,#378137);
   border: 1px solid green;
   color: white;
@@ -1574,8 +1578,10 @@ body #jfusionframeless {
 .btn-danger {
   background: #bd362f;
   background-image: -moz-linear-gradient(to bottom,#bd362f,#942a25);
+  background-image: -webkit-gradient(to bottom,#bd362f,#942a25);
   background-image: -webkit-linear-gradient(to bottom,#bd362f,#942a25);
   background-image: -o-linear-gradient(to bottom,#bd362f,#942a25);
+  background-image: -ms-linear-gradient(to bottom,#bd362f,#942a25);
   background-image: linear-gradient(to bottom,#bd362f,#942a25);
   border: 1px solid darkred;
   color: white;
@@ -1619,7 +1625,6 @@ body #jfusionframeless {
   -webkit-border-radius: 6px;
   border-radius: 6px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -1701,7 +1706,6 @@ body #jfusionframeless {
   -webkit-border-radius: 6px;
   border-radius: 6px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -1714,7 +1718,6 @@ body #jfusionframeless {
   -webkit-border-radius: 5px 5px 5px 0;
   border-radius: 5px 5px 5px 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .dropdown-submenu > a:after {
   display: block;
@@ -1737,7 +1740,6 @@ body #jfusionframeless {
   -webkit-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .dropdown .dropdown-menu .nav-header {
   padding-left: 20px;
@@ -1749,7 +1751,6 @@ body #jfusionframeless {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .pull-right {
   float: right;
@@ -1776,7 +1777,6 @@ input[type="color"],
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   vertical-align: middle;
   height: 25px;
   line-height: 20px;
@@ -1833,7 +1833,6 @@ input[type="color"]:focus,
   border-color: rgba(82,168,236,0.8);
   outline: 0;
   outline: thin dotted \9;
-  /* IE6-9 */
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
@@ -1842,9 +1841,7 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
   *margin-top: 0;
-  /* IE7 */
   margin-top: 1px \9;
-  /* IE8-9 */
   line-height: normal;
 }
 input[type="file"],
@@ -1902,7 +1899,6 @@ select[size] {
   -webkit-border-radius: none;
   border-radius: none;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-append input:focus,
 .input-append select:focus,
@@ -1925,13 +1921,14 @@ select[size] {
   border: 1px solid grey;
   background: lightgrey;
   background-image: -moz-linear-gradient(to top,lightgrey,white);
+  background-image: -webkit-gradient(to top,lightgrey,white);
   background-image: -webkit-linear-gradient(to top,lightgrey,white);
   background-image: -o-linear-gradient(to top,lightgrey,white);
+  background-image: -ms-linear-gradient(to top,lightgrey,white);
   background-image: linear-gradient(to top,lightgrey,white);
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -1946,7 +1943,6 @@ select[size] {
   -webkit-border-radius: 0;
   border-radius: 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-append .active,
 .input-prepend .active {
@@ -1963,7 +1959,6 @@ select[size] {
   -webkit-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-append input,
 .input-append select,
@@ -1971,7 +1966,6 @@ select[size] {
   -webkit-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-append input + .btn-group .btn:last-child,
 .input-append select + .btn-group .btn:last-child,
@@ -1979,7 +1973,6 @@ select[size] {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-append .add-on,
 .input-append .btn,
@@ -1992,7 +1985,6 @@ select[size] {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-prepend.input-append input,
 .input-prepend.input-append select,
@@ -2000,7 +1992,6 @@ select[size] {
   -webkit-border-radius: 0;
   border-radius: 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-prepend.input-append input + .btn-group .btn,
 .input-prepend.input-append select + .btn-group .btn,
@@ -2008,7 +1999,6 @@ select[size] {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-prepend.input-append .add-on:first-child,
 .input-prepend.input-append .btn:first-child {
@@ -2016,7 +2006,6 @@ select[size] {
   -webkit-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-prepend.input-append .add-on:last-child,
 .input-prepend.input-append .btn:last-child {
@@ -2024,7 +2013,6 @@ select[size] {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
 }
 .input-prepend.input-append .btn-group:first-child {
   margin-left: 0;
