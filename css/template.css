@@ -1074,6 +1074,10 @@ body #jfusionframeless {
   background-image: -ms-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: linear-gradient(to bottom,#145cae,#6da9ee);
 }
+#livescore {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 #component #searchForm {
   margin-top: 15px;
   margin-left: 10px;
