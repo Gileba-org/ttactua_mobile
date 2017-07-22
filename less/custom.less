@@ -199,11 +199,6 @@ ul.manager.thumbnails {
 	margin: auto;
 }
 
-// jFusion
-body #jfusionframeless {
-	margin-top: 15px;
-}
-
 // Cookie Accept
 #footer div#ca_info_plus {
 	text-transform: none;
@@ -273,103 +268,6 @@ body #jfusionframeless {
 	}
 }
 
-/* jFusion */
-// Forum module
-.forum ul {
-	margin: 10px 10px 0px 10px;
-	padding: 0px;
-	li {
-		margin-left: 0px;
-		color: @color-main;
-		font-size: 0.8em;
-		line-height: 1.1em;
-		a {
-			color: @color-text;
-			font-family: @font-title;
-			color: @color-text;
-			text-transform: uppercase;
-			font-size: 1.1em;
-		}
-		a:after { // Force date and replies on next line
-			content: "";
-			display: table;
-			clear: both;
-		}
-	}
-	li:not(:last-child) {
-		margin-bottom: 10px !important;
-	}
-}
-
-// jFusion Discussion bot
-.jfusionButtonArea {
-	display: none;
-}
-.jfusionposts {
-	background-color: @color-bg-module;
-	.jfusionPostHeader {
-		background-color: @color-bg-moduletitle;
-		padding: 5px 0px 5px 10px;
-		color: white;
-		line-height: 1em;
-		font-family: @font-title;
-		font-size: 1.17em;
-		.uppercase;
-		font-weight: normal;
-	}
-	.jfusionPostArea {
-		width: 100%;
-		margin: 0px;
-		.jfusionNoPostMsg {
-			font-weight: normal;
-			margin: 10px;
-		}
-	}
-	.jfusionPostBody {
-		margin: 10px;
-	}
-	.jfusionQuickReply{
-		margin: 10px;
-		#submitpost {
-			margin-bottom: 10px;
-		}
-		.markItUp {
-			width: 100%;
-		}
-		.markItUpContainer {
-			background-color: #fafafa;
-			border: 1px solid @color-text;
-			.markItUpButton {
-				margin: 5px 2px;
-				padding: 2px;
-			}
-			.markItUpSeparator {
-				height: 32px;
-			}
-			li.markItUpButton:hover {
-				border: 1px solid @color-text;
-			}
-			.markItUpEditor {
-				font-family: @font-body;
-				padding: 5px 10px;
-				border-radius: 0;
-				width: 100%;
-				.box-shadow(none);
-				border: 1px solid rgba(217, 217, 217, 0.52);
-			}
-		}
-		br {
-			display: none;
-		}
-	}
-}
-
-// phpBB
-#jfusionframeless #phpbb ul.linklist li {
-	font-size: 1em;
-	line-height: 1.5em;
-}
-
 // Video
 .yendif-video-share.front {
 	margin: 0px;
@@ -391,4 +289,11 @@ body #jfusionframeless {
 		background-color: lighten(@color-main, 30%);
 		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 	}
+}
+
+// TT Livescore
+#livescore
+{
+	margin-left: 10px;
+	margin-right: 10px;
 }
