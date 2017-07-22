@@ -2,9 +2,9 @@
 <extension type="package" version="3.7" method="upgrade">
 	<name>TTactua Mobile Package</name>
 	<author>Gijs Lamon</author>
-	<creationDate>2017-06-17</creationDate>
+	<creationDate>2017-07-22</creationDate>
 	<packagename>ttactua_mobile</packagename>
-	<version>1.6.2</version>
+	<version>1.6.3</version>
 	<packager>Gijs Lamon</packager>
 	<description>Package containing the template and its dependancies for Tafeltennisactua</description>
 	<files folder="packages">
