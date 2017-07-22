@@ -6,9 +6,11 @@
 
 .bglineargradient(@direction, @topcolor, @bottomcolor) {
 	background: @topcolor;
-	background-image: -moz-linear-gradient(@direction, @topcolor, @bottomcolor);
-	background-image: -webkit-linear-gradient(@direction, @topcolor, @bottomcolor);
-	background-image: -o-linear-gradient(@direction, @topcolor, @bottomcolor);
+	background-image: -moz-linear-gradient(@direction, @topcolor, @bottomcolor); /* FF3.6+ */
+	background-image: -webkit-gradient(@direction, @topcolor, @bottomcolor); /* Chrome, Safari4+ */
+	background-image: -webkit-linear-gradient(@direction, @topcolor, @bottomcolor); /* Chrome10+, Safari5.1+ */
+	background-image: -o-linear-gradient(@direction, @topcolor, @bottomcolor); /* Opera 11.10+ */
+	background-image: -ms-linear-gradient(@direction, @topcolor, @bottomcolor); /* IE10+ */
 	background-image: linear-gradient(@direction, @topcolor, @bottomcolor);
 }
 
