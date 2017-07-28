@@ -33,6 +33,8 @@ class DefaultModSlideshowView extends DefaultModLatestView
 		$datenow = JEVHelper::getNow();
 
 		$this->getLatestEventsData();
+		
+		$content = "";
 
 
 		if (isset($this->eventsByRelDay) && count($this->eventsByRelDay))
