@@ -52,8 +52,12 @@
 			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
 		<div id="mobile-header" class="col-p-only">
-			<div class="col-p-2">
-				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></a></p>
+			<div class="col-p-2" id="simple-menu">
+				<button class="hamburger hamburger--collapse" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>  
 			</div>
 			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
 		</div>
@@ -104,15 +108,17 @@
 				</div>
 			</div>
 		</div>
-		<!-- Sidr -->
+		<!-- Hamburgers en Sidr -->
 		<script>
-			jQuery(document).ready(function () {
+			var $hamburger = jQuery(".hamburger");
+			$hamburger.on("click", function(e) {
+				$hamburger.toggleClass("is-active");
 				jQuery('#simple-menu').sidr({
 					body: '#fakemove'
 				});
-    		});
-			jQuery(function() {
-				moveScroller();
+				jQuery(function() {
+					moveScroller();
+				});
 			});
 		</script>
 		<!-- Google Analytics -->
