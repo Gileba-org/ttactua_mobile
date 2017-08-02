@@ -48,7 +48,7 @@
 	</head>
 	<body>
 		<div id="fakemove" class="col-1 col-s-1 col-m-1 col-p-1"></div>
-		<div id="sidr">
+		<div id="sidr" class="col-p-only">
 			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
 		</div>
 		<div id="mobile-header" class="col-p-only">
