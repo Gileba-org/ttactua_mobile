@@ -284,21 +284,25 @@ h7 {
   clear: both;
   display: block;
 }
-ul#mainmenu:last-child {
+ul#mainmenu:last-child, 
+ul#adminmenu:last-child {
   margin-bottom: 16px;
   margin-top: 0px;
 }
-ul#mainmenu:nth-child(1) {
+ul#mainmenu:nth-child(1), 
+ul#adminmenu:nth-child(1) {
   margin-top: 16px;
   margin-bottom: 0px;
 }
-#mainmenu {
+#mainmenu, 
+#adminmenu {
   padding: 10px 10px 20px 10px;
   background-color: #145cae;
   color: white;
   margin: 0px 10px;
 }
-#mainmenu li {
+#mainmenu li, 
+#adminmenu li {
   text-transform: uppercase;
   list-style-type: none;
   font-family: 'HelveticaNeueW02-87HvCn 694072';
@@ -307,46 +311,60 @@ ul#mainmenu:nth-child(1) {
   padding-left: 15px;
   line-height: 1.5em;
 }
-#mainmenu li ul {
+#mainmenu li ul, 
+#adminmenu li ul {
   padding-left: 10px;
 }
-#mainmenu li li {
+#mainmenu li li, 
+#adminmenu li li {
   border-bottom: none;
 }
-#mainmenu li li:nth-child(1) {
+#mainmenu li li:nth-child(1), 
+#adminmenu li li:nth-child(1) {
   border-top: none;
 }
-#mainmenu li:nth-child(1) {
+#mainmenu li:nth-child(1), 
+#adminmenu li:nth-child(1) {
   border-top: 1px solid white;
 }
 #mainmenu a,
-#mainmenu a:visited {
+#mainmenu a:visited,
+#adminmenu a,
+#adminmenu a:visited {
   color: white;
   opacity: 1;
 }
 #mainmenu a:hover,
-#mainmenu li.active.current .nav-child a:hover {
+#mainmenu li.active.current .nav-child a:hover,
+#adminmenu a:hover,
+#adminmenu li.active.current .nav-child a:hover {
   opacity: 0.25;
 }
-#mainmenu li.active.current a {
+#mainmenu li.active.current a,
+#adminmenu li.active.current a {
   opacity: 0.25;
 }
-#mainmenu li.active.current .nav-child a {
+#mainmenu li.active.current .nav-child a,
+#adminmenu li.active.current .nav-child a {
   color: white;
   opacity: 1;
 }
-#mainmenu li.parent:before {
+#mainmenu li.parent:before,
+#adminmenu li.parent:before {
   content: "+ ";
   width: 15px;
   display: inline-block;
 }
-#mainmenu li.parent.deeper:before {
+#mainmenu li.parent.deeper:before,
+#adminmenu li.parent:before {
   content: "- ";
   width: 15px;
   display: inline-block;
 }
 #mainmenu li.parent,
-#mainmenu li.parent.deeper {
+#mainmenu li.parent.deeper,
+#adminmenu li.parent,
+#adminmenu li.parent.deeper {
   padding-left: 0px;
 }
 .sidr {
@@ -1993,8 +2011,8 @@ label {
 }
 @font-face {
   font-family: 'IcoMoon';
-  src: url('http://www.tafeltennis-mobiel.nl/media/jui/fonts/IcoMoon.eot');
-  src: url('http://www.tafeltennis-mobiel.nl/media/jui/fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('http://www.tafeltennis-mobiel.nl/media/jui/fonts/IcoMoon.svg#IcoMoon') format('svg'), url('http://www.tafeltennis-mobiel.nl/media/jui/fonts/IcoMoon.woff') format('woff'), url('http://www.tafeltennis-mobiel.nl/media/jui/fonts/IcoMoon.ttf') format('truetype');
+  src: url('/media/jui/fonts/IcoMoon.eot');
+  src: url('/media/jui/fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('/media/jui/fonts/IcoMoon.svg#IcoMoon') format('svg'), url('/media/jui/fonts/IcoMoon.woff') format('woff'), url('/media/jui/fonts/IcoMoon.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
