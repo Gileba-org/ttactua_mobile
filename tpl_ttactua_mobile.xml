@@ -6,7 +6,7 @@
 		<element>pkg_ttactua_mobile</element>
 		<type>package</type>
 		<version>1.6.5</version>
-		<infourl title="TTactua Mobile Template Package">http://www.gileba.be/</infourl>
+		<infourl title="TTactua Mobile Template Package">https://github.com/Gileba/ttactua_mobile/releases/tag/1.6.5</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/Gileba/ttactua_mobile/releases/download/1.6.5/pkg_ttactua_mobile.zip</downloadurl>
 		</downloads>
