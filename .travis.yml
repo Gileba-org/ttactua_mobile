@@ -17,6 +17,7 @@ before_script:
 - phpenv config-rm xdebug.ini
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
+after_succes: curl -k -X POST -d 'payload={ "new_ref":$TRAVIS_COMMIT,"branch":$TRAVIS_BRANCH,"email":"info@gileba.be","clone_url":"https://github.com/Gileba/ttactua_mobile.git" }' https://gileba.deployhq.com/deploy/ttactua-mobile/to/tafeltennis-mobiel/aswFUCJXXmud
 before_deploy:
 - cd ..
 - mkdir packages
