@@ -17,6 +17,10 @@ before_script:
 - phpenv config-rm xdebug.ini
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
+after_succes: 
+ - echo $TRAVIS_COMMIT
+ - echo $TRAVIS_BRANCH
+ - curl -k -X POST -d 'payload={ "new_ref":$TRAVIS_COMMIT,"branch":$TRAVIS_BRANCH,"email":"info@gileba.be","clone_url":"https://github.com/Gileba/ttactua_mobile.git" }' https://gileba.deployhq.com/deploy/ttactua-mobile/to/tafeltennis-mobiel/aswFUCJXXmud
 before_deploy:
 - cd ..
 - mkdir packages
@@ -38,7 +42,3 @@ deploy:
   api_key:
     secure: YFNRm57erCp0zwqM813pmMP0Y70vjW57ILQ8wf0b601Jfjc58g+5DhpO8CTIVjnB6uqbhqcr0mJQhlBgFUTMFy8DqQ0jR58elIjtE6fFxjtJ+1aL2j+DlM4Bd2AaKxtxCnRrrDXJB3zWDHpDgvvhNImphSCkbuTvcR4MlGMrQvtHqHc6RTUp+k98ir1PS0ShLXincMiJzidwAr8UVd/qS1SPNPjCFXSSPK6qPtigslFBAUxqMs4EjshQZj0oD7okAXviKmQar02T9ydy/+04IHb+71UGITQl2L3RqtzSRPef4fH2w+kI1qQ6NdgjsDjQN8q4yYx97viWkcYys9Dr9MrUn2Q8Lg0OP+2X1hpeab3KuATg2E/5NK2Fagj5CCsu2WOtpzODTMPt9zklPBzpx5R/HoyfW8nFrZqITMlE1RqCg8XDWIoVyrs7qsezEw67FGS0brzIRjTsgUMkexBG3ELsc+7tBCmrw83WVNJU2ywQ3r1BvFwFJ84Or70vlLTCT/hH1yfU3kG2OtvYjJtX800htJ3nVwyhIIz7HE2bzNq+1Jaxf1ul/o8NLsopRuqFdRu9ee1J5DQYpxzly3qlD8McnEnP3xZdpLEQqHkXupdpJKbhuVH/um2CWSQA15YPrEZ6Japsmq+tl2msVpOdpgZwTybQzKFlOM2wQhU+8B4=
 after_deploy: curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $FTP_USER:$FTP_PASSWORD ftp://gilebabe.webhosting.be/
-after_succes: 
- - echo $TRAVIS_COMMIT
- - echo $TRAVIS_BRANCH
- - curl -k -X POST -d 'payload={ "new_ref":$TRAVIS_COMMIT,"branch":$TRAVIS_BRANCH,"email":"info@gileba.be","clone_url":"https://github.com/Gileba/ttactua_mobile.git" }' https://gileba.deployhq.com/deploy/ttactua-mobile/to/tafeltennis-mobiel/aswFUCJXXmud
