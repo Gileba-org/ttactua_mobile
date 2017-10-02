@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.7.2" type="template" method="upgrade">
 	<name>ttactua_mobile</name>
-	<creationDate>2017-08-11</creationDate>
+	<creationDate>2017-10-02</creationDate>
 	<author>Gijs Lamon</author>
 	<authorEmail>info@gileba.be</authorEmail>
 	<authorUrl>http://www.gileba.be/</authorUrl>
 	<copyright>(c) 2016-2017 by Gileba</copyright>
 	<license>GNU/GPL</license>
-	<version>1.6.6</version>
+	<version>1.6.7</version>
 	<description>Template for Tafeltennisactua.be</description>
 	<files>
 		<filename>index.php</filename>
