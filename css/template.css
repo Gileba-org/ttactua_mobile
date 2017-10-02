@@ -1413,6 +1413,7 @@ ul.manager.thumbnails .small {
 }
 .nav-tabs {
   border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 .nav-tabs > li {
   margin-bottom: -1px;
@@ -1428,8 +1429,9 @@ ul.manager.thumbnails .small {
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   border: 1px solid #ddd;
-  border-bottom-color: white;
+  border-bottom-color: #f6fafe;
   cursor: default;
+  background-color: #f6fafe;
 }
 .nav-tabs > .active > a {
   color: #4d4d4d;
