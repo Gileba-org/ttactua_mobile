@@ -63,8 +63,6 @@ $tparams = $this->item->params;
 		<?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
 	<?php endif; ?>
 
-	<?php echo $this->item->event->beforeDisplayContent; ?>
-
 	<?php $presentation_style = $tparams->get('presentation_style'); ?>
 	<?php $accordionStarted = false; ?>
 	<?php $tabSetStarted = false; ?>
@@ -98,6 +96,8 @@ $tparams = $this->item->params;
 		<?php endif; ?>
 
 		<?php echo $this->loadTemplate('address'); ?>
+
+		<?php echo $this->item->event->beforeDisplayContent; ?>
 
 		<?php if ($tparams->get('allow_vcard')) : ?>
 			<?php echo JText::_('COM_CONTACT_DOWNLOAD_INFORMATION_AS'); ?>

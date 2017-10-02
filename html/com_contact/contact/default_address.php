@@ -34,6 +34,11 @@ defined('_JEXEC') or die;
 
 		<?php if ($this->contact->suburb && $this->params->get('show_suburb')) : ?>
 			<dd>
+				<?php if ($this->contact->postcode && $this->params->get('show_postcode')) : ?>
+					<span class="contact-postcode" itemprop="postalCode">
+						<?php echo $this->contact->postcode . ' '; ?>
+					</span>
+				<?php endif; ?>
 				<span class="contact-suburb" itemprop="addressLocality">
 					<?php echo $this->contact->suburb; ?>
 					<br />
@@ -48,19 +53,11 @@ defined('_JEXEC') or die;
 				</span>
 			</dd>
 		<?php endif; ?>
-		<?php if ($this->contact->postcode && $this->params->get('show_postcode')) : ?>
-			<dd>
-				<span class="contact-postcode" itemprop="postalCode">
-					<?php echo $this->contact->postcode; ?>
-					<br />
-				</span>
-			</dd>
-		<?php endif; ?>
 		<?php if ($this->contact->country && $this->params->get('show_country')) : ?>
 		<dd>
 			<span class="contact-country" itemprop="addressCountry">
 				<?php echo $this->contact->country; ?>
-				<br />
+				<br /><br />
 			</span>
 		</dd>
 		<?php endif; ?>
