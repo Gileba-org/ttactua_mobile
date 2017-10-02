@@ -1093,6 +1093,9 @@ ul.manager.thumbnails .small {
   margin-left: 10px;
   margin-right: 10px;
 }
+.contact-position dt {
+  display: none;
+}
 #component #searchForm {
   margin-top: 15px;
   margin-left: 10px;
