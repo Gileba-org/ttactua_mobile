@@ -53,7 +53,7 @@
 		</div>
 		<div id="mobile-header" class="col-p-only">
 			<div class="col-p-2" id="simple-menu">
-				<button class="hamburger hamburger--collapse" type="button">
+				<button class="hamburger hamburger--<?php echo $this->params->get('hamburgerstyle'); ?>" type="button">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
