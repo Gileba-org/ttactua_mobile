@@ -48,8 +48,8 @@
 	</head>
 	<body>
 		<div id="fakemove" class="col-1 col-s-1 col-m-1 col-p-1"></div>
-		<div id="sidr" class="col-p-only">
-			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
+		<div id="sidr" class="col-p-only left sidr">
+			<div class="col-12" id="mobile-menu"></div>
 		</div>
 		<div id="mobile-header" class="col-p-only">
 			<div class="col-p-2" id="simple-menu">
@@ -119,6 +119,23 @@
 				jQuery(function() {
 					moveScroller();
 				});
+			});
+		</script>
+		<!-- Move left menu to mobile space and back -->
+		<script>
+			var $win = jQuery(window);
+			jQuery(document).ready(function(f) {			
+				if ($win.width() < 720) {
+					jQuery("#mainmenu").appendTo("#mobile-menu");
+				}
+			});
+			$win.on("resize", function(e) {
+				if ($win.width() < 720) {
+					jQuery("#mainmenu").appendTo("#mobile-menu");
+				}
+				if ($win.width() >= 720) {
+					jQuery("#mainmenu").prependTo("#left");
+				}
 			});
 		</script>
 		<!-- Google Analytics -->
