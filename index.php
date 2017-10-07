@@ -47,8 +47,7 @@
 <!-- END Google DoubleClick Code -->
 	</head>
 	<body>
-		<div id="fakemove" class="col-1 col-s-1 col-m-1 col-p-1"></div>
-		<div id="sidr" class="col-p-only left sidr">
+		<div id="sidemenu" class="col-p-only left">
 			<div class="col-12" id="mobile-menu"></div>
 		</div>
 		<div id="mobile-header" class="col-p-only">
@@ -111,14 +110,10 @@
 		<!-- Hamburgers en Sidr -->
 		<script>
 			var $hamburger = jQuery(".hamburger");
+			var $mobilemenu = jQuery("#sidemenu");
 			$hamburger.on("click", function(e) {
 				$hamburger.toggleClass("is-active");
-				jQuery('#simple-menu').sidr({
-					body: '#fakemove'
-				});
-				jQuery(function() {
-					moveScroller();
-				});
+				$mobilemenu.toggleClass("left open");				
 			});
 		</script>
 		<!-- Move left menu to mobile space and back -->
