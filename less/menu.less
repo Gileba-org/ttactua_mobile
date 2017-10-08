@@ -65,7 +65,7 @@ ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
 }
 
 /* Sidr */
-.sidr {
+#sidemenu {
 	margin-top: 60px;
 	display: block;
 	position: fixed;
@@ -79,7 +79,13 @@ ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
 	color: white;
 }
 
-.sidr.left {
+#sidemenu.left {
 	left: -290px;
+	transition: 0.5s;
 	right: auto;
+}
+
+#sidemenu.open {
+	transition: 0.5s;
+	left: 0px;
 }
