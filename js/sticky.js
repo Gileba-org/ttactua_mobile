@@ -2,7 +2,7 @@ var win = jQuery(window);
 
 function moveScroller() {
 	var move = function() {
-		var stickyAnchor = jQuery("#sticky-anchor")
+		var stickyAnchor = jQuery("#sticky-anchor");
 
 		if ((win.scrollTop()) > (stickyAnchor.offset().top)) {
 			if (win.width() >= 720) {
