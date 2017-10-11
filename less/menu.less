@@ -62,6 +62,14 @@ ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
 	li.parent, li.parent.deeper {
 		padding-left: 0px;
 	}
+	li:not(.active) li {
+		display: none;	
+	}
+	li:not(.active).deeper:before {
+		content: "+ ";
+		width: 15px;
+		display: inline-block;
+	}
 }
 
 /* Sidr */
