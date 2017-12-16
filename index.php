@@ -22,6 +22,7 @@
 <?php	$doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css'); ?>
 <?php	$doc->addScript('templates/' . $this->template . '/js/sticky.js'); ?>
 <?php	$doc->addScript('templates/' . $this->template . '/js/elementQuery.js'); ?>
+<?php	$doc->addScript('templates/' . $this->template . '/js/submenu.js'); ?>
 <?php	if ($this->params->get('fontsCss') != "") {?>
 		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
 <?php	}?>

@@ -20,7 +20,7 @@ ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
 		font-family: @font-title;
 		text-weight: bold;
 		border-bottom: 1px solid white;
-		padding-left: 15px;
+		padding-left: 23px;
 		line-height: 1.5em;
 		ul {
 			padding-left: 10px;
@@ -49,26 +49,25 @@ ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
 		color: white;
 		opacity: 1;
 	}
-	li.parent:before {
-		content: "+ ";
-		width: 15px;
-		display: inline-block;
-	}
-	li.parent.deeper:before {
-		content: "- ";
-		width: 15px;
-		display: inline-block;
-	}
 	li.parent, li.parent.deeper {
-		padding-left: 0px;
+		padding-left: 2px;
 	}
 	li:not(.active) li {
 		display: none;	
 	}
-	li:not(.active).deeper:before {
-		content: "+ ";
-		width: 15px;
+	.submenu-closed, .submenu-open {
+		width: 20px;
 		display: inline-block;
+		transition: 1s;
+		padding-top: 5px;
+		font-size: 125%;
+		line-height: 1em;
+	}
+	.submenu-closed:before {
+		content: "+ ";
+	}
+	.submenu-open:before {
+		content: "- ";
 	}
 }
 
