@@ -17,7 +17,7 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 
 ?>
 <div id="ttactua-login">
-	<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-inline">
+	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login', true, $params->get('usesecure')); ?>" method="post" id="login-form" class="form-inline">
 	<?php if ($params->get('pretext')) : ?>
 		<div class="pretext">
 			<p><?php echo $params->get('pretext'); ?></p>
@@ -65,8 +65,6 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 				<div>
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>"><img src="<?php echo $path; ?>images/lost_password.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?>" /></a>
 				</div>
-		<input type="hidden" name="option" value="com_users" />
-		<input type="hidden" name="task" value="user.login" />
 		<input type="hidden" name="return" value="<?php echo $return; ?>" />
 		<?php echo JHtml::_('form.token'); ?>
 	</div>
