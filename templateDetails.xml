@@ -51,6 +51,39 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
+				<field name="hamburgerstyle" type="list" default="collapse" label="TPL_GILEBA_HAMBURGERSTYLE" description="TPL_GILEBA_HAMBURGERSTYLE_DESC">
+					<option value="3dx">3DX</option>
+					<option value="3dx-r">3DX Reverse</option>
+					<option value="3dy">3DY</option>
+					<option value="3dy-r">3DY Reverse</option>
+					<option value="3dxy">3DXY</option>
+					<option value="3dxy-r">3DXY Reverse</option>
+					<option value="arrow">Arrow</option>
+					<option value="arrow-r">Arrow Right</option>
+					<option value="arrowalt">Arrow Alt</option>
+					<option value="arrowalt-r">Arrow Alt Right</option>
+					<option value="arrowturn">Arrow Turn</option>
+					<option value="arrowturn-r">Arrow Turn Right</option>
+					<option value="boring">Boring</option>
+					<option value="collapse">Collapse</option>
+					<option value="collapse-r">Collapse Reverse</option>
+					<option value="elastic">Elastic</option>
+					<option value="elastic-r">Elastic Reverse</option>
+					<option value="empathic">Empathic</option>
+					<option value="empathic-r">Empathic Reverse</option>
+					<option value="minus">Minus</option>
+					<option value="slider">Slider</option>
+					<option value="slider-r">Slider Reverse</option>
+					<option value="spin">Spin</option>
+					<option value="spin-r">Spin Reverse</option>
+					<option value="spring">Spring</option>
+					<option value="spring-r">Spring Reverse</option>
+					<option value="stand">Stand</option>
+					<option value="stand-r">Stand Reverse</option>
+					<option value="squeeze">Squeeze</option>
+					<option value="vortex">Vortex</option>
+					<option value="vortex-r">Vortex Reverse</option>
+				</field>
 			</fieldset>
 			<fieldset name="variables">
 				<field name="useLESS" type="hidden" default="true" />

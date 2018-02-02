@@ -5,6 +5,7 @@
 	$doc      	= JFactory::getDocument();
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
+	$config 	= JFactory::getConfig();
 	
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
@@ -47,28 +48,40 @@
 <!-- END Google DoubleClick Code -->
 	</head>
 	<body>
-		<div id="fakemove" class="col-1 col-s-1 col-m-1 col-p-1"></div>
-		<div id="sidr" class="col-p-only">
-			<div class="col-12" id="mobile-menu"><jdoc:include type="modules" name="mobile-menu" /></div>
+		<div id="sidemenu" class="col-p-only left">
+			<div class="col-12" id="mobile-menu"></div>
 		</div>
 		<div id="mobile-header" class="col-p-only">
-			<div class="col-p-2">
-				<p><a id="simple-menu" href="#sidr"><span class="hamburger"></span></a></p>
+			<div class="col-p-2" id="simple-menu">
+				<button class="hamburger hamburger--<?php echo $this->params->get('hamburgerstyle'); ?>" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>  
 			</div>
-			<div class="col-p-10"><jdoc:include type="modules" name="mobile-header" /></div>
+			<div class="col-p-10 flip-container vertical">
+				<div class="flipper">
+					<div class="mobile-front" id="site">
+						<span id="sitename"><?php echo $config->get( 'sitename' );?></span>
+					</div>
+					<div class="mobile-back">
+						<jdoc:include type="modules" name="mobile-header" />
+   					</div>
+				</div>
+			</div>
 		</div>
 		<div id="container">
 			<div id="wrapper">
 				<div class="row" id="title">
-					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="title" /></div>
+					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="title" /></div>
 				</div>
 				<div class="row" id="top">
-					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="top" /></div>
+					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="top" /></div>
 				</div>
 				<div id="sticky-anchor"></div>
 				<div id="sticky">
 					<div class="row" id="banners">
-						<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="banners" /></div>
+						<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="banners" /></div>
 					</div>
 				</div>
 				<div class="row" id="header">
@@ -104,16 +117,35 @@
 				</div>
 			</div>
 		</div>
-		<!-- Sidr -->
+		<!-- Hamburgers en Sidr -->
 		<script>
-			jQuery(document).ready(function () {
-				jQuery('#simple-menu').sidr({
-					body: '#fakemove'
-				});
-    		});
-			jQuery(function() {
-				moveScroller();
+			var $hamburger = jQuery(".hamburger");
+			var $mobilemenu = jQuery("#sidemenu");
+			$hamburger.on("click", function(e) {
+				$hamburger.toggleClass("is-active");
+				$mobilemenu.toggleClass("left open");				
 			});
+		</script>
+		<!-- Move left menu to mobile space and back -->
+		<script>
+			var $win = jQuery(window);
+			jQuery(document).ready(function(f) {			
+				if ($win.width() < 720) {
+					jQuery("#mainmenu").appendTo("#mobile-menu");
+				}
+			});
+			$win.on("resize", function(e) {
+				if ($win.width() < 720) {
+					jQuery("#mainmenu").appendTo("#mobile-menu");
+				}
+				if ($win.width() >= 720) {
+					jQuery("#mainmenu").prependTo("#left");
+				}
+			});
+		</script>
+		<!-- Sticky and turning banners -->
+		<script>
+			moveScroller();
 		</script>
 		<!-- Google Analytics -->
 		<script>

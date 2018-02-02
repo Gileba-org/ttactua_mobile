@@ -298,3 +298,61 @@ ul.manager.thumbnails {
 .contact-position dt {
 	display: none;
 }
+
+// Flip
+/* entire container, keeps perspective */
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .mobile-front, .mobile-back {
+	height: 60px;
+	background-color: @color-main;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 2s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.mobile-front, .mobile-back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.mobile-front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.mobile-back {
+	transform: rotateY(180deg);
+}
+
+.vertical.flip-container {
+	position: relative;
+}
+
+.vertical .mobile-back {
+	transform: rotateX(-180deg);
+	width: 100%;
+	margin: auto;
+}
+
+.vertical.flip-container .flipper {
+	transform-origin: 100% 30px; /* half of height */
+}
+
+.vertical.flip-container.hover .flipper {
+	transform: rotateX(180deg);
+}
