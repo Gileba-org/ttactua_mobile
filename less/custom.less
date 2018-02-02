@@ -54,7 +54,7 @@
 #jevents {
 	margin: 16px 10px;
 	#jevents_body {
-		font-size: 0.8em;
+		font-size: 1em;
 		a {
 			color: @color-link;
 		}
@@ -102,14 +102,6 @@
 	.jev_daywithevents {
 		margin: 0px;
 		width: 100%;
-	}
-}
-
-#component {
-	#jevents {
-		#jevents_body {
-			font-size: 1em;
-		}
 	}
 }
 
@@ -200,38 +192,42 @@ ul.manager.thumbnails {
 }
 
 // Cookie Accept
-#footer div#ca_info_plus {
-	text-transform: none;
-}
-
-#footer div#ca_banner {
-	text-transform: none;
-	border: none !important;
-	p, div.accept {
+#footer {
+	div#ca_info_plus {
 		text-transform: none;
 	}
-	div.accept {
-		border: 1px solid grey;
-		margin-top: 10px;
-		.border-radius(4px);
-		.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
-		background-color: @color-main;
-		.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
 
-		// Hover/focus state
-		&:hover,
-		&:focus {
-			background-color: @color-main;
-			.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
-			color: white;
-			border: 1px solid grey;
+	div#ca_banner {
+		text-transform: none;
+		border: none !important;
+
+		p, div.accept {
+			text-transform: none;
 		}
 
-		// Active state
-		&.active,
-		&:active {
-			.box-shadow(0 1px 0 @color-main);
-			color: white;
+		div.accept {
+			border: 1px solid grey;
+			margin-top: 10px;
+			.border-radius(4px);
+			.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
+			background-color: @color-main;
+			.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
+
+			// Hover/focus state
+			&:hover,
+			&:focus {
+				background-color: @color-main;
+				.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+				color: white;
+				border: 1px solid grey;
+			}
+
+			// Active state
+			&.active,
+			&:active {
+				.box-shadow(0 1px 0 @color-main);
+				color: white;
+			}
 		}
 	}
 }
