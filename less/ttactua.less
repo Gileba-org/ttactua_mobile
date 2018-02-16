@@ -50,6 +50,7 @@ img {
 	right: 0;
 	z-index: 999;
 	width: 100%;
+	height: 60px;
 	background-color: @color-main;
 	p {
 		margin: 20px 10px;
@@ -90,11 +91,6 @@ h1, h2, h3, h4, h5, h6, h7 {
 	}
 }
 
-#mobile-header .banneritem {
-	margin: 0;
-}
-
-
 @media only screen and (min-width: 600px) {
 	#header {
 		padding: 10px;
@@ -103,4 +99,22 @@ h1, h2, h3, h4, h5, h6, h7 {
 			-webkit-appearance: textfield; // Fix for Safari
 		}
 	}
+}
+
+#site {
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	#sitename {
+		color: white;
+		font-family: @font-title;
+		font-size: 8vmin;
+		height: 60px;
+		vertical-align: middle;
+	}
+}
+
+#mobile-header .banneritem {
+	margin: 0;
+	transition: 2s;
 }
