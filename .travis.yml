@@ -28,7 +28,6 @@ deploy:
   provider: releases
   file:
   - packages/tpl_ttactua_mobile.zip
-  - packages/plg_system_templatecompanion.zip
   - pkg_ttactua_mobile.zip
   skip_cleanup: true
   on:
