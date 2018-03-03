@@ -20,15 +20,14 @@ before_deploy:
 - mkdir packages
 - zip -r packages/tpl_ttactua_mobile.zip ttactua_mobile -x \*.git\* \*tests\* *travisci-phpunit.xml*
   *.travis.yml* *pkg_ttactua_mobile.xml* *tpl_ttactua_mobile.xml*
-- git clone https://github.com/Gileba/plg_system_lesstemplatecompanion.git plg_system_lesstemplatecompanion
-- zip -r packages/plg_system_lesstemplatecompanion.zip plg_system_lesstemplatecompanion -x \*.git\* *.gitignore*
+- git clone -b 1.0.0-rc.3 https://github.com/Gileba/plg_system_templatecompanion.git plg_system_templatecompanion
+- zip -r packages/plg_system_templatecompanion.zip plg_system_templatecompanion/src -x \*.git\* *.gitignore*
 - cp ttactua_mobile/pkg_ttactua_mobile.xml pkg_ttactua_mobile.xml
-- zip pkg_ttactua_mobile packages/tpl_ttactua_mobile.zip packages/plg_system_lesstemplatecompanion.zip pkg_ttactua_mobile.xml
+- zip pkg_ttactua_mobile packages/tpl_ttactua_mobile.zip packages/plg_system_templatecompanion.zip pkg_ttactua_mobile.xml
 deploy:
   provider: releases
   file:
   - packages/tpl_ttactua_mobile.zip
-  - packages/plg_system_lesstemplatecompanion.zip
   - pkg_ttactua_mobile.zip
   skip_cleanup: true
   on:
