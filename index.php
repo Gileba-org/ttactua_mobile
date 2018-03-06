@@ -100,6 +100,7 @@
 <?php else : ?>
 					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
 <?php endif ?>
+						<div id="messages"><jdoc:include type="message" /></div>
 						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
 <?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
 						<div id="component"><jdoc:include type="component" /></div>
