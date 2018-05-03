@@ -148,6 +148,7 @@
 		<script>
 			moveScroller();
 		</script>
+<?php	if ($this->params->get('analytics')) {	?>
 		<!-- Google Analytics -->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -158,5 +159,6 @@
   			ga('create', '<?php	echo $this->params->get('analytics'); ?>', 'auto');
   			ga('send', 'pageview');
   		</script>
+<?php	}	?>
 	</body>
 </html>
