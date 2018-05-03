@@ -45,6 +45,7 @@
 				});
 			</script>		
 <!-- END Google DoubleClick Code -->
+<?php	}	?>
 	</head>
 	<body>
 		<div id="sidemenu" class="col-p-only left">
