@@ -27,8 +27,8 @@
 <?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
-<!-- START Google DoubleClick Code -->
 <?php	if ($this->params->get('doubleClick')) {	?>
+<!-- START Google DoubleClick Code -->
 			<script type='text/javascript'>
 				(function() {
 					var useSSL = 'https:' == document.location.protocol;
@@ -44,8 +44,8 @@
 			    	googletag.enableServices();
 				});
 			</script>		
-<?php	}	?>
 <!-- END Google DoubleClick Code -->
+<?php	}	?>
 	</head>
 	<body>
 		<div id="sidemenu" class="col-p-only left">
@@ -148,6 +148,7 @@
 		<script>
 			moveScroller();
 		</script>
+<?php	if ($this->params->get('analytics')) {	?>
 		<!-- Google Analytics -->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -158,5 +159,6 @@
   			ga('create', '<?php	echo $this->params->get('analytics'); ?>', 'auto');
   			ga('send', 'pageview');
   		</script>
+<?php	}	?>
 	</body>
 </html>
