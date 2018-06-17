@@ -123,6 +123,22 @@ h7 {
 #system-message {
   padding-top: 15px;
 }
+.tag-category {
+  margin-top: -8px;
+  margin-left: 10px;
+}
+.tag-category fieldset {
+  padding-bottom: 15px;
+}
+.tag-category .category > thead > tr > th {
+  padding-bottom: 10px;
+}
+.tag-category .list-title {
+  padding-right: 20px;
+}
+.tag-category #categorylist_header_title {
+  text-align: left;
+}
 [class*="col-"] {
   float: left;
   width: 100%;
@@ -822,6 +838,22 @@ fieldset {
 }
 .ui-input-clear-hidden {
   display: none;
+}
+ul.tags.inline {
+  list-style-type: none;
+  padding: 0px;
+}
+ul.tags.inline li {
+  display: inline-block;
+  margin-right: 0.1em;
+  background-color: #1974dc;
+  border-radius: 3px;
+  padding: 2px 5px 4px 5px;
+}
+ul.tags.inline li a {
+  color: white;
+  font-weight: 600;
+  font-size: 75%;
 }
 .uitslag {
   clear: right;
