@@ -1,32 +1,40 @@
 <?php
 	defined( '_JEXEC' ) or die( 'Restricted access' );
 	
-	$app      	= JFactory::getApplication();
-	$doc      	= JFactory::getDocument();
+	/** @var JDocumentHtml $this */
+ 	$app      	= JFactory::getApplication();
+
+	/** Output as HTML5 */
+	$this->setHtml5(true);
+
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
 	$config 	= JFactory::getConfig();
 	
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
+	
+	/** Count Modules Performance **/
+	$countRightModules	= $this->countModules('right');
+	$countLeftModules	= $this->countModules('left');
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-   xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
+<html lang="<?php echo $this->language; ?>" >
    <head>
 		<jdoc:include type="head" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/icomoon.css" type="text/css" />
-<?php	$doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css'); ?>
-<?php	$doc->addScript('templates/' . $this->template . '/js/sticky.js'); ?>
-<?php	$doc->addScript('templates/' . $this->template . '/js/elementQuery.js'); ?>
-<?php	if ($this->params->get('fontsCss') != "") {?>
-		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
-<?php	}?>
+<?php
+		JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
+		JHtml::_('stylesheet', '/templates/system/css/system.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', '/templates/system/css/general.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', '/media/jui/css/icomoon.css', array('version' => 'auto'));
+		if ($this->params->get('fontsCss') != "") {
+			JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+		}
+		JHTML::_('script', 'sticky.js', array('version' => 'auto'), 'relative' => true));
+		JHTML::_('script', 'elementQuery.js', array('version' => 'auto'), 'relative' => true));
+		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto'), 'relative' => true));
+?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php	$doc->addScript('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
 <?php	if ($this->params->get('doubleClick')) {	?>
 <!-- START Google DoubleClick Code -->
 			<script type='text/javascript'>
@@ -93,9 +101,9 @@
 <?php else : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 <?php endif ?>
-<?php if($this->countModules('right') && $this->countModules('left')) : ?>
+<?php if($countRightModules && $countLeftModules) : ?>
 					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
-<?php elseif ($this->countModules('right') || $this->countModules('left')): ?>
+<?php elseif ($countRightModules || $countLeftModules): ?>
 					<div class="col-9 col-s-8 col-m-7" id="component_wrapper">
 <?php else : ?>
 					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
