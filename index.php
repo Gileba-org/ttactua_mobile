@@ -24,15 +24,15 @@
 		<jdoc:include type="head" />
 <?php
 		JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
-		JHtml::_('stylesheet', '/templates/system/css/system.css', array('version' => 'auto'));
-		JHtml::_('stylesheet', '/templates/system/css/general.css', array('version' => 'auto'));
-		JHtml::_('stylesheet', '/media/jui/css/icomoon.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
 		if ($this->params->get('fontsCss') != "") {
 			JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
 		}
-		JHTML::_('script', 'sticky.js', array('version' => 'auto'), 'relative' => true));
-		JHTML::_('script', 'elementQuery.js', array('version' => 'auto'), 'relative' => true));
-		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto'), 'relative' => true));
+		JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
+		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
 ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($this->params->get('doubleClick')) {	?>
