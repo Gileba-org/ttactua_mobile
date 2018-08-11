@@ -19,18 +19,17 @@
    <head>
 		<jdoc:include type="head" />
 <?php
-		$this->addStyleSheetVersion($this->baseurl . '/templates/system/css/system.css');
-		$this->addStyleSheetVersion($this->baseurl . '/templates/system/css/general.css');
-		$this->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
-		$this->addStyleSheetVersion($this->baseurl . '/media/jui/css/icomoon.css');
-		$this->addStyleSheetVersion($this->baseurl . '/media/jui/css/icomoon.css');
-		$this->addScriptVersion('templates/' . $this->template . '/js/sticky.js');
-		$this->addScriptVersion('templates/' . $this->template . '/js/elementQuery.js');
-		$this->addScriptVersion('templates/' . $this->template . '/js/jquery.sidr.js');
+		JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
+		JHtml::_('stylesheet', '/templates/system/css/system.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', '/templates/system/css/general.css', array('version' => 'auto'));
+		JHtml::_('stylesheet', '/media/jui/css/icomoon.css', array('version' => 'auto'));
+		if ($this->params->get('fontsCss') != "") {
+			JHtml::_('stylesheet', '//fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+		}
+		JHTML::_('script', 'sticky.js', array('version' => 'auto'), 'relative' => true));
+		JHTML::_('script', 'elementQuery.js', array('version' => 'auto'), 'relative' => true));
+		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto'), 'relative' => true));
 ?>
-<?php	if ($this->params->get('fontsCss') != "") {?>
-			<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
-<?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($this->params->get('doubleClick')) {	?>
 <!-- START Google DoubleClick Code -->
