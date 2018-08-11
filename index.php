@@ -13,6 +13,10 @@
 	
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
+	
+	/** Count Modules Performance **/
+	$countRightModules	= $this->countModules('right');
+	$countLeftModules	= $this->countModules('left');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" >
@@ -97,9 +101,9 @@
 <?php else : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
 <?php endif ?>
-<?php if($this->countModules('right') && $this->countModules('left')) : ?>
+<?php if($countRightModules && $countLeftModules) : ?>
 					<div class="col-6 col-s-8 col-m-7" id="component_wrapper">
-<?php elseif ($this->countModules('right') || $this->countModules('left')): ?>
+<?php elseif ($countRightModules || $countLeftModules): ?>
 					<div class="col-9 col-s-8 col-m-7" id="component_wrapper">
 <?php else : ?>
 					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
