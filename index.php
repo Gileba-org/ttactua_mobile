@@ -18,18 +18,20 @@
 <html lang="<?php echo $this->language; ?>" >
    <head>
 		<jdoc:include type="head" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/icomoon.css" type="text/css" />
-<?php	$doc->addStyleSheetVersion($this->baseurl.'/media/jui/css/icomoon.css'); ?>
-<?php	$doc->addScriptVersion('templates/' . $this->template . '/js/sticky.js'); ?>
-<?php	$doc->addScriptVersion('templates/' . $this->template . '/js/elementQuery.js'); ?>
+<?php
+		$this->addStyleSheetVersion($this->baseurl . '/templates/system/css/system.css');
+		$this->addStyleSheetVersion($this->baseurl . '/templates/system/css/general.css');
+		$this->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+		$this->addStyleSheetVersion($this->baseurl . '/media/jui/css/icomoon.css');
+		$this->addStyleSheetVersion($this->baseurl . '/media/jui/css/icomoon.css');
+		$this->addScriptVersion('templates/' . $this->template . '/js/sticky.js');
+		$this->addScriptVersion('templates/' . $this->template . '/js/elementQuery.js');
+		$this->addScriptVersion('templates/' . $this->template . '/js/jquery.sidr.js');
+?>
 <?php	if ($this->params->get('fontsCss') != "") {?>
-		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
+			<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/<?php echo $this->params->get('fontsCss'); ?>"/>
 <?php	}?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php	$doc->addScriptVersion('templates/' . $this->template . '/js/jquery.sidr.js'); ?>
 <?php	if ($this->params->get('doubleClick')) {	?>
 <!-- START Google DoubleClick Code -->
 			<script type='text/javascript'>
