@@ -1,11 +1,11 @@
 <?php
 	defined( '_JEXEC' ) or die( 'Restricted access' );
 	
-	$app      	= JFactory::getApplication();
-	$doc      	= JFactory::getDocument();
+	/** @var JDocumentHtml $this */
+ 	$app      	= JFactory::getApplication();
 
-	// Output as HTML5
-	$doc->setHtml5(true);
+	/** Output as HTML5 */
+	$this->setHtml5(true);
 
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
