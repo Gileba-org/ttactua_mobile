@@ -57,10 +57,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
 	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
-<?php endif; ?>
-
-<?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-	<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
+	<?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+		<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
+	<?php endif; ?>
 <?php endif; ?>
 
 <?php echo JLayoutHelper::render('joomla.content.full_image', $this->item); ?>
@@ -75,10 +74,8 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 <?php echo $this->item->introtext; ?>
 
-<?php if ($info == 1 || $info == 2) : ?>
-	<?php if ($useDefList) : ?>
-		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
-	<?php endif; ?>
+<?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
+	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
 	<?php endif; ?>
