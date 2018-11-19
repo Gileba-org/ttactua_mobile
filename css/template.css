@@ -6,6 +6,18 @@
 .uppercase {
   text-transform: uppercase;
 }
+.slidecontainer {
+  display: inline-block;
+  background-color: #145cae;
+  width: 100%;
+  max-width: inherit;
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+  opacity: 0.9;
+  position: relative;
+  left: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -898,6 +910,25 @@ ul.tags.inline li a {
   border-left-width: 1px;
   width: 16%;
 }
+.tornooiuitslag {
+  font-size: .8em;
+  width: 100%;
+}
+.tornooiuitslag .round {
+  width: 130px;
+}
+.tornooiuitslag .opponent.winner {
+  color: green;
+}
+.tornooiuitslag .opponent.loser {
+  color: red;
+}
+.tornooiuitslag .score {
+  width: 40px;
+}
+.tornooiuitslag .details {
+  width: 170px;
+}
 .tab-content ul {
   margin-top: 0px;
 }
@@ -1228,7 +1259,7 @@ ul.manager.thumbnails .small {
   background-color: #62696f;
 }
 .front .moduletitle h3 {
-  margin: 16px 0px 0px 10px;
+  margin: 16px 0 0 10px;
   color: white;
   padding-bottom: 5px;
   line-height: 1.5em;
@@ -1241,7 +1272,7 @@ ul.manager.thumbnails .small {
   vertical-align: middle;
 }
 .front .modulecontent .mod_events_latest_table {
-  margin: 10px 0px 10px 10px;
+  margin: 10px 0 10px 10px;
   line-height: 1em;
   padding-right: 20px;
 }
@@ -1249,7 +1280,7 @@ ul.manager.thumbnails .small {
 .front .modulecontent .mod_events_latest_first {
   text-transform: uppercase;
   margin: 10px;
-  padding: 7px 0px;
+  padding: 7px 0;
   font-size: 0.9em;
   line-height: 12px;
   font-family: 'HelveticaNeueW02-87HvCn 694072';
@@ -1269,7 +1300,7 @@ ul.manager.thumbnails .small {
   font-size: 1.1em;
   background-color: #999;
   color: white;
-  margin: 0px;
+  margin: 0;
 }
 .jsmodtbl_responsive th {
   font-size: 0.9em;
@@ -1290,18 +1321,18 @@ ul.manager.thumbnails .small {
   color: #4d4d4d;
 }
 .calendarslideshow .modulecontent {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .calendarslideshow .jevcarousel img {
   margin: auto;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
   background-clip: padding-box;
 }
 .calendarslideshow .jevcarousel .carousel-caption {
   position: relative;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
   background-clip: padding-box;
   max-width: 272px;
   margin: auto;
@@ -1357,13 +1388,13 @@ ul.manager.thumbnails .small {
   margin-bottom: -30px;
 }
 #cheader .front .modulecontent {
-  padding: 0px;
+  padding: 0;
 }
 #cheader .yendif-video-share.front {
   margin-bottom: 50px;
 }
 #right .nobottompadding .modulecontent {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 #right .slideContainer h4 {
   display: inline-block;
