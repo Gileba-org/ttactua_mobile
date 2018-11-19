@@ -4,7 +4,7 @@
 
 body {
 	background-color: @color-bg-site;
-    margin: 0px 10px;
+    margin: 0 10px;
     font-family: @font-body;
     color: @color-text;
 }
@@ -21,10 +21,10 @@ img {
 }
 
 #container {
-	margin-top: 0px;
+	margin: auto;
+	margin-top: 0;
 	max-width: 1200px;
 	background-color: @color-bg-component;
-	margin: auto;
 }
 
 #wrapper {
@@ -34,7 +34,7 @@ img {
 #sticky.stick {
 	.box-shadow(inset 5px 0 5px -5px #333, inset -5px -5px 5px -5px #333);
 	position: fixed;
-	top: 0px;
+	top: 0;
 	max-width: 1200px;
 	margin: auto;
 	left: 10px;
@@ -59,7 +59,7 @@ img {
 
 #title {
 	div.col-12 {
-		padding: 0px 10px;
+		padding: 0 10px;
 	}
 	img {
 		margin: auto;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 	}
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600) {
 	#header {
 		padding: 10px;
 		.search form.form-inline input {
