@@ -2,7 +2,7 @@
 .uitslag {
 	clear: right;
 	font-size: 0.65em;
-	border-spacing: 0px 0px;
+	border-spacing: 0 0;
 	border-width: 3px;
 	border-color: @color-text;
 	border-style: solid;
@@ -25,7 +25,7 @@
 		padding-left: 5px;
 	}
 	.lastline td {
-		border-bottom-width: 0px;
+		border-bottom-width: 0;
 	}
 	.winner {
 		color: @color-main;
@@ -67,7 +67,7 @@
 // Tabs
 .tab-content {
 	ul {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 }
 
@@ -80,7 +80,7 @@
 			color: @color-link;
 		}
 		.jev_edt, .jev_evdt {
-			padding: 0px;
+			padding: 0;
 		}
 		.jev_evdt_creator {
 			color: @color-text;
@@ -98,7 +98,7 @@
 		}
 		.jev_listrow {
 			.eventfull {
-				margin-top: 0px;
+				margin-top: 0;
 				a {
 					font-size: 1.5em;
 				}
@@ -121,7 +121,7 @@
 		display: none;
 	}
 	.jev_daywithevents {
-		margin: 0px;
+		margin: 0;
 		width: 100%;
 	}
 }
@@ -133,7 +133,7 @@
 		font-weight: normal;
 		font-family: @font-title;
 		margin-top: 0.5 em;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 }
 
@@ -151,22 +151,20 @@
 	}
 	img {
 		display: inline;
-		margin: 0px 2px;
+		margin: 0 2px;
 		vertical-align: middle;
 	}
 	#form-login-submit {
 		margin-right: 5px;
+		.btn {
+			height: 25px;
+			// FIX : Text on loginbutton is taken down in FF for Windows
+			padding: 0 12px;
+ 		}
 	}
 	// FIX: Password placeholder is taken down on Safari
 	#modlgn-passwd {
 		-webkit-padding-before: 1px;
-	}
-	#form-login-submit {
-		.btn {
-			height: 25px;
-			// FIX : Text on loginbutton is taken down in FF for Windows
-			padding: 0px 12px;
- 		}
 	}
 }
 
@@ -180,7 +178,7 @@ ul.manager.thumbnails {
 		}
 	}
 	.small {
-		margin: 4px 0px;
+		margin: 4px 0;
 		font-size: 0.6em;
 	}
 }
@@ -257,9 +255,9 @@ ul.manager.thumbnails {
 .front.twitter {
 	background-color: white;
 	.custom.twitter {
-		margin: 0px;
+		margin: 0;
 		p {
-			margin: 0px;
+			margin: 0;
 		}
 	}
 }
@@ -275,7 +273,7 @@ ul.manager.thumbnails {
 			color: @color-text;
 		}
 		li {
-			margin: 0px;
+			margin: 0;
 			font-size: 0.9em;
 			line-height: 1em;
 		}
@@ -283,11 +281,6 @@ ul.manager.thumbnails {
 			margin-bottom: 10px;
 		}
 	}
-}
-
-// Video
-.yendif-video-share.front {
-	margin: 0px;
 }
 
 // Ajax Infinity
