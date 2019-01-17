@@ -329,13 +329,13 @@ h7 {
   clear: both;
   display: block;
 }
-ul#mainmenu:last-child,
-ul#adminmenu:last-child {
+#mainmenu:last-child,
+#adminmenu:last-child {
   margin-bottom: 16px;
   margin-top: 0;
 }
-ul#mainmenu:nth-child(1),
-ul#adminmenu:nth-child(1) {
+#mainmenu:nth-child(1),
+#adminmenu:nth-child(1) {
   margin-top: 16px;
   margin-bottom: 0;
 }
