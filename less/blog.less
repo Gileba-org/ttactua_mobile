@@ -70,42 +70,12 @@
 	}
 }
 
-.mod_events_latest_callink {
-	line-height: 1.7em;
-	border: 1px solid @color-main;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-	.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
-	padding: 3px 10px;
-	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
-	.border-radius(4px);
-		background-color: @color-main;
-	text-align: center;
-	a {
-		color: white;
-	}
-	&:hover {
-			background-color: lighten(@color-main, 30%);
-		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
-	}
-	&:active {
-		.box-shadow(0 1px 0 @color-main);
-		color: white;
-	}
-	clear: both;
-}
-
 .readmore {
 	float: right;
 	margin: 5px;
 	.btn {
-		.bglineargradient(top, lighten(@color-main, 30%), @color-main);
-		border: 1px solid @color-main;
-		color: white;
-		background-color: @color-main;
-		&:hover {
-			background-color: lighten(@color-main, 30%);
-			.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
-		}
+		.readmorebutton();
+		line-height: 1.1em;
 	}
 }
 
