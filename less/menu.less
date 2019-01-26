@@ -1,24 +1,24 @@
 /* Dekstop */
-ul#mainmenu:last-child, ul#adminmenu:last-child{
-	margin-bottom: 16px;
-	margin-top: 0;
-}
-
-ul#mainmenu:nth-child(1), ul#adminmenu:nth-child(1) {
-	margin-top: 16px;
-	margin-bottom: 0;
-}
-
 #mainmenu, #adminmenu {
 	padding: 10px 10px 20px;
 	background-color: @color-main;
 	color: white;
 	margin: 0 10px;
+
+	&:last-child {
+		margin-bottom: 16px;
+		margin-top: 0;
+	}
+
+	&:nth-child(1) {
+		margin-top: 16px;
+		margin-bottom: 0;
+	}
+
 	li {
 		.uppercase();
 		list-style-type: none;
 		font-family: @font-title;
-		text-weight: bold;
 		border-bottom: 1px solid white;
 		padding-left: 15px;
 		line-height: 1.5em;

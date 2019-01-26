@@ -48,3 +48,26 @@
 	position: relative;
 	left: 0;
 }
+
+.readmorebutton {
+	line-height: 1.7em;
+	border: 1px solid @color-main;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
+	padding: 3px 10px;
+	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
+	.border-radius(4px);
+	background-color: @color-main;
+	color: white;
+	a {
+		color: white;
+	}
+	&:hover {
+		background-color: lighten(@color-main, 30%);
+		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+	}
+	&:active {
+		.box-shadow(0 1px 0 @color-main);
+		color: white;
+	}
+}
