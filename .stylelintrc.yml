@@ -3,4 +3,4 @@ rules:
   declaration-no-important: true
 
 ignoreFiles:
-  - less/hamburgers.less
+  - ./less/hamburgers.less
