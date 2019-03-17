@@ -22,7 +22,7 @@ rules:
   string-no-newline: true
   color-hex-case: "lower"
   color-hex-length: "short"
-  font-family-name-quotes: "always-unless-keyword""
+  font-family-name-quotes: "always-unless-keyword"
   font-weight-notation:
   	- "numeric"
   	- ignore: "relative"
