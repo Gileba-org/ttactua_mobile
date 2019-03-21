@@ -17,4 +17,4 @@ $params = $displayData->params;
 			echo 'class="caption" title="' . htmlspecialchars($images->image_fulltext_caption) . '"';
 		endif; ?>
 		src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image"/> </div>
-	<?php endif; ?>
+	<?php endif;
