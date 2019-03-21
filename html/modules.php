@@ -24,7 +24,7 @@ function modChrome_ttactua($module, &$params, &$attribs)
 	$headerClass    = htmlspecialchars($params->get('header_class'), ENT_QUOTES, 'UTF-8');
 	$headerClass    = ($headerClass) ? ' class="' . $headerClass . '"' : '';
 
-	if (!empty ($module->content)) : ?>
+	if (!empty($module->content)) : ?>
 		<<?php echo $moduleTag; ?> class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_QUOTES, 'UTF-8') . $moduleClass; ?>">
 			<?php if ((bool) $module->showtitle) : ?>
 				<div class="moduletitle">
