@@ -1,8 +1,8 @@
 <?php
-	defined( '_JEXEC' ) or die( 'Restricted access' );
-	
+	defined('_JEXEC') or die('Restricted access');
+
 	/** @var JDocumentHtml $this */
- 	$app      	= JFactory::getApplication();
+	$app      	= JFactory::getApplication();
 
 	/** Output as HTML5 */
 	$this->setHtml5(true);
@@ -10,11 +10,11 @@
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
 	$config 	= JFactory::getConfig();
-	
+
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
-	
-	/** Count Modules Performance **/
+
+	/** Count Modules Performance */
 	$countRightModules	= $this->countModules('right');
 	$countLeftModules	= $this->countModules('left');
 ?>
@@ -27,9 +27,10 @@
 		JHtml::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
-		if ($this->params->get('fontsCss') != "") {
-			JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
-		}
+if ($this->params->get('fontsCss') != "") {
+	JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+}
+
 		JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
 		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
 		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
@@ -42,14 +43,14 @@
 					var useSSL = 'https:' == document.location.protocol;
 					var src = (useSSL ? 'https:' : 'http:') +
 						'//www.googletagservices.com/tag/js/gpt.js';
-				    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+					document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
 				})();
 			</script>
 			<script>
 				googletag.cmd.push(function() {
-<?php				echo $this->params->get('doubleClick');	?>
-			    	googletag.pubads().enableSingleRequest();
-			    	googletag.enableServices();
+	<?php				echo $this->params->get('doubleClick');	?>
+					googletag.pubads().enableSingleRequest();
+					googletag.enableServices();
 				});
 			</script>		
 <!-- END Google DoubleClick Code -->
@@ -70,11 +71,11 @@
 			<div class="col-p-10 flip-container vertical">
 				<div class="flipper">
 					<div class="mobile-front" id="site">
-						<span id="sitename"><?php echo $config->get( 'sitename' );?></span>
+						<span id="sitename"><?php echo $config->get('sitename');?></span>
 					</div>
 					<div class="mobile-back">
 						<jdoc:include type="modules" name="mobile-header" />
-   					</div>
+					   </div>
 				</div>
 			</div>
 		</div>
@@ -162,11 +163,11 @@
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  			})
-  			(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  			ga('create', '<?php	echo $this->params->get('analytics'); ?>', 'auto');
-  			ga('send', 'pageview');
-  		</script>
+			  })
+			  (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			  ga('create', '<?php	echo $this->params->get('analytics'); ?>', 'auto');
+			  ga('send', 'pageview');
+		  </script>
 <?php	}	?>
 	</body>
 </html>
