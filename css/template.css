@@ -19,7 +19,6 @@
   left: 0;
 }
 .readmorebutton {
-  line-height: 1.7em;
   border: 1px solid #145cae;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -632,7 +631,6 @@ h7 {
   margin: 5px;
 }
 .readmore .btn {
-  line-height: 1.7em;
   border: 1px solid #145cae;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -792,7 +790,6 @@ h7 {
 .pagenav li {
   list-style-type: none;
   margin: 5px;
-  line-height: 1.7em;
   border: 1px solid #145cae;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -811,6 +808,7 @@ h7 {
   background-clip: padding-box;
   background-color: #145cae;
   color: white;
+  line-height: 1.7em;
   float: right;
 }
 .pagenav li a {
@@ -1012,7 +1010,6 @@ ul.tags.inline li a {
   margin-bottom: 0;
 }
 .mod_events_latest_callink {
-  line-height: 1.7em;
   border: 1px solid #145cae;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
@@ -1031,6 +1028,7 @@ ul.tags.inline li a {
   background-clip: padding-box;
   background-color: #145cae;
   color: white;
+  line-height: 1.7em;
   text-align: center;
   clear: both;
 }
@@ -1219,6 +1217,11 @@ ul.manager.thumbnails .small {
 }
 .contact-position dt {
   display: none;
+}
+#mobile-header .hamburger-inner,
+#mobile-header .hamburger-inner::before,
+#mobile-header .hamburger-inner::after {
+  background-color: white;
 }
 .flip-container.hover .flipper {
   transform: rotateY(180deg);
@@ -1881,37 +1884,10 @@ input[type="color"],
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-}
-input,
-textarea,
-.uneditable-input {
-  width: 206px;
-}
-textarea {
-  height: auto;
-}
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
   background-color: #fff;
   border: 1px solid grey;
-  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-  -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
 }
+select:focus,
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -1934,6 +1910,14 @@ input[type="color"]:focus,
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
+}
+input,
+textarea,
+.uneditable-input {
+  width: 206px;
+}
+textarea {
+  height: auto;
 }
 input[type="radio"],
 input[type="checkbox"] {
