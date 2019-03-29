@@ -22,6 +22,7 @@ if (!$editoroptions)
 {
 	$params->show_urls_images_frontend = '0';
 }
+
 JFactory::getDocument()->addScriptDeclaration("
 	Joomla.submitbutton = function(task)
 	{
@@ -31,7 +32,8 @@ JFactory::getDocument()->addScriptDeclaration("
 			Joomla.submitform(task);
 		}
 	}
-");
+"
+);
 ?>
 <div class="edit item-page<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($params->get('show_page_heading')) : ?>
@@ -61,7 +63,7 @@ JFactory::getDocument()->addScriptDeclaration("
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 			<?php if ($params->get('show_urls_images_frontend')) : ?>
-			<?php echo JHtml::_('bootstrap.addTab', $this->tab_name, 'images', JText::_('COM_CONTENT_IMAGES_AND_URLS')); ?>
+				<?php echo JHtml::_('bootstrap.addTab', $this->tab_name, 'images', JText::_('COM_CONTENT_IMAGES_AND_URLS')); ?>
 				<?php echo $this->form->renderField('image_intro', 'images'); ?>
 				<?php echo $this->form->renderField('image_intro_alt', 'images'); ?>
 				<?php echo $this->form->renderField('image_intro_caption', 'images'); ?>
@@ -91,7 +93,7 @@ JFactory::getDocument()->addScriptDeclaration("
 						<?php echo $this->form->getInput('targetc', 'urls'); ?>
 					</div>
 				</div>
-			<?php echo JHtml::_('bootstrap.endTab'); ?>
+				<?php echo JHtml::_('bootstrap.endTab'); ?>
 			<?php endif; ?>
 
 			<?php echo JLayoutHelper::render('joomla.edit.params', $this); ?>

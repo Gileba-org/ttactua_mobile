@@ -13,7 +13,7 @@ JLoader::register('UsersHelperRoute', JPATH_SITE . '/components/com_users/helper
 
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
-$path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
+$path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 
 ?>
 <div id="ttactua-login">
@@ -66,7 +66,7 @@ $path   = JURI::base(true).'/templates/'.$app->getTemplate().'/';
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>"><img src="<?php echo $path; ?>images/lost_password.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?>" /></a>
 				</div>
 		<input type="hidden" name="option" value="com_users" />
- 		<input type="hidden" name="task" value="user.login" />
+		 <input type="hidden" name="task" value="user.login" />
 		<input type="hidden" name="return" value="<?php echo $return; ?>" />
 		<?php echo JHtml::_('form.token'); ?>
 	</div>
