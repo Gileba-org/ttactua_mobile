@@ -1856,6 +1856,52 @@ ul.manager.thumbnails .small {
 .pull-right {
   float: right;
 }
+#main .accordeonck #mainmenu li.parent,
+#main .accordeonck #mainmenu li.parent.deeper,
+#main .accordeonck #adminmenu li.parent,
+#main .accordeonck #adminmenu li.parent.deeper,
+#mobile-menu #mainmenu li.parent,
+#mobile-menu #mainmenu li.parent.deeper,
+#mobile-menu #adminmenu li.parent,
+#mobile-menu #adminmenu li.parent.deeper {
+  padding-left: 15px;
+}
+#main .accordeonck #mainmenu li.parent:before,
+#main .accordeonck #mainmenu li.parent.deeper:before,
+#main .accordeonck #adminmenu li.parent:before,
+#main .accordeonck #adminmenu li.parent.deeper:before,
+#mobile-menu #mainmenu li.parent:before,
+#mobile-menu #mainmenu li.parent.deeper:before,
+#mobile-menu #adminmenu li.parent:before,
+#mobile-menu #adminmenu li.parent.deeper:before {
+  display: none;
+}
+#main .accordeonck #mainmenu li.parent.open > span span.toggler_icon,
+#main .accordeonck #adminmenu li.parent.open > span span.toggler_icon,
+#mobile-menu #mainmenu li.parent.open > span span.toggler_icon,
+#mobile-menu #adminmenu li.parent.open > span span.toggler_icon {
+  background: url(/modules/mod_accordeonck/assets/minus.png) center center no-repeat !important;
+  width: 20px;
+}
+#main .accordeonck #mainmenu li.parent > span span.toggler_icon,
+#main .accordeonck #adminmenu li.parent > span span.toggler_icon,
+#mobile-menu #mainmenu li.parent > span span.toggler_icon,
+#mobile-menu #adminmenu li.parent > span span.toggler_icon {
+  background: url(/modules/mod_accordeonck/assets/plus.png) center center no-repeat !important;
+  width: 20px;
+}
+#main .accordeonck #mainmenu li.active.current a,
+#main .accordeonck #adminmenu li.active.current a,
+#mobile-menu #mainmenu li.active.current a,
+#mobile-menu #adminmenu li.active.current a {
+  opacity: 1;
+}
+#main .accordeonck #mainmenu li.active.current a.isactive,
+#main .accordeonck #adminmenu li.active.current a.isactive,
+#mobile-menu #mainmenu li.active.current a.isactive,
+#mobile-menu #adminmenu li.active.current a.isactive {
+  opacity: 0.25;
+}
 select,
 textarea,
 input[type="text"],
@@ -1937,8 +1983,6 @@ input[type="checkbox"] {
 }
 select {
   width: 220px;
-  border: 1px solid grey;
-  background-color: #fff;
 }
 select[multiple],
 select[size] {
