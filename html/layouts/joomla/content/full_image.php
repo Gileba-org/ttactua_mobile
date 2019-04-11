@@ -15,6 +15,6 @@ $params = $displayData->params;
 	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image full"> <img
 		<?php if ($images->image_fulltext_caption) :
 			echo 'class="caption" title="' . htmlspecialchars($images->image_fulltext_caption) . '"';
-	endif; ?>
+		endif; ?>
 	src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image"/> </div>
 <?php endif;
