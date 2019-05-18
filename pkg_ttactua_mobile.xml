@@ -2,11 +2,11 @@
 <extension type="package" version="3.7" method="upgrade">
 	<name>TTactua Mobile Package</name>
 	<author>Gijs Lamon</author>
-	<creationDate>2019-03-30</creationDate>
+	<creationDate>2019-05-18</creationDate>
 	<packagename>ttactua_mobile</packagename>
-	<version>2.1.0</version>
+	<version>2.1.1</version>
 	<packager>Gijs Lamon</packager>
-	<infourl title="TTactua Mobile Template Package">https://github.com/Gileba/ttactua_mobile/releases/tag/2.1.0</infourl>
+	<infourl title="TTactua Mobile Template Package">https://github.com/Gileba/ttactua_mobile/releases/tag/2.1.1</infourl>
 	<description>Package containing the template and its dependancies for Tafeltennisactua</description>
 	<files folder="packages">
 		<file type="template" id="ttactua_mobile" client="site">tpl_ttactua_mobile.zip</file>
