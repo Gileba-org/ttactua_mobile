@@ -17,6 +17,11 @@
 	/** Count Modules Performance */
 	$countRightModules	= $this->countModules('right');
 	$countLeftModules	= $this->countModules('left');
+	$countHeaderModules	= $this->countModules('header');
+	$countFooterModules	= $this->countModules('footer');
+	$countTitleModules	= $this->countModules('title');
+	$countTopModules		= $this->countModules('top');
+	$countBannerModules	= $this->countModules('banners');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" >
@@ -31,7 +36,10 @@ if ($this->params->get('fontsCss') != "") {
 	JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
 }
 
-		JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+if($countBannerModules) {
+	JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+}
+
 		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
 		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
 ?>
@@ -81,21 +89,29 @@ if ($this->params->get('fontsCss') != "") {
 		</div>
 		<div id="container">
 			<div id="wrapper">
+<?php if($countTitleModules) : ?>
 				<div class="row" id="title">
 					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="title" /></div>
 				</div>
+<?php endif ?>
+<?php if($countTopModules) : ?>
 				<div class="row" id="top">
 					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="top" /></div>
 				</div>
+<?php endif ?>
+<?php if($countBannerModules) : ?>
 				<div id="sticky-anchor"></div>
 				<div id="sticky">
 					<div class="row" id="banners">
 						<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="banners" /></div>
 					</div>
 				</div>
+<?php endif ?>
+<?php if($countHeaderModules) : ?>
 				<div class="row" id="header">
 					<div class="col-12 col-s-12 col-m-12 col-p-0"><jdoc:include type="modules" name="header" /></div>
 				</div>
+<?php endif ?>
 				<div class="row" id="main">
 <?php if ($this->params->get('hideleft')) : ?>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="left"><jdoc:include type="modules" name="left" /></div>
@@ -122,9 +138,11 @@ if ($this->params->get('fontsCss') != "") {
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 <?php endif ?>
 				</div>			 
+<?php if($countFooterModules) : ?>
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
 				</div>
+<?php endif ?>
 			</div>
 		</div>
 		<!-- Hamburgers en Sidr -->
@@ -153,10 +171,12 @@ if ($this->params->get('fontsCss') != "") {
 				}
 			});
 		</script>
+<?php if($countBannerModules) : ?>
 		<!-- Sticky and turning banners -->
 		<script>
 			moveScroller();
 		</script>
+<?php endif ?>
 <?php	if ($this->params->get('analytics')) {	?>
 		<!-- Google Analytics -->
 		<script>
