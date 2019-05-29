@@ -76,7 +76,7 @@ if ($tplParams->get('swipe')) {
 
 	<?php // Todo Not that elegant would be nice to group the params ?>
 	<?php $useDefList = ($params->get('show_publish_date') || $params->get('show_modify_date') || $params->get('show_create_date')
-	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') 
+	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author')
 	|| $assocParam); ?>
 
 	<?php if (!$useDefList && $this->print) : ?>
@@ -99,7 +99,7 @@ if ($tplParams->get('swipe')) {
 			<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
 		<?php endif; ?>
 		<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
-		&& $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
+	&& $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
 			<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
 		<?php endif; ?>
 	</div>
@@ -121,7 +121,7 @@ if ($tplParams->get('swipe')) {
 
 	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
-		'position' => 'above')
+			'position' => 'above')
 		); ?>
 	<?php endif; ?>
 
@@ -160,7 +160,7 @@ if ($tplParams->get('swipe')) {
 		<?php if ($info == 1 || $info == 2) : ?>
 			<?php if ($useDefList) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
-				'position' => 'below')
+					'position' => 'below')
 				); ?>
 			<?php endif; ?>
 			<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
@@ -188,7 +188,8 @@ if ($tplParams->get('swipe')) {
 			<?php $itemId = $active->id; ?>
 			<?php $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false)); ?>
 			<?php $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid,
-			$this->item->language))
+				$this->item->language)
+			)
 			); ?>
 	<p class="readmore">
 		<a href="<?php echo $link; ?>" class="register">
