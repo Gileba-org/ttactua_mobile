@@ -98,8 +98,10 @@ if ($tplParams->get('swipe')) {
 		<?php if (strtotime($this->item->publish_up) > strtotime(JFactory::getDate())) : ?>
 			<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
 		<?php endif; ?>
-		<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
-		&& ($this->item->publish_down != JFactory::getDbo()->getNullDate())) : ?>
+		<?php 
+			if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
+			&& ($this->item->publish_down != JFactory::getDbo()->getNullDate())) : 
+		?>
 			<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
 		<?php endif; ?>
 	</div>
