@@ -27,14 +27,16 @@ $path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 		<div id="form-login-username" class="control-group">
 			<div class="controls">
 				<div class="input-prepend">
-					<input id="modlgn-username" type="text" name="username" class="input-medium ttactua" tabindex="0" size="18" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?>" />
+					<input id="modlgn-username" type="text" name="username" class="input-medium ttactua" tabindex="0" size="18" 
+						placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?>" />
 				</div>
 			</div>
 		</div>
 		<div id="form-login-password" class="control-group">
 			<div class="controls">
 				<div class="input-prepend">
-					<input id="modlgn-passwd" type="password" name="password" class="input-medium" tabindex="0" size="18" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
+					<input id="modlgn-passwd" type="password" name="password" class="input-medium" tabindex="0" size="18" 
+						placeholder="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
 				</div>
 			</div>
 		</div>
@@ -42,7 +44,8 @@ $path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 		<div id="form-login-secretkey" class="control-group">
 			<div class="controls">
 				<div class="input-prepend">
-					<input id="modlgn-secretkey" type="text" name="secretkey" class="input-medium" tabindex="0" size="18" placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+					<input id="modlgn-secretkey" type="text" name="secretkey" class="input-medium" tabindex="0" size="18" 
+						placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
 				</div>
 			</div>
 		</div>
@@ -56,14 +59,21 @@ $path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 			$usersConfig = JComponentHelper::getParams('com_users'); ?>
 			<?php if ($usersConfig->get('allowUserRegistration')) : ?>
 				<div>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . UsersHelperRoute::getRegistrationRoute()); ?>"><img src="<?php echo $path; ?>images/registration.png" alt="<?php echo JText::_('MOD_LOGIN_REGISTER'); ?>" /></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . 
+						UsersHelperRoute::getRegistrationRoute()); ?>">
+						<img src="<?php echo $path; ?>images/registration.png" alt="<?php echo JText::_('MOD_LOGIN_REGISTER'); ?>" />
+					</a>
 				</div>
 			<?php endif; ?>
 				<div>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind&Itemid=' . UsersHelperRoute::getRemindRoute()); ?>"><img src="<?php echo $path; ?>images/lost_username.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?>" /></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind&Itemid=' . UsersHelperRoute::getRemindRoute()); ?>">
+						<img src="<?php echo $path; ?>images/lost_username.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?>" />
+					</a>
 				</div>
 				<div>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>"><img src="<?php echo $path; ?>images/lost_password.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?>" /></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset&Itemid=' . UsersHelperRoute::getResetRoute()); ?>">
+						<img src="<?php echo $path; ?>images/lost_password.png" alt="<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?>" />
+					</a>
 				</div>
 		<input type="hidden" name="option" value="com_users" />
 		 <input type="hidden" name="task" value="user.login" />

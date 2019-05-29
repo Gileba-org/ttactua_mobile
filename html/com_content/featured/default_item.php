@@ -20,14 +20,16 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 ?>
 
 <?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate())
-	|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())) : ?>
+	|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
+	&& $this->item->publish_down != JFactory::getDbo()->getNullDate())) : ?>
 	<div class="system-unpublished">
 <?php endif; ?>
 
 <?php if ($params->get('show_title')) : ?>
 	<h2 class="item-title" itemprop="headline">
 	<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
-		<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>" itemprop="url">
+		<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>" 
+			itemprop="url">
 			<?php echo $this->escape($this->item->title); ?>
 		</a>
 	<?php else : ?>
@@ -42,7 +44,8 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 <?php if (strtotime($this->item->publish_up) > strtotime(JFactory::getDate())) : ?>
 	<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
 <?php endif; ?>
-<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
+<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
+	&& $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
 	<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
 <?php endif; ?>
 
@@ -52,7 +55,8 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 <?php // Todo Not that elegant would be nice to group the params ?>
 <?php $useDefList = ($params->get('show_publish_date') || $params->get('show_modify_date') || $params->get('show_create_date')
-	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam); ?>
+	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author')
+	|| $assocParam); ?>
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
 	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
@@ -76,7 +80,8 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 <?php if ($info == 1 || $info == 2) : ?>
 	<?php if ($useDefList) : ?>
-		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
+		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
+			'position' => 'below')); ?>
 	<?php endif; ?>
 	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
@@ -91,7 +96,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 		$active = $menu->getActive();
 		$itemId = $active->id;
 		$link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
-		$link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language), false));
+		$link->setVar('return',
+		base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language), false)
+		);
 	endif; ?>
 
 	<?php echo JLayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
