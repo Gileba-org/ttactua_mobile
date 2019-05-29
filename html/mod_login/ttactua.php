@@ -59,7 +59,7 @@ $path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 			$usersConfig = JComponentHelper::getParams('com_users'); ?>
 			<?php if ($usersConfig->get('allowUserRegistration')) : ?>
 				<div>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . 
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' .
 						UsersHelperRoute::getRegistrationRoute()); ?>">
 						<img src="<?php echo $path; ?>images/registration.png" alt="<?php echo JText::_('MOD_LOGIN_REGISTER'); ?>" />
 					</a>
