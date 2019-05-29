@@ -82,7 +82,7 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 	<?php if ($useDefList) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.info_block.block',
 			array('item' => $this->item, 'params' => $params, 'position' => 'below')
-			); ?>
+		); ?>
 	<?php endif; ?>
 	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
@@ -98,7 +98,7 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 		$itemId = $active->id;
 		$link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
 		$link->setVar('return',
-		base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language), false)
+			base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language), false)
 		);
 	endif; ?>
 
