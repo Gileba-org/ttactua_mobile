@@ -99,7 +99,7 @@ if ($tplParams->get('swipe')) {
 			<span class="label label-warning"><?php echo JText::_('JNOTPUBLISHEDYET'); ?></span>
 		<?php endif; ?>
 		<?php if ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate()))
-		&& $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
+	&& $this->item->publish_down != JFactory::getDbo()->getNullDate()) : ?>
 			<span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
 		<?php endif; ?>
 	</div>
@@ -188,8 +188,8 @@ if ($tplParams->get('swipe')) {
 			<?php $itemId = $active->id; ?>
 			<?php $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false)); ?>
 			<?php $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid,
-			$this->item->language
-			))); ?>
+				$this->item->language
+				))); ?>
 	<p class="readmore">
 		<a href="<?php echo $link; ?>" class="register">
 			<?php $attribs = json_decode($this->item->attribs); ?>
