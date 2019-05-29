@@ -55,7 +55,8 @@ $tparams = $this->item->params;
 		<form action="#" method="get" name="selectForm" id="selectForm">
 			<label for="select_contact"><?php echo JText::_('COM_CONTACT_SELECT_CONTACT'); ?></label>
 			<?php echo JHtml::_('select.genericlist', $this->contacts, 'select_contact',
-				'class="inputbox" onchange="document.location.href = this.value"', 'link', 'name', $this->contact->link); ?>
+				'class="inputbox" onchange="document.location.href = this.value"', 'link', 'name', $this->contact->link
+				); ?>
 		</form>
 	<?php endif; ?>
 
@@ -84,7 +85,8 @@ $tparams = $this->item->params;
 		<?php if ($this->contact->image && $tparams->get('show_image')) : ?>
 			<div class="thumbnail pull-right">
 				<?php echo JHtml::_('image', $this->contact->image, htmlspecialchars($this->contact->name, ENT_QUOTES, 'UTF_8'),
-					array('itemprop' => 'image')); ?>
+					array('itemprop' => 'image')
+					); ?>
 			</div>
 		<?php endif; ?>
 

@@ -80,8 +80,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 <?php if ($info == 1 || $info == 2) : ?>
 	<?php if ($useDefList) : ?>
-		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
-			'position' => 'below')); ?>
+		<?php echo JLayoutHelper::render('joomla.content.info_block.block',
+			array('item' => $this->item, 'params' => $params, 'position' => 'below')
+			); ?>
 	<?php endif; ?>
 	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
 		<?php echo JLayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
