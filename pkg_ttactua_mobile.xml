@@ -13,6 +13,6 @@
 		<file type="plugin" id="templatecompanion" group="system">plg_system_templatecompanion.zip</file>
 	</files>
 	<updateservers>
-		<server type="extension" name="TTactua Mobile Template Package">http://www.gileba.be/updates/tpl_ttactua_mobile.xml</server>
+		<server type="extension" name="TTactua Mobile Template Package">https://updates.gileba.be/tpl_ttactua_mobile.xml</server>
 	</updateservers>
 </extension>
