@@ -1266,27 +1266,27 @@ ul.manager.thumbnails .small {
 .vertical.flip-container.hover .flipper {
   transform: rotateX(180deg);
 }
-.modulecontent .csvtable.front {
+.modulecontent .csvtable {
   border-collapse: unset;
   width: 100%;
   border: none;
   margin-left: 0;
-  font-size: 0.8em;
   margin-top: -20px;
 }
-.modulecontent .csvtable.front tr {
-  line-height: 1.5em;
+.modulecontent .csvtable tr {
+  line-height: 1.75em;
+  font-size: 0.8em;
 }
-.modulecontent .csvtable.front tr td:not(:nth-child(2)) {
+.modulecontent .csvtable tr td:not(:nth-child(2)) {
   text-align: center;
 }
-.modulecontent .csvtable.front tr td:nth-child(2) {
+.modulecontent .csvtable tr td:nth-child(2) {
   padding-left: 5px;
 }
-.modulecontent .csvtable.front tr:first-child {
+.modulecontent .csvtable tr:first-child {
   font-weight: bold;
   padding-left: 5px;
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 #component #searchForm {
   margin-top: 15px;
