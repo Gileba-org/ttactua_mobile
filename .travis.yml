@@ -34,6 +34,6 @@ deploy:
   on:
     tags: true
   api_key: $GITHUB_TOKEN
-after_deploy: 
+after_deploy:
  - curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
  - curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $TEMP_FTP_USER:$TEMP_FTP_PASSWORD $TEMP_FTP_SERVER
