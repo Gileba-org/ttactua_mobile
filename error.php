@@ -40,6 +40,7 @@
 		<link href="<?php echo JUri::root(true); ?>/templates/system/css/general.css" rel="stylesheet" />
 		<link href="<?php echo JUri::root(true); ?>/media/jui/css/icomoon.css" rel="stylesheet" />
 		<link href="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/css/template.css" rel="stylesheet" />
+		<link href="<?php echo Juri::root(true); ?>/modules/mod_cookiesaccept/screen.css" rel="stylesheet" />
 		<script src="/media/jui/js/jquery.min.js"></script>
 		<script src="/media/jui/js/jquery-noconflict.js"></script>
 		<script src="/media/jui/js/jquery-migrate.min.js"></script>
@@ -259,7 +260,7 @@ foreach ($modules AS $module ) {
 					<div class="col-12 col-s-12 col-m-12">
 												<?php 
 $modules = JModuleHelper::getModules( 'footer' );
-$attribs['style'] = 'xhtml';
+$attribs['style'] = 'inherit';
 foreach ($modules AS $module ) {
     echo JModuleHelper::renderModule( $module, $attribs );
 }						?>
