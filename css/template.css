@@ -1288,6 +1288,12 @@ ul.manager.thumbnails .small {
   padding-left: 5px;
   font-size: 0.9em;
 }
+#component {
+  margin-right: 10px;
+}
+#component .page-header {
+  margin-top: 10px;
+}
 #component #searchForm {
   margin-top: 15px;
   margin-left: 10px;
