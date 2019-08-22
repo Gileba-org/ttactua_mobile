@@ -155,6 +155,10 @@ h7 {
     -webkit-appearance: textfield;
   }
 }
+#banners {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 #site {
   width: 100%;
   text-align: center;
