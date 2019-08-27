@@ -102,10 +102,10 @@ if ($params->get('fontsCss') != "") {
 					</div>
 					<div class="mobile-back">
 						<?php
-						$modules = JModuleHelper::getModules( 'mobile_header' );
+						$modules = JModuleHelper::getModules('mobile_header');
 						$attribs['style'] = 'xhtml';
 						foreach ($modules AS $module) {
-							echo JModuleHelper::renderModule( $module, $attribs );
+							echo JModuleHelper::renderModule($module, $attribs);
 						}						?>
 					   </div>
 				</div>
@@ -117,10 +117,10 @@ if ($params->get('fontsCss') != "") {
 				<div class="row" id="title">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
 												<?php
-												$modules = JModuleHelper::getModules( 'title' );
+												$modules = JModuleHelper::getModules('title');
 												$attribs['style'] = 'xhtml';
 												foreach ($modules AS $module) {
-													echo JModuleHelper::renderModule( $module, $attribs );
+													echo JModuleHelper::renderModule($module, $attribs);
 												}						?>
 
 					</div>
@@ -130,10 +130,10 @@ if ($params->get('fontsCss') != "") {
 				<div class="row" id="top">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
 												<?php
-												$modules = JModuleHelper::getModules( 'top' );
+												$modules = JModuleHelper::getModules('top');
 												$attribs['style'] = 'xhtml';
 												foreach ($modules AS $module) {
-													echo JModuleHelper::renderModule( $module, $attribs );
+													echo JModuleHelper::renderModule($module, $attribs);
 												}						?>
 </div>
 				</div>
@@ -144,10 +144,10 @@ if ($params->get('fontsCss') != "") {
 					<div class="row" id="banners">
 						<div class="col-12 col-s-12 col-m-12">
 													<?php
-													$modules = JModuleHelper::getModules( 'banners' );
+													$modules = JModuleHelper::getModules('banners');
 													$attribs['style'] = 'inherit';
 													foreach ($modules AS $module) {
-														echo JModuleHelper::renderModule( $module, $attribs );
+														echo JModuleHelper::renderModule($module, $attribs);
 													}						?>
 
 						</div>
@@ -158,10 +158,10 @@ if ($params->get('fontsCss') != "") {
 				<div class="row" id="header">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
 												<?php
-												$modules = JModuleHelper::getModules( 'header' );
+												$modules = JModuleHelper::getModules('header');
 												$attribs['style'] = 'inherit';
 												foreach ($modules AS $module) {
-													echo JModuleHelper::renderModule( $module, $attribs );
+													echo JModuleHelper::renderModule($module, $attribs);
 												}						?>
 
 					</div>
@@ -171,10 +171,10 @@ if ($params->get('fontsCss') != "") {
 <?php if (!$params->get('hideleft')) : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left">
 												<?php
-												$modules = JModuleHelper::getModules( 'left' );
+												$modules = JModuleHelper::getModules('left');
 												$attribs['style'] = 'xhtml';
 												foreach ($modules AS $module) {
-													echo JModuleHelper::renderModule( $module, $attribs );
+													echo JModuleHelper::renderModule($module, $attribs);
 												}						?>
 
 					</div>
@@ -246,7 +246,7 @@ if ($params->get('fontsCss') != "") {
 <?php if ($params->get('hideleft')) : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="right">
 												<?php
-												$modules = JModuleHelper::getModules( 'right' );
+												$modules = JModuleHelper::getModules('right');
 												$attribs['style'] = 'ttactua';
 												foreach ($modules AS $module) {
 													echo JModuleHelper::renderModule( $module, $attribs );
@@ -259,10 +259,10 @@ if ($params->get('fontsCss') != "") {
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12">
 												<?php
-												$modules = JModuleHelper::getModules( 'footer' );
+												$modules = JModuleHelper::getModules('footer');
 												$attribs['style'] = 'inherit';
 												foreach ($modules AS $module) {
-													echo JModuleHelper::renderModule( $module, $attribs );
+													echo JModuleHelper::renderModule($module, $attribs);
 												}						?>
 
 					</div>
