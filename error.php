@@ -23,13 +23,13 @@
 	JHtml::_('bootstrap.framework');
 
 	/** Count Modules Performance */
-	$countRightModules	= count(JModuleHelper::getModules( 'right' ));
-	$countLeftModules	= count(JModuleHelper::getModules( 'left' ));
-	$countHeaderModules	= count(JModuleHelper::getModules( 'header' ));
-	$countFooterModules	= count(JModuleHelper::getModules( 'footer' ));
-	$countTitleModules	= count(JModuleHelper::getModules( 'title' ));
-	$countTopModules	= count(JModuleHelper::getModules( 'top' ));
-	$countBannerModules	= count(JModuleHelper::getModules( 'banners' ));
+	$countRightModules	= count(JModuleHelper::getModules('right'));
+	$countLeftModules	= count(JModuleHelper::getModules('left'));
+	$countHeaderModules	= count(JModuleHelper::getModules('header'));
+	$countFooterModules	= count(JModuleHelper::getModules('footer'));
+	$countTitleModules	= count(JModuleHelper::getModules('title'));
+	$countTopModules	= count(JModuleHelper::getModules('top'));
+	$countBannerModules	= count(JModuleHelper::getModules('banners'));
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" >
@@ -203,16 +203,24 @@ if ($params->get('fontsCss') != "") {
 									<?php $module = JModuleHelper::getModule('mod_search'); ?>
 									<?php echo JModuleHelper::renderModule($module); ?>
 								<?php endif; ?>
-								<p style='display: block; content: ""; clear: both; padding-top: 20px;'><?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
-								<p><a href="<?php echo $this->baseurl; ?>/index.php" class="btn"><span class="icon-home" aria-hidden="true"></span> <?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
+								<p style='display: block; content: ""; clear: both; padding-top: 20px;'>
+									<?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
+								<p>
+									<a href="<?php echo $this->baseurl; ?>/index.php" class="btn">
+										<span class="icon-home" aria-hidden="true"></span>
+										<?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?>
+									</a>
+								</p>
 							</div>
 						</div>
 						<hr class="col-12" />
 						<p class="col-12"> <?php echo JText::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
 						<blockquote class="col-12" >
-							<span class="label label-inverse"><?php echo $this->error->getCode(); ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8');?>
+							<span class="label label-inverse"><?php echo $this->error->getCode(); ?></span> 
+							<?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8');?>
 							<?php if ($this->debug) : ?>
-								<br/><?php echo htmlspecialchars($this->error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->error->getLine(); ?>
+								<br/>
+								<?php echo htmlspecialchars($this->error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->error->getLine(); ?>
 							<?php endif; ?>
 						</blockquote>
 						<?php if ($this->debug) : ?>
@@ -221,14 +229,17 @@ if ($params->get('fontsCss') != "") {
 								<?php // Check if there are more Exceptions and render their data as well ?>
 								<?php if ($this->error->getPrevious()) : ?>
 									<?php $loop = true; ?>
-									<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
+									<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property ?>
+									<?php // and we need this for the backtrace to work correctly ?>
 									<?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
 									<?php $this->setError($this->_error->getPrevious()); ?>
 									<?php while ($loop === true) : ?>
 										<p><strong><?php echo JText::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
 										<p>
 											<?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
-											<br/><?php echo htmlspecialchars($this->_error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->_error->getLine(); ?>
+											<br/>
+											<?php echo htmlspecialchars(
+												$this->_error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->_error->getLine(); ?>
 										</p>
 										<?php echo $this->renderBacktrace(); ?>
 										<?php $loop = $this->setError($this->_error->getPrevious()); ?>
