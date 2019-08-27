@@ -49,18 +49,18 @@
 <?php endif; ?>
 <?php
 if($countBannerModules) {
-?>
+	?>
 		<script src="<?php echo JUri::root(true); ?>/templates/<?php echo $this->template; ?>/js/sticky.js"></script>
 <?php } ?>
 
 		<script src="<?php echo JUri::root(true); ?>/templates/<?php echo $this->template; ?>/js/elementQuery.js"></script>
 		<script src="<?php echo JUri::root(true); ?>/templates/<?php echo $this->template; ?>/js/jquery.sidr.js"></script>
 <?php
-	if ($params->get('fontsCss') != "") {
-?>
+if ($params->get('fontsCss') != "") {
+	?>
 		<link href="https://fast.fonts.net/cssapi/<?php echo $params->get('fontsCss'); ?>" rel="stylesheet" />
-<?php
-	}
+	<?php
+}
 ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($params->get('doubleClick')) {	?>
@@ -101,12 +101,12 @@ if($countBannerModules) {
 						<span id="sitename"><?php echo $config->get('sitename');?></span>
 					</div>
 					<div class="mobile-back">
-						<?php 
-$modules = JModuleHelper::getModules( 'mobile_header' );
-$attribs['style'] = 'xhtml';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+						<?php
+						$modules = JModuleHelper::getModules( 'mobile_header' );
+						$attribs['style'] = 'xhtml';
+						foreach ($modules AS $module) {
+							echo JModuleHelper::renderModule( $module, $attribs );
+						}						?>
 					   </div>
 				</div>
 			</div>
@@ -116,12 +116,12 @@ foreach ($modules AS $module ) {
 <?php if($countTitleModules) : ?>
 				<div class="row" id="title">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
-												<?php 
-$modules = JModuleHelper::getModules( 'title' );
-$attribs['style'] = 'xhtml';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'title' );
+												$attribs['style'] = 'xhtml';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 
 					</div>
 				</div>
@@ -129,12 +129,12 @@ foreach ($modules AS $module ) {
 <?php if($countTopModules) : ?>
 				<div class="row" id="top">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
-												<?php 
-$modules = JModuleHelper::getModules( 'top' );
-$attribs['style'] = 'xhtml';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'top' );
+												$attribs['style'] = 'xhtml';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 </div>
 				</div>
 <?php endif ?>
@@ -143,12 +143,12 @@ foreach ($modules AS $module ) {
 				<div id="sticky">
 					<div class="row" id="banners">
 						<div class="col-12 col-s-12 col-m-12">
-													<?php 
-$modules = JModuleHelper::getModules( 'banners' );
-$attribs['style'] = 'inherit';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+													<?php
+													$modules = JModuleHelper::getModules( 'banners' );
+													$attribs['style'] = 'inherit';
+													foreach ($modules AS $module) {
+														echo JModuleHelper::renderModule( $module, $attribs );
+													}						?>
 
 						</div>
 					</div>
@@ -157,12 +157,12 @@ foreach ($modules AS $module ) {
 <?php if($countHeaderModules) : ?>
 				<div class="row" id="header">
 					<div class="col-12 col-s-12 col-m-12 col-p-0">
-												<?php 
-$modules = JModuleHelper::getModules( 'header' );
-$attribs['style'] = 'inherit';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'header' );
+												$attribs['style'] = 'inherit';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 
 					</div>
 				</div>
@@ -170,12 +170,12 @@ foreach ($modules AS $module ) {
 				<div class="row" id="main">
 <?php if (!$params->get('hideleft')) : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="left">
-												<?php 
-$modules = JModuleHelper::getModules( 'left' );
-$attribs['style'] = 'xhtml';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'left' );
+												$attribs['style'] = 'xhtml';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 
 					</div>
 <?php endif ?>
@@ -245,12 +245,12 @@ foreach ($modules AS $module ) {
 					</div>
 <?php if ($params->get('hideleft')) : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="right">
-												<?php 
-$modules = JModuleHelper::getModules( 'right' );
-$attribs['style'] = 'ttactua';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'right' );
+												$attribs['style'] = 'ttactua';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 
 					</div>
 <?php endif ?>
@@ -258,12 +258,12 @@ foreach ($modules AS $module ) {
 <?php if($countFooterModules) : ?>
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12">
-												<?php 
-$modules = JModuleHelper::getModules( 'footer' );
-$attribs['style'] = 'inherit';
-foreach ($modules AS $module ) {
-    echo JModuleHelper::renderModule( $module, $attribs );
-}						?>
+												<?php
+												$modules = JModuleHelper::getModules( 'footer' );
+												$attribs['style'] = 'inherit';
+												foreach ($modules AS $module) {
+													echo JModuleHelper::renderModule( $module, $attribs );
+												}						?>
 
 					</div>
 				</div>
