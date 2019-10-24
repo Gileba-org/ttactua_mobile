@@ -6,6 +6,8 @@ php:
 - '7.2'
 - '7.3'
 - nightly
+env:
+  - DB=mysql PHPUNIT_VERSION=8
 jobs:
   - include:
     -
