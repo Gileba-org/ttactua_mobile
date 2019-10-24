@@ -1,5 +1,5 @@
 language: php
-jobs:
+matrix:
   - include:
     -
       php: '5.6'
