@@ -5,28 +5,20 @@ php:
 - '7.1'
 - '7.2'
 - '7.3'
+- '7.4'
 - nightly
 env:
   - DB=mysql PHPUNIT_VERSION=8
 jobs:
-  - include:
+  - exclude:
     -
       php: '5.6'
-      env: DB=mysql PHPUNIT_VERSION=5
+      env: DB=mysql PHPUNIT_VERSION=8
     -
       php: '7.0'
-      env: DB=mysql PHPUNIT_VERSION=6
+      env: DB=mysql PHPUNIT_VERSION=8
     -
       php: '7.1'
-      env: DB=mysql PHPUNIT_VERSION=7
-    -
-      php: '7.2'
-      env: DB=mysql PHPUNIT_VERSION=8
-    -
-      php: '7.3'
-      env: DB=mysql PHPUNIT_VERSION=8
-    -
-      php: nightly
       env: DB=mysql PHPUNIT_VERSION=8
   - allow_failures:
     - php: nightly
