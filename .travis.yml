@@ -1,30 +1,24 @@
 language: php
-php:
-- '5.6'
-- '7.0'
-- '7.1'
-- '7.2'
-- '7.3'
-- nightly
-env:
-- DB=mysql
-matrix:
+jobs:
   - include:
     -
       php: '5.6'
-      env: PHPUNIT_VERSION=5
+      env: DB=mysql PHPUNIT_VERSION=5
     -
       php: '7.0'
-      env: PHPUNIT_VERSION=6
+      env: DB=mysql PHPUNIT_VERSION=6
     -
       php: '7.1'
-      env: PHPUNIT_VERSION=7
+      env: DB=mysql PHPUNIT_VERSION=7
     -
       php: '7.2'
-      env: PHPUNIT_VERSION=8
+      env: DB=mysql PHPUNIT_VERSION=8
     -
       php: '7.3'
-      env: PHPUNIT_VERSION=8
+      env: DB=mysql PHPUNIT_VERSION=8
+    -
+      php: 'nightly'
+      env: DB=mysql PHPUNIT_VERSION=8
   - allow_failures:
     - php: nightly
 before_script:
