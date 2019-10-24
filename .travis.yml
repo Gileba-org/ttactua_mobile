@@ -31,8 +31,8 @@ matrix:
     -
       php: nightly
       env: DB=mysql PHPUNIT_VERSION=8
-  -allow_failures:
-  - php: nightly
+  - allow_failures:
+    - php: nightly
 before_script:
 - composer require --dev phpunit/phpunit ^$PHPUNIT_VERSION
 - composer require --dev phpunit/php-code-coverage
