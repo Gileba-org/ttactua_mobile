@@ -1,4 +1,16 @@
 language: php
+php:
+- '5.6'
+- '7.0'
+- '7.1'
+- '7.2'
+- '7.3'
+- nightly
+env:
+- DB=mysql PHPUNIT_VERSION=5
+- DB=mysql PHPUNIT_VERSION=6
+- DB=mysql PHPUNIT_VERSION=7
+- DB=mysql PHPUNIT_VERSION=8
 matrix:
   - include:
     -
@@ -17,10 +29,10 @@ matrix:
       php: '7.3'
       env: DB=mysql PHPUNIT_VERSION=8
     -
-      php: 'nightly'
+      php: nightly
       env: DB=mysql PHPUNIT_VERSION=8
-  - allow_failures:
-    - php: nightly
+  -allow_failures:
+  - php: nightly
 before_script:
 - composer require --dev phpunit/phpunit ^$PHPUNIT_VERSION
 - composer require --dev phpunit/php-code-coverage
