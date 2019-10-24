@@ -7,6 +7,9 @@ php:
 - '7.3'
 - nightly
 env:
+- DB=mysql PHPUNIT_VERSION=5
+- DB=mysql PHPUNIT_VERSION=6
+- DB=mysql PHPUNIT_VERSION=7
 - DB=mysql PHPUNIT_VERSION=8
 jobs:
   - include:
@@ -24,6 +27,7 @@ matrix:
   - php: nightly
 before_script:
 - composer require --dev phpunit/phpunit ^$PHPUNIT_VERSION
+- composer require --dev phpunit/php-code-coverage
 - phpenv config-rm xdebug.ini
 script:
 - ./vendor/bin/phpunit --configuration travisci-phpunit.xml --no-configuration tests
