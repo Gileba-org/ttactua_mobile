@@ -11,7 +11,7 @@ env:
 - DB=mysql PHPUNIT_VERSION=6
 - DB=mysql PHPUNIT_VERSION=7
 - DB=mysql PHPUNIT_VERSION=8
-matrix:
+jobs:
   - include:
     -
       php: '5.6'
