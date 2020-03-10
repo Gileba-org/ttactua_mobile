@@ -9,9 +9,6 @@
 
 defined('_JEXEC') or die;
 
-jimport('joomla.html.html.bootstrap');
-
-$cparams = JComponentHelper::getParams('com_media');
 $tparams = $this->item->params;
 
 ?>
