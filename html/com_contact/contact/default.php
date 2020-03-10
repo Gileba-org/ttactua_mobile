@@ -9,21 +9,18 @@
 
 defined('_JEXEC') or die;
 
-jimport('joomla.html.html.bootstrap');
-
-$cparams = JComponentHelper::getParams('com_media');
-$tparams = $this->item->params;
+$params = $this->item->params;
 
 ?>
 
 <div class="contact<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Person">
-	<?php if ($tparams->get('show_page_heading')) : ?>
+	<?php if ($params->get('show_page_heading')) : ?>
 		<h1>
-			<?php echo $this->escape($tparams->get('page_heading')); ?>
+			<?php echo $this->escape($params->get('page_heading')); ?>
 		</h1>
 	<?php endif; ?>
 
-	<?php if ($this->contact->name && $tparams->get('show_name')) : ?>
+	<?php if ($this->contact->name && $params->get('show_name')) : ?>
 		<div class="page-header">
 			<h2>
 				<?php if ($this->item->published == 0) : ?>
@@ -34,7 +31,7 @@ $tparams = $this->item->params;
 		</div>
 	<?php endif; ?>
 
-	<?php $show_contact_category = $tparams->get('show_contact_category'); ?>
+	<?php $show_contact_category = $params->get('show_contact_category'); ?>
 
 	<?php if ($show_contact_category === 'show_no_link') : ?>
 		<h3>
@@ -51,7 +48,7 @@ $tparams = $this->item->params;
 
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 
-	<?php if ($tparams->get('show_contact_list') && count($this->contacts) > 1) : ?>
+	<?php if ($params->get('show_contact_list') && count($this->contacts) > 1) : ?>
 		<form action="#" method="get" name="selectForm" id="selectForm">
 			<label for="select_contact"><?php echo JText::_('COM_CONTACT_SELECT_CONTACT'); ?></label>
 			<?php echo JHtml::_('select.genericlist', $this->contacts, 'select_contact',
@@ -60,12 +57,12 @@ $tparams = $this->item->params;
 		</form>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
 		<?php $this->item->tagLayout = new JLayoutFile('joomla.content.tags'); ?>
 		<?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
 	<?php endif; ?>
 
-	<?php $presentation_style = $tparams->get('presentation_style'); ?>
+	<?php $presentation_style = $params->get('presentation_style'); ?>
 	<?php $accordionStarted = false; ?>
 	<?php $tabSetStarted = false; ?>
 
@@ -82,7 +79,7 @@ $tparams = $this->item->params;
 			<?php echo '<h3>' . JText::_('COM_CONTACT_DETAILS') . '</h3>'; ?>
 		<?php endif; ?>
 
-		<?php if ($this->contact->image && $tparams->get('show_image')) : ?>
+		<?php if ($this->contact->image && $params->get('show_image')) : ?>
 			<div class="thumbnail pull-right">
 				<?php echo JHtml::_('image', $this->contact->image, htmlspecialchars($this->contact->name, ENT_QUOTES, 'UTF_8'),
 					array('itemprop' => 'image')
@@ -90,7 +87,7 @@ $tparams = $this->item->params;
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->contact->con_position && $tparams->get('show_position')) : ?>
+		<?php if ($this->contact->con_position && $params->get('show_position')) : ?>
 			<dl class="contact-position dl-horizontal">
 				<dt><?php echo JText::_('COM_CONTACT_POSITION'); ?>:</dt>
 				<dd itemprop="jobTitle">
@@ -103,7 +100,7 @@ $tparams = $this->item->params;
 
 		<?php echo $this->item->event->beforeDisplayContent; ?>
 
-		<?php if ($tparams->get('allow_vcard')) : ?>
+		<?php if ($params->get('allow_vcard')) : ?>
 			<?php echo JText::_('COM_CONTACT_DOWNLOAD_INFORMATION_AS'); ?>
 			<a href="<?php echo JRoute::_('index.php?option=com_contact&amp;view=contact&amp;id=' . $this->contact->id . '&amp;format=vcf'); ?>">
 			<?php echo JText::_('COM_CONTACT_VCARD'); ?></a>
@@ -116,7 +113,7 @@ $tparams = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_email_form') && ($this->contact->email_to || $this->contact->user_id)) : ?>
+	<?php if ($params->get('show_email_form') && ($this->contact->email_to || $this->contact->user_id)) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -146,7 +143,7 @@ $tparams = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_links')) : ?>
+	<?php if ($params->get('show_links')) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted) : ?>
 				<?php echo JHtml::_('bootstrap.startAccordion', 'slide-contact', array('active' => 'display-links')); ?>
@@ -161,7 +158,7 @@ $tparams = $this->item->params;
 		<?php echo $this->loadTemplate('links'); ?>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_articles') && $this->contact->user_id && $this->contact->articles) : ?>
+	<?php if ($params->get('show_articles') && $this->contact->user_id && $this->contact->articles) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -191,7 +188,7 @@ $tparams = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_profile') && $this->contact->user_id && JPluginHelper::isEnabled('user', 'profile')) : ?>
+	<?php if ($params->get('show_profile') && $this->contact->user_id && JPluginHelper::isEnabled('user', 'profile')) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -221,11 +218,11 @@ $tparams = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($tparams->get('show_user_custom_fields') && $this->contactUser) : ?>
+	<?php if ($params->get('show_user_custom_fields') && $this->contactUser) : ?>
 		<?php echo $this->loadTemplate('user_custom_fields'); ?>
 	<?php endif; ?>
 
-	<?php if ($this->contact->misc && $tparams->get('show_misc')) : ?>
+	<?php if ($this->contact->misc && $params->get('show_misc')) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -249,8 +246,8 @@ $tparams = $this->item->params;
 		<div class="contact-miscinfo">
 			<dl class="dl-horizontal">
 				<dt>
-					<span class="<?php echo $tparams->get('marker_class'); ?>">
-					<?php echo $tparams->get('marker_misc'); ?>
+					<span class="<?php echo $params->get('marker_class'); ?>">
+					<?php echo $params->get('marker_misc'); ?>
 					</span>
 				</dt>
 				<dd>
