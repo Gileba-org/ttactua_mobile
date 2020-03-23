@@ -7,10 +7,7 @@ php:
 - '7.3'
 - '7.4'
 - nightly
-env:
-  matrix:
-    DB=mysql
-matrix:
+jobs:
   allow_failures:
     - php: nightly
 before_script:
@@ -34,6 +31,6 @@ deploy:
   - pkg_ttactua_mobile.zip
   on:
     tags: true
-  yokrn: $GITHUB_TOKEN
+  token: $GITHUB_TOKEN
 after_deploy:
  - curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
