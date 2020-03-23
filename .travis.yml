@@ -11,6 +11,8 @@ jobs:
   allow_failures:
     - php: nightly
 before_script:
+- composer require --dev phpunit/phpunit
+- composer require --dev phpunit/php-code-coverage
 - phpenv config-rm xdebug.ini
 script:
 - ./vendor/bin/phpunit --configuration travisci-phpunit.xml --no-configuration tests
