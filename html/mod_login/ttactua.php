@@ -44,8 +44,8 @@ $path   = JURI::base(true) . '/templates/' . $app->getTemplate() . '/';
 		<div id="form-login-secretkey" class="control-group">
 			<div class="controls">
 				<div class="input-prepend">
-					<input id="modlgn-secretkey" autocomplete="one-time-code" type="text" name="secretkey" class="input-medium" tabindex="0" size="18" 
-						placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+					<input id="modlgn-secretkey" autocomplete="one-time-code" type="text" name="secretkey" class="input-medium" tabindex="0" 
+						size="18" placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
 				</div>
 			</div>
 		</div>
