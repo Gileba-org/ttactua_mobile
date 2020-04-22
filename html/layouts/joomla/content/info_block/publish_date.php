@@ -7,10 +7,11 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-	$app      = JFactory::getApplication();
-	$params	  = $app->getTemplate(true)->params;
+defined('_JEXEC') or die;
 
-defined('JPATH_BASE') or die;
+$app      = JFactory::getApplication();
+$params	  = $app->getTemplate(true)->params;
+
 ?>
 			<dd class="published">
 				<span class="icon-calendar" aria-hidden="true"></span>
