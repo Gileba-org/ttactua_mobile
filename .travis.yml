@@ -5,17 +5,17 @@ php:
 - '7.1'
 - '7.2'
 - '7.3'
+- '7.4'
 - nightly
-env:
-  matrix:
-  - DB=mysql
-matrix:
+jobs:
   allow_failures:
-  - php: nightly
+    - php: nightly
 before_script:
+- composer require --dev phpunit/phpunit
+- composer require --dev phpunit/php-code-coverage
 - phpenv config-rm xdebug.ini
 script:
-- phpunit --configuration travisci-phpunit.xml --no-configuration tests
+- ./vendor/bin/phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
 - cd ..
 - mkdir packages
@@ -27,13 +27,12 @@ before_deploy:
 - zip pkg_ttactua_mobile packages/tpl_ttactua_mobile.zip packages/plg_system_templatecompanion.zip pkg_ttactua_mobile.xml
 deploy:
   provider: releases
+  edge: true
   file:
   - packages/tpl_ttactua_mobile.zip
   - pkg_ttactua_mobile.zip
-  skip_cleanup: true
   on:
     tags: true
-  api_key: $GITHUB_TOKEN
+  token: $GITHUB_TOKEN
 after_deploy:
  - curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
- - curl -T ttactua_mobile/tpl_ttactua_mobile.xml -u $TEMP_FTP_USER:$TEMP_FTP_PASSWORD $TEMP_FTP_SERVER
