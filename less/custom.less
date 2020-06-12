@@ -237,13 +237,11 @@ ul.manager.thumbnails {
 			margin-top: 10px;
 			.border-radius(4px);
 			.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
-			background-color: @color-main;
 			.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
 
 			// Hover/focus state
 			&:hover,
 			&:focus {
-				background-color: @color-main;
 				.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 				color: white;
 				border: 1px solid grey;
@@ -302,9 +300,7 @@ ul.manager.thumbnails {
 	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
 	border: 1px solid @color-main;
 	color: white;
-	background-color: @color-main;
 	&:hover {
-		background-color: lighten(@color-main, 30%);
 		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 	}
 }
