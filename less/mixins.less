@@ -5,7 +5,7 @@
 }
 
 .bglineargradient(@direction, @topcolor, @bottomcolor) {
-	background: @topcolor;
+	background-color: @topcolor;
 	background-image: -moz-linear-gradient(@direction, @topcolor, @bottomcolor); /* FF3.6+ */
 	background-image: -webkit-gradient(@direction, @topcolor, @bottomcolor); /* Chrome, Safari4+ */
 	background-image: -webkit-linear-gradient(@direction, @topcolor, @bottomcolor); /* Chrome10+, Safari5.1+ */
@@ -56,13 +56,11 @@
 	padding: 3px 10px;
 	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
 	.border-radius(4px);
-	background-color: @color-main;
 	color: white;
 	a {
 		color: white;
 	}
 	&:hover {
-		background-color: lighten(@color-main, 30%);
 		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
 	}
 	&:active {
