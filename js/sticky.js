@@ -5,14 +5,14 @@ function moveScroller() {
 		var stickyAnchor = jQuery("#sticky-anchor");
 
 		if ((win.scrollTop()) > (stickyAnchor.offset().top)) {
-			if (win.width() >= 720) {
+			if (win.width() >= 600) {
 				jQuery("#sticky").addClass("stick");
 				stickyAnchor.height(jQuery("#sticky").outerHeight());
 			} else {
 				jQuery(".flip-container").addClass("hover");
 			}			
 		} else {
-			if (win.width() >= 720) {
+			if (win.width() >= 600) {
 				jQuery("#sticky").removeClass("stick");
 					stickyAnchor.height(0);
 				} else {
