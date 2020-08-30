@@ -158,15 +158,15 @@ if($countBannerModules) {
 		<script>
 			var $win = jQuery(window);
 			jQuery(document).ready(function(f) {			
-				if ($win.width() < 720) {
+				if ($win.width() < 600) {
 					jQuery("#mainmenu").appendTo("#mobile-menu");
 				}
 			});
 			$win.on("resize", function(e) {
-				if ($win.width() < 720) {
+				if ($win.width() < 600) {
 					jQuery("#mainmenu").appendTo("#mobile-menu");
 				}
-				if ($win.width() >= 720) {
+				if ($win.width() >= 600) {
 					jQuery("#mainmenu").prependTo("#left");
 				}
 			});
