@@ -35,14 +35,12 @@
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  background-color: #145cae;
   color: white;
 }
 .readmorebutton a {
   color: white;
 }
 .readmorebutton:hover {
-  background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -651,7 +649,6 @@ h7 {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  background-color: #145cae;
   color: white;
   line-height: 1.1em;
 }
@@ -659,7 +656,6 @@ h7 {
   color: white;
 }
 .readmore .btn:hover {
-  background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -810,7 +806,6 @@ h7 {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  background-color: #145cae;
   color: white;
   line-height: 1.7em;
   float: right;
@@ -819,7 +814,6 @@ h7 {
   color: white;
 }
 .pagenav li:hover {
-  background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -1030,7 +1024,6 @@ ul.tags.inline li a {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box;
-  background-color: #145cae;
   color: white;
   line-height: 1.7em;
   text-align: center;
@@ -1040,7 +1033,6 @@ ul.tags.inline li a {
   color: white;
 }
 .mod_events_latest_callink:hover {
-  background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -1130,7 +1122,6 @@ ul.manager.thumbnails .small {
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-  background-color: #145cae;
   background: #6da9ee;
   background-image: -moz-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: -webkit-gradient(to bottom,#6da9ee,#145cae);
@@ -1141,7 +1132,6 @@ ul.manager.thumbnails .small {
 }
 #footer div#ca_banner div.accept:hover,
 #footer div#ca_banner div.accept:focus {
-  background-color: #145cae;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -1203,10 +1193,8 @@ ul.manager.thumbnails .small {
   background-image: linear-gradient(top,#6da9ee,#145cae);
   border: 1px solid #145cae;
   color: white;
-  background-color: #145cae;
 }
 .ai-next:hover {
-  background-color: #6da9ee;
   background: #145cae;
   background-image: -moz-linear-gradient(to bottom,#145cae,#6da9ee);
   background-image: -webkit-gradient(to bottom,#145cae,#6da9ee);
@@ -1670,7 +1658,6 @@ ul.manager.thumbnails .small {
 }
 .btn:hover,
 .btn:focus {
-  background-color: #145cae;
   background: #6da9ee;
   background-image: -moz-linear-gradient(to bottom,#6da9ee,#145cae);
   background-image: -webkit-gradient(to bottom,#6da9ee,#145cae);
