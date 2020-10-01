@@ -26,7 +26,7 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 if ($tplParams->get('swipe')) {
 	JHtml::_('behavior.caption');
 	$document = JFactory::getDocument();
-	$document->addScript('http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
+	$document->addScript('https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
 
 	?>
 <script>
