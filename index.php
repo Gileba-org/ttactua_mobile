@@ -46,14 +46,7 @@ if($countBannerModules) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($this->params->get('doubleClick')) {	?>
 <!-- START Google DoubleClick Code -->
-			<script>
-				(function() {
-					var useSSL = 'https:' == document.location.protocol;
-					var src = (useSSL ? 'https:' : 'http:') +
-						'//www.googletagservices.com/tag/js/gpt.js';
-					document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-				})();
-			</script>
+			<script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 			<script>
 				googletag.cmd.push(function() {
 	<?php				echo $this->params->get('doubleClick');	?>
