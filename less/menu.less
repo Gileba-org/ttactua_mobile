@@ -49,17 +49,17 @@
 		color: white;
 		opacity: 1;
 	}
-	li.parent:before {
+	li.parent:not(.accordeonck):before{
 		content: "+ ";
 		width: 15px;
 		display: inline-block;
 	}
-	li.parent.deeper:before {
+	li.parent:not(.accordeonck).deeper:before {
 		content: "- ";
 		width: 15px;
 		display: inline-block;
 	}
-	li.parent, li.parent.deeper {
+	li.parent:not(.accordeonck), li.parent:not(.accordeonck).deeper {
 		padding-left: 0;
 	}
 }
