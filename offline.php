@@ -47,8 +47,12 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 		<div class="middle">
 			<div class="inner well">
 				<div class="header">
-					<img src="/templates/tpl_trta/images/logo.png" alt="<?php echo $sitename ?>" />
-				<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== '') : ?>
+					<?php if ($sitename == "Tafeltennisactua.be") { ?>
+							<img src="/images/header/logo.jpg" alt="<?php echo $sitename; ?>" />
+					<?php } else { ?>
+							<img src="/images/logos/header.jpg" alt="<?php echo $sitename; ?>" />
+					<?php } ?>
+				<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== ''): ?>
 					<p><?php echo $app->get('offline_message'); ?></p>
 				<?php elseif ($app->get('display_offline_message', 1) == 2) : ?>
 					<p><?php echo JText::_('JOFFLINE_MESSAGE'); ?></p>
