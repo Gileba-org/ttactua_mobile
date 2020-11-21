@@ -7,12 +7,13 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
+defined('_JEXEC') or die();
 
 /** @var JDocumentHtml $this */
 
 $twofactormethods = JAuthenticationHelper::getTwoFactorMethods();
-$app              = JFactory::getApplication();
+$app = JFactory::getApplication();
+$params = $app->getTemplate(true)->params;
 
 // Output as HTML5
 $this->setHtml5(true);
@@ -23,18 +24,27 @@ $fullWidth = 1;
 JHtml::_('bootstrap.framework');
 
 // Add template js
-JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
+JHtml::_('script', 'template.js', ['version' => 'auto', 'relative' => true]);
 
 // Add html5 shiv
-JHtml::_('script', 'jui/html5.js', array('version' => 'auto', 'relative' => true, 'conditional' => 'lt IE 9'));
+JHtml::_('script', 'jui/html5.js', [
+	'version' => 'auto',
+	'relative' => true,
+	'conditional' => 'lt IE 9',
+]);
 
 // Add Stylesheets
-JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
-JHtml::_('stylesheet', 'offline.css', array('version' => 'auto', 'relative' => true));
+JHtml::_('stylesheet', 'template.css', [
+	'version' => 'auto',
+	'relative' => true,
+]);
+JHtml::_('stylesheet', 'offline.css', [
+	'version' => 'auto',
+	'relative' => true,
+]);
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -54,7 +64,7 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 					<?php } ?>
 				<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== ''): ?>
 					<p><?php echo $app->get('offline_message'); ?></p>
-				<?php elseif ($app->get('display_offline_message', 1) == 2) : ?>
+				<?php elseif ($app->get('display_offline_message', 1) == 2): ?>
 					<p><?php echo JText::_('JOFFLINE_MESSAGE'); ?></p>
 				<?php endif; ?>
 				</div>
@@ -67,7 +77,7 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 						<label for="password"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
 						<input type="password" name="password" id="password" title="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
 
-						<?php if (count($twofactormethods) > 1) : ?>
+						<?php if (count($twofactormethods) > 1): ?>
 						<label for="secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?></label>
 						<input type="text" name="secretkey" autocomplete="one-time-code" id="secretkey"
 							title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>" />
