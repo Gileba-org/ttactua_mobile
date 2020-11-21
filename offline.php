@@ -24,24 +24,24 @@ $fullWidth = 1;
 JHtml::_('bootstrap.framework');
 
 // Add template js
-JHtml::_('script', 'template.js', ['version' => 'auto', 'relative' => true]);
+JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
 
 // Add html5 shiv
-JHtml::_('script', 'jui/html5.js', [
+JHtml::_('script', 'jui/html5.js', array(
 	'version' => 'auto',
 	'relative' => true,
 	'conditional' => 'lt IE 9',
-]);
+));
 
 // Add Stylesheets
-JHtml::_('stylesheet', 'template.css', [
+JHtml::_('stylesheet', 'template.css', array(
 	'version' => 'auto',
 	'relative' => true,
-]);
-JHtml::_('stylesheet', 'offline.css', [
+));
+JHtml::_('stylesheet', 'offline.css', array(
 	'version' => 'auto',
 	'relative' => true,
-]);
+));
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
