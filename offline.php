@@ -31,17 +31,20 @@ JHtml::_('script', 'jui/html5.js', array(
 	'version' => 'auto',
 	'relative' => true,
 	'conditional' => 'lt IE 9',
-));
+)
+);
 
 // Add Stylesheets
 JHtml::_('stylesheet', 'template.css', array(
 	'version' => 'auto',
 	'relative' => true,
-));
+)
+);
 JHtml::_('stylesheet', 'offline.css', array(
 	'version' => 'auto',
 	'relative' => true,
-));
+)
+);
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
