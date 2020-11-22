@@ -1,15 +1,17 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  Templates.protostar
+ * @package    Joomla.Site
+ * @subpackage Templates.protostar
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @license   GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die();
 
-/** @var JDocumentHtml $this */
+/**
+ * @var JDocumentHtml $this
+*/
 
 $twofactormethods = JAuthenticationHelper::getTwoFactorMethods();
 $app = JFactory::getApplication();
@@ -27,7 +29,10 @@ JHtml::_('bootstrap.framework');
 JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
 
 // Add html5 shiv
-JHtml::_('script', 'jui/html5.js', array(
+JHtml::_(
+	'script',
+	'jui/html5.js',
+	array(
 	'version' => 'auto',
 	'relative' => true,
 	'conditional' => 'lt IE 9',
@@ -35,12 +40,18 @@ JHtml::_('script', 'jui/html5.js', array(
 );
 
 // Add Stylesheets
-JHtml::_('stylesheet', 'template.css', array(
+JHtml::_(
+	'stylesheet',
+	'template.css',
+	array(
 	'version' => 'auto',
 	'relative' => true,
 	)
 );
-JHtml::_('stylesheet', 'offline.css', array(
+JHtml::_(
+	'stylesheet',
+	'offline.css',
+	array(
 	'version' => 'auto',
 	'relative' => true,
 	)
@@ -51,25 +62,27 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
 </head>
+
 <body class="site">
 	<div class="outer">
 		<div class="middle">
 			<div class="inner well">
 				<div class="header">
 					<?php if ($sitename == "Tafeltennisactua.be") { ?>
-							<img src="/images/header/logo.jpg" alt="<?php echo $sitename; ?>" />
+					<img src="/images/header/logo.jpg" alt="<?php echo $sitename; ?>" />
 					<?php } else { ?>
-							<img src="/images/logos/header.jpg" alt="<?php echo $sitename; ?>" />
+					<img src="/images/logos/header.jpg" alt="<?php echo $sitename; ?>" />
 					<?php } ?>
-				<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== ''): ?>
+					<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== '') : ?>
 					<p><?php echo $app->get('offline_message'); ?></p>
-				<?php elseif ($app->get('display_offline_message', 1) == 2): ?>
+					<?php elseif ($app->get('display_offline_message', 1) == 2) : ?>
 					<p><?php echo JText::_('JOFFLINE_MESSAGE'); ?></p>
-				<?php endif; ?>
+					<?php endif; ?>
 				</div>
 				<jdoc:include type="message" />
 				<form action="<?php echo JRoute::_('index.php', true); ?>" method="post" id="form-login">
@@ -80,9 +93,9 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 						<label for="password"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
 						<input type="password" name="password" id="password" title="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
 
-						<?php if (count($twofactormethods) > 1): ?>
+						<?php if (count($twofactormethods) > 1) : ?>
 						<label for="secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?></label>
-						<input type="text" name="secretkey" autocomplete="one-time-code" id="secretkey"
+						<input type="text" name="secretkey" autocomplete="one-time-code" id="secretkey" 
 							title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>" />
 						<?php endif; ?>
 
@@ -91,11 +104,12 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 						<input type="hidden" name="option" value="com_users" />
 						<input type="hidden" name="task" value="user.login" />
 						<input type="hidden" name="return" value="<?php echo base64_encode(JUri::base()); ?>" />
-						<?php echo JHtml::_('form.token'); ?>
+						<?php echo JHtml::_('form.token') ?>
 					</fieldset>
 				</form>
 			</div>
 		</div>
 	</div>
 </body>
+
 </html>
