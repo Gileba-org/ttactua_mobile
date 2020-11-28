@@ -1,5 +1,6 @@
 /* Dekstop */
-#mainmenu, #adminmenu {
+#mainmenu,
+#adminmenu {
 	padding: 10px 10px 20px;
 	background-color: @color-main;
 	color: white;
@@ -35,11 +36,13 @@
 	li:nth-child(1) {
 		border-top: 1px solid white;
 	}
-	a, a:visited {
+	a,
+	a:visited {
 		color: white;
 		opacity: 1;
 	}
-	a:hover, li.active.current .nav-child a:hover {
+	a:hover,
+	li.active.current .nav-child a:hover {
 		opacity: 0.25;
 	}
 	li.active.current a {
@@ -49,17 +52,18 @@
 		color: white;
 		opacity: 1;
 	}
-	li.parent:before {
+	li.parent:not(.accordeonck):before {
 		content: "+ ";
 		width: 15px;
 		display: inline-block;
 	}
-	li.parent.deeper:before {
+	li.parent:not(.accordeonck).deeper:before {
 		content: "- ";
 		width: 15px;
 		display: inline-block;
 	}
-	li.parent, li.parent.deeper {
+	li.parent:not(.accordeonck),
+	li.parent:not(.accordeonck).deeper {
 		padding-left: 0;
 	}
 }
