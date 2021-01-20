@@ -13,7 +13,10 @@ defined('_JEXEC') or die;
 			<dd class="category-name">
 					<?php $title = $this->escape($displayData['item']->category_title); ?>
 				<?php if ($displayData['params']->get('link_category') && $displayData['item']->catslug) : ?>
-					<?php $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($displayData['item']->catslug)) . '" itemprop="genre">' . $title . '</a>'; ?>
+					<?php $url = '<a href="' . 
+						JRoute::_(ContentHelperRoute::getCategoryRoute($displayData['item']->catslug)) . 
+						'" itemprop="genre">' . $title . '</a>';
+					?>
 					<?php echo JText::sprintf($url); ?>
 				<?php else : ?>
 					<?php echo JText::sprintf('<span itemprop="genre">' . $title . '</span>'); ?>
