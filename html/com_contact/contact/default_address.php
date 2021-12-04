@@ -7,23 +7,27 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
-
+defined("_JEXEC") or die();
 /**
  * Marker_class: Class based on the selection of text, none, or icons
  * jicon-text, jicon-none, jicon-icon
  */
 ?>
 <dl class="contact-address dl-horizontal" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-	<?php if (($this->params->get('address_check') > 0)
-	&& ($this->contact->address || $this->contact->suburb  || $this->contact->state || $this->contact->country || $this->contact->postcode)) : ?>
+	<?php if ($this->params->get("address_check") > 0
+	&& ($this->contact->address
+	|| $this->contact->suburb
+	|| $this->contact->state
+	|| $this->contact->country
+	|| $this->contact->postcode)
+): ?>
 		<dt>
-			<span class="<?php echo $this->params->get('marker_class'); ?>">
-				<?php echo $this->params->get('marker_address'); ?>
+			<span class="<?php echo $this->params->get("marker_class"); ?>">
+				<?php echo $this->params->get("marker_address"); ?>
 			</span>
 		</dt>
 
-		<?php if ($this->contact->address && $this->params->get('show_street_address')) : ?>
+		<?php if ($this->contact->address && $this->params->get("show_street_address")): ?>
 			<dd>
 				<span class="contact-street" itemprop="streetAddress">
 					<?php echo nl2br($this->contact->address); ?>
@@ -32,11 +36,11 @@ defined('_JEXEC') or die;
 			</dd>
 		<?php endif; ?>
 
-		<?php if ($this->contact->suburb && $this->params->get('show_suburb')) : ?>
+		<?php if ($this->contact->suburb && $this->params->get("show_suburb")): ?>
 			<dd>
-				<?php if ($this->contact->postcode && $this->params->get('show_postcode')) : ?>
+				<?php if ($this->contact->postcode && $this->params->get("show_postcode")): ?>
 					<span class="contact-postcode" itemprop="postalCode">
-						<?php echo $this->contact->postcode . ' '; ?>
+						<?php echo $this->contact->postcode . " "; ?>
 					</span>
 				<?php endif; ?>
 				<span class="contact-suburb" itemprop="addressLocality">
@@ -45,7 +49,7 @@ defined('_JEXEC') or die;
 				</span>
 			</dd>
 		<?php endif; ?>
-		<?php if ($this->contact->state && $this->params->get('show_state')) : ?>
+		<?php if ($this->contact->state && $this->params->get("show_state")): ?>
 			<dd>
 				<span class="contact-state" itemprop="addressRegion">
 					<?php echo $this->contact->state; ?>
@@ -53,7 +57,7 @@ defined('_JEXEC') or die;
 				</span>
 			</dd>
 		<?php endif; ?>
-		<?php if ($this->contact->country && $this->params->get('show_country')) : ?>
+		<?php if ($this->contact->country && $this->params->get("show_country")): ?>
 		<dd>
 			<span class="contact-country" itemprop="addressCountry">
 				<?php echo $this->contact->country; ?>
@@ -63,10 +67,10 @@ defined('_JEXEC') or die;
 		<?php endif; ?>
 	<?php endif; ?>
 
-<?php if ($this->contact->email_to && $this->params->get('show_email')) : ?>
+<?php if ($this->contact->email_to && $this->params->get("show_email")): ?>
 	<dt>
-		<span class="<?php echo $this->params->get('marker_class'); ?>" itemprop="email">
-			<?php echo nl2br($this->params->get('marker_email')); ?>
+		<span class="<?php echo $this->params->get("marker_class"); ?>" itemprop="email">
+			<?php echo nl2br($this->params->get("marker_email")); ?>
 		</span>
 	</dt>
 	<dd>
@@ -76,10 +80,10 @@ defined('_JEXEC') or die;
 	</dd>
 <?php endif; ?>
 
-<?php if ($this->contact->telephone && $this->params->get('show_telephone')) : ?>
+<?php if ($this->contact->telephone && $this->params->get("show_telephone")): ?>
 	<dt>
-		<span class="<?php echo $this->params->get('marker_class'); ?>">
-			<?php echo $this->params->get('marker_telephone'); ?>
+		<span class="<?php echo $this->params->get("marker_class"); ?>">
+			<?php echo $this->params->get("marker_telephone"); ?>
 		</span>
 	</dt>
 	<dd>
@@ -88,10 +92,10 @@ defined('_JEXEC') or die;
 		</span>
 	</dd>
 <?php endif; ?>
-<?php if ($this->contact->fax && $this->params->get('show_fax')) : ?>
+<?php if ($this->contact->fax && $this->params->get("show_fax")): ?>
 	<dt>
-		<span class="<?php echo $this->params->get('marker_class'); ?>">
-			<?php echo $this->params->get('marker_fax'); ?>
+		<span class="<?php echo $this->params->get("marker_class"); ?>">
+			<?php echo $this->params->get("marker_fax"); ?>
 		</span>
 	</dt>
 	<dd>
@@ -100,10 +104,10 @@ defined('_JEXEC') or die;
 		</span>
 	</dd>
 <?php endif; ?>
-<?php if ($this->contact->mobile && $this->params->get('show_mobile')) : ?>
+<?php if ($this->contact->mobile && $this->params->get("show_mobile")): ?>
 	<dt>
-		<span class="<?php echo $this->params->get('marker_class'); ?>">
-			<?php echo $this->params->get('marker_mobile'); ?>
+		<span class="<?php echo $this->params->get("marker_class"); ?>">
+			<?php echo $this->params->get("marker_mobile"); ?>
 		</span>
 	</dt>
 	<dd>
@@ -112,9 +116,10 @@ defined('_JEXEC') or die;
 		</span>
 	</dd>
 <?php endif; ?>
-<?php if ($this->contact->webpage && $this->params->get('show_webpage')) : ?>
+<?php if ($this->contact->webpage && $this->params->get("show_webpage")): ?>
 	<dt>
-		<span class="<?php echo $this->params->get('marker_class'); ?>">
+		<span class="<?php echo $this->params->get("marker_class"); ?>">
+	<?php echo $this->params->get("marker_webpage"); ?>
 		</span>
 	</dt>
 	<dd>
