@@ -87,4 +87,4 @@ function carousel_<?php echo $module->id; ?>() {
 }
 
 </script>
-<?php endif; ?>
+<?php endif;
