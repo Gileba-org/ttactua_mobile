@@ -47,7 +47,8 @@ if ($moduleTag !== 'div')
 	endif;
 }
 
-$header = '<div class="moduletitle"><' . $headerTag . ' ' . ArrayHelper::toString($headerAttribs) . '>' . $module->title . '</' . $headerTag . '></div>';
+$header = '<div class="moduletitle"><' . $headerTag . ' ' . ArrayHelper::toString($headerAttribs) . '>' .
+$module->title . '</' . $headerTag . '></div>';
 ?>
 <?php if (!empty($module->content)) : ?>
 <<?php echo $moduleTag; ?> <?php echo ArrayHelper::toString($moduleAttribs); ?>>
