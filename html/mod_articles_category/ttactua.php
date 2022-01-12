@@ -11,6 +11,7 @@ defined("_JEXEC") or die();
 
 JLoader::register("ContentHelperRoute", JPATH_SITE . "/components/com_content/helpers/route.php");
 ?>
+<?php if (!empty($list)) : ?>
 <div class="slideContainer">
 	<?php foreach ($list as $item): ?>
 		<div class="mySlide_<?php echo $module->id; ?>" style="max-width: 100%;" itemscope>
@@ -86,3 +87,4 @@ function carousel_<?php echo $module->id; ?>() {
 }
 
 </script>
+<?php endif;
