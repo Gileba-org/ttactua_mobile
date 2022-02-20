@@ -9,10 +9,13 @@
 
 defined('_JEXEC') or die;
 
-$app      	= JFactory::getApplication();
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+
+$app      	= Factory::getApplication();
 $params	  	= $app->getTemplate(true)->params;
 
-JHtml::_('formbehavior.chosen', 'select');
+HTMLHelper::_('formbehavior.chosen', 'select');
 ?>
 
 <div class="search<?php echo $this->pageclass_sfx; ?>">

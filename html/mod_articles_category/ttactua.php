@@ -9,19 +9,23 @@
 
 defined("_JEXEC") or die();
 
-JLoader::register("ContentHelperRoute", JPATH_SITE . "/components/com_content/helpers/route.php");
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 ?>
 <?php if (!empty($list)) : ?>
 <div class="slideContainer">
 	<?php foreach ($list as $item): ?>
 		<div class="mySlide_<?php echo $module->id; ?>" style="max-width: 100%;" itemscope>
 			<?php if ($params->get("link_titles") == 1): ?>
-				<?php echo JLayoutHelper::render("joomla.content.full_image", $item); ?>
-				<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>">
+				<?php echo LayoutHelper::render("joomla.content.full_image", $item); ?>
+				<a href="<?php echo Route::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>">
 					<h4><?php echo $item->title; ?></h4>
 				</a>
 			<?php else: ?>
-				<?php echo JLayoutHelper::render("joomla.content.full_image", $item); ?>
+				<?php echo LayoutHelper::render("joomla.content.full_image", $item); ?>
 				<h4><?php echo $item->title; ?></h4>
 			<?php endif; ?>
 					<?php if ($item->displayHits): ?>
@@ -53,15 +57,15 @@ JLoader::register("ContentHelperRoute", JPATH_SITE . "/components/com_content/he
 				<p class="mod-articles-category-readmore">
 					<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
 						<?php if ($item->params->get("access-view") == false): ?>
-							<?php echo JText::_("MOD_ARTICLES_CATEGORY_REGISTER_TO_READ_MORE"); ?>
+							<?php echo Text::_("MOD_ARTICLES_CATEGORY_REGISTER_TO_READ_MORE"); ?>
 						<?php elseif ($readmore = $item->alternative_readmore): ?>
 							<?php echo $readmore; ?>
-							<?php echo JHtml::_("string.truncate", $item->title, $params->get("readmore_limit")); ?>
+							<?php echo HTMLHelper::_("string.truncate", $item->title, $params->get("readmore_limit")); ?>
 						<?php elseif ($params->get("show_readmore_title", 0) == 0): ?>
-							<?php echo JText::sprintf("MOD_ARTICLES_CATEGORY_READ_MORE_TITLE"); ?>
+							<?php echo Text::sprintf("MOD_ARTICLES_CATEGORY_READ_MORE_TITLE"); ?>
 						<?php else: ?>
-							<?php echo JText::_("MOD_ARTICLES_CATEGORY_READ_MORE"); ?>
-							<?php echo JHtml::_("string.truncate", $item->title, $params->get("readmore_limit")); ?>
+							<?php echo Text::_("MOD_ARTICLES_CATEGORY_READ_MORE"); ?>
+							<?php echo HTMLHelper::_("string.truncate", $item->title, $params->get("readmore_limit")); ?>
 						<?php endif; ?>
 					</a>
 				</p>

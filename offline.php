@@ -9,12 +9,19 @@
 
 defined('_JEXEC') or die();
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\AuthenticationHelper;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
+
 /**
- * @var JDocumentHtml $this
+ * @var DocumentHtml $this
 */
 
-$twofactormethods = JAuthenticationHelper::getTwoFactorMethods();
-$app = JFactory::getApplication();
+$twofactormethods = AuthenticationHelper::getTwoFactorMethods();
+$app = Factory::getApplication();
 $params = $app->getTemplate(true)->params;
 
 // Output as HTML5
@@ -23,13 +30,13 @@ $this->setHtml5(true);
 $fullWidth = 1;
 
 // Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
+HTMLHelper::_('bootstrap.framework');
 
 // Add template js
-JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
 
 // Add html5 shiv
-JHtml::_(
+HTMLHelper::_(
 	'script',
 	'jui/html5.js',
 	array(
@@ -40,7 +47,7 @@ JHtml::_(
 );
 
 // Add Stylesheets
-JHtml::_(
+HTMLHelper::_(
 	'stylesheet',
 	'template.css',
 	array(
@@ -48,7 +55,7 @@ JHtml::_(
 	'relative' => true,
 	)
 );
-JHtml::_(
+HTMLHelper::_(
 	'stylesheet',
 	'offline.css',
 	array(
@@ -81,30 +88,30 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 					<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) !== '') : ?>
 					<p><?php echo $app->get('offline_message'); ?></p>
 					<?php elseif ($app->get('display_offline_message', 1) == 2) : ?>
-					<p><?php echo JText::_('JOFFLINE_MESSAGE'); ?></p>
+					<p><?php echo Text::_('JOFFLINE_MESSAGE'); ?></p>
 					<?php endif; ?>
 				</div>
 				<jdoc:include type="message" />
-				<form action="<?php echo JRoute::_('index.php', true); ?>" method="post" id="form-login">
+				<form action="<?php echo Route::_('index.php', true); ?>" method="post" id="form-login">
 					<fieldset>
-						<label for="username"><?php echo JText::_('JGLOBAL_USERNAME'); ?></label>
-						<input name="username" id="username" type="text" title="<?php echo JText::_('JGLOBAL_USERNAME'); ?>" />
+						<label for="username"><?php echo Text::_('JGLOBAL_USERNAME'); ?></label>
+						<input name="username" id="username" type="text" title="<?php echo Text::_('JGLOBAL_USERNAME'); ?>" />
 
-						<label for="password"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
-						<input type="password" name="password" id="password" title="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" />
+						<label for="password"><?php echo Text::_('JGLOBAL_PASSWORD'); ?></label>
+						<input type="password" name="password" id="password" title="<?php echo Text::_('JGLOBAL_PASSWORD'); ?>" />
 
 						<?php if (count($twofactormethods) > 1) : ?>
-						<label for="secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?></label>
-						<input type="text" name="secretkey" autocomplete="one-time-code" id="secretkey" 
-							title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>" />
+						<label for="secretkey"><?php echo Text::_('JGLOBAL_SECRETKEY'); ?></label>
+						<input type="text" name="secretkey" autocomplete="one-time-code" id="secretkey"
+							title="<?php echo Text::_('JGLOBAL_SECRETKEY'); ?>" />
 						<?php endif; ?>
 
-						<input type="submit" name="Submit" class="btn btn-primary" value="<?php echo JText::_('JLOGIN'); ?>" />
+						<input type="submit" name="Submit" class="btn btn-primary" value="<?php echo Text::_('JLOGIN'); ?>" />
 
 						<input type="hidden" name="option" value="com_users" />
 						<input type="hidden" name="task" value="user.login" />
-						<input type="hidden" name="return" value="<?php echo base64_encode(JUri::base()); ?>" />
-						<?php echo JHtml::_('form.token') ?>
+						<input type="hidden" name="return" value="<?php echo base64_encode(Uri::base()); ?>" />
+						<?php echo HTMLHelper::_('form.token') ?>
 					</fieldset>
 				</form>
 			</div>

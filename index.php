@@ -1,18 +1,21 @@
 <?php
 	defined('_JEXEC') or die('Restricted access');
 
+	use Joomla\CMS\Factory;
+	use Joomla\CMS\HTML\HTMLHelper;
+
 	/** @var JDocumentHtml $this */
-	$app      	= JFactory::getApplication();
+	$app      	= Factory::getApplication();
 
 	/** Output as HTML5 */
 	$this->setHtml5(true);
 
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
-	$config 	= JFactory::getConfig();
+	$config 	= Factory::getConfig();
 
-	JHtml::_('jquery.framework');
-	JHtml::_('bootstrap.framework');
+	HTMLHelper::_('jquery.framework');
+	HTMLHelper::_('bootstrap.framework');
 
 	/** Count Modules Performance */
 	$countRightModules	= $this->countModules('right');
@@ -28,20 +31,20 @@
    <head>
 		<jdoc:include type="head" />
 <?php
-		JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
-		JHtml::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
-		JHtml::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
-		JHtml::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
+		HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
+		HTMLHelper::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
+		HTMLHelper::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
+		HTMLHelper::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
 if ($this->params->get('fontsCss') != "") {
-	JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+	HTMLHelper::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
 }
 
 if($countBannerModules) {
-	JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+	HTMLHelper::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
 }
 
-		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
-		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
+		HTMLHelper::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
+		HTMLHelper::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
 ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($this->params->get('doubleClick')) {	?>
@@ -53,7 +56,7 @@ if($countBannerModules) {
 					googletag.pubads().enableSingleRequest();
 					googletag.enableServices();
 				});
-			</script>		
+			</script>
 <!-- END Google DoubleClick Code -->
 <?php	}	?>
 	</head>
@@ -67,7 +70,7 @@ if($countBannerModules) {
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
-				</button>  
+				</button>
 			</div>
 			<div class="col-p-10 flip-container vertical">
 				<div class="flipper">
@@ -130,7 +133,7 @@ if($countBannerModules) {
 <?php else : ?>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 <?php endif ?>
-				</div>			 
+				</div>
 <?php if($countFooterModules) : ?>
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
@@ -144,13 +147,13 @@ if($countBannerModules) {
 			var $mobilemenu = jQuery("#sidemenu");
 			$hamburger.on("click", function(e) {
 				$hamburger.toggleClass("is-active");
-				$mobilemenu.toggleClass("left open");				
+				$mobilemenu.toggleClass("left open");
 			});
 		</script>
 		<!-- Move left menu to mobile space and back -->
 		<script>
 			var $win = jQuery(window);
-			jQuery(document).ready(function(f) {			
+			jQuery(document).ready(function(f) {
 				if ($win.width() < 600) {
 					jQuery("#mainmenu").appendTo("#mobile-menu");
 				}

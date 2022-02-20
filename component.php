@@ -9,19 +9,23 @@
 
 defined('_JEXEC') or die;
 
-$app             = JFactory::getApplication();
-$doc             = JFactory::getDocument();
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
+
+$app             = Factory::getApplication();
+$doc             = Factory::getDocument();
 $this->language  = $doc->language;
 $this->direction = $doc->direction;
 
 // Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
+HTMLHelper::_('bootstrap.framework');
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
 
 // Load optional rtl Bootstrap css and Bootstrap bugfixes
-JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
+HtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +38,7 @@ JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <jdoc:include type="head" />
 <!--[if lt IE 9]>
-	<script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script>
+	<script src="<?php echo Uri::root(true); ?>/media/jui/js/html5.js"></script>
 <![endif]-->
 </head>
 <body class="contentpane modal">
