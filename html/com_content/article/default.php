@@ -25,7 +25,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 $currentDate       = JFactory::getDate()->format('Y-m-d H:i:s');
 $isNotPublishedYet = $this->item->publish_up > $currentDate;
-$isExpired         = $this->item->publish_down < $currentDate && $this->item->publish_down !== JFactory::getDbo()->getNullDate();
+$isExpired         = $this->item->publish_down < $currentDate
+	&& $this->item->publish_down !== JFactory::getDbo()->getNullDate()
+	&& $this->item->publish_down !== null;
 
 if ($tplParams->get('swipe')) {
 	JHtml::_('behavior.caption');
@@ -36,35 +38,35 @@ if ($tplParams->get('swipe')) {
 <script>
 	jQuery.mobile.loading().hide();
 	jQuery.mobile.linkBindingEnabled = false;
-	jQuery(document).on("swipeleft", function(event){    
+	jQuery(document).on("swipeleft", function(event){
 		if(event.handled !== true) // This will prevent event triggering more then once
-		{    
+		{
 			if (jQuery('a[rel="next"]').attr('href') !== undefined)
 			{
 				window.location = jQuery('a[rel="next"]').attr('href');
 			}
 			event.handled = true;
 		}
-		return false;         
+		return false;
 	});
 
-	jQuery(document).on("swiperight", function(event){     
+	jQuery(document).on("swiperight", function(event){
 		if(event.handled !== true) // This will prevent event triggering more then once
-		{      
+		{
 			if (jQuery('a[rel="prev"]').attr('href') !== undefined)
 			{
 				window.location = jQuery('a[rel="prev"]').attr('href');
 			}
 			event.handled = true;
 		}
-		return false;            
+		return false;
 	});
 </script>
 <?php } ?>
 <div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
-	<meta 
-		itemprop="inLanguage" 
-		content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" 
+	<meta
+		itemprop="inLanguage"
+		content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>"
 	/>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
