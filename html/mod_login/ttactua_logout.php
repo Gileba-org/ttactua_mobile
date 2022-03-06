@@ -9,14 +9,18 @@
 
 defined('_JEXEC') or die;
 
-JHtml::_('behavior.keepalive');
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+
+// HTMLHelper::_('behavior.keepalive');
 ?>
-<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure', 0)); ?>" method="post" id="login-form" class="form-vertical">
+<form action="<?php echo Route::_('index.php', true, $params->get('usesecure', 0)); ?>" method="post" id="login-form" class="form-vertical">
 	<div class="logout-button">
-		<input type="submit" name="Submit" class="btn" value="<?php echo JText::_('JLOGOUT'); ?>" />
+		<input type="submit" name="Submit" class="btn" value="<?php echo Text::_('JLOGOUT'); ?>" />
 		<input type="hidden" name="option" value="com_users" />
 		<input type="hidden" name="task" value="user.logout" />
 		<input type="hidden" name="return" value="<?php echo $return; ?>" />
-		<?php echo JHtml::_('form.token'); ?>
+		<?php echo HTMLHelper::_('form.token'); ?>
 	</div>
 </form>
