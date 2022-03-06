@@ -9,16 +9,19 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 ?>
 			<dd class="category-name">
 					<?php $title = $this->escape($displayData['item']->category_title); ?>
 				<?php if ($displayData['params']->get('link_category') && $displayData['item']->catslug) : ?>
 					<?php $url = '<a href="' .
-						JRoute::_(ContentHelperRoute::getCategoryRoute($displayData['item']->catslug)) .
+						Route::_(ContentHelperRoute::getCategoryRoute($displayData['item']->catslug)) .
 						'" itemprop="genre">' . $title . '</a>';
 					?>
-					<?php echo JText::sprintf($url); ?>
+					<?php echo Text::sprintf($url); ?>
 				<?php else : ?>
-					<?php echo JText::sprintf('<span itemprop="genre">' . $title . '</span>'); ?>
+					<?php echo Text::sprintf('<span itemprop="genre">' . $title . '</span>'); ?>
 				<?php endif; ?>
 			</dd>

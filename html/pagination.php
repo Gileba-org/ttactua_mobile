@@ -9,10 +9,12 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Language\Text;
+
 /**
  * Renders an active item in the pagination block
  *
- * @param   JPaginationObject  $item  The current pagination object
+ * @param   PaginationObject  $item  The current pagination object
  *
  * @return  string                    HTML markup for active item
  *
@@ -23,25 +25,25 @@ function pagination_item_active(&$item)
 	$class = '';
 
 	// Check for "Start" item
-	if ($item->text == JText::_('JLIB_HTML_START'))
+	if ($item->text == Text::_('JLIB_HTML_START'))
 	{
 		$display = '<span class="icon-first"></span>';
 	}
 
 	// Check for "Prev" item
-	if ($item->text == JText::_('JPREV'))
+	if ($item->text == Text::_('JPREV'))
 	{
 		$display = '<span class="icon-previous"></span>';
 	}
 
 	// Check for "Next" item
-	if ($item->text == JText::_('JNEXT'))
+	if ($item->text == Text::_('JNEXT'))
 	{
 		$display = '<span class="icon-next"></span>';
 	}
 
 	// Check for "End" item
-	if ($item->text == JText::_('JLIB_HTML_END'))
+	if ($item->text == Text::_('JLIB_HTML_END'))
 	{
 		$display = '<span class="icon-last"></span>';
 	}
@@ -59,7 +61,7 @@ function pagination_item_active(&$item)
 /**
  * Renders an inactive item in the pagination block
  *
- * @param   JPaginationObject  $item  The current pagination object
+ * @param   PaginationObject  $item  The current pagination object
  *
  * @return  string  HTML markup for inactive item
  *
@@ -68,25 +70,25 @@ function pagination_item_active(&$item)
 function pagination_item_inactive(&$item)
 {
 	// Check for "Start" item
-	if ($item->text == JText::_('JLIB_HTML_START'))
+	if ($item->text == Text::_('JLIB_HTML_START'))
 	{
 		return '<span class="disabled"><a><span class="icon-first"></span></a></span>';
 	}
 
 	// Check for "Prev" item
-	if ($item->text == JText::_('JPREV'))
+	if ($item->text == Text::_('JPREV'))
 	{
 		return '<span class="disabled"><a><span class="icon-previous"></span></a></span>';
 	}
 
 	// Check for "Next" item
-	if ($item->text == JText::_('JNEXT'))
+	if ($item->text == Text::_('JNEXT'))
 	{
 		return '<span class="disabled"><a><span class="icon-next"></span></a></span>';
 	}
 
 	// Check for "End" item
-	if ($item->text == JText::_('JLIB_HTML_END'))
+	if ($item->text == Text::_('JLIB_HTML_END'))
 	{
 		return '<span class="disabled"><a><span class="icon-last"></span></a></span>';
 	}
