@@ -13,7 +13,7 @@ a {
 	color: @color-link;
 	text-decoration: none;
 }
-	
+
 img {
     max-width: 100%;
     height: auto;
@@ -102,8 +102,15 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 #banners {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 10px;
+
+	.col-12 {
+		display: flex;
+
+		.bannergroup {
+			width: 25%;
+		}
+	}
 }
 
 #site {
