@@ -34,7 +34,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 
 $currentDate       = Factory::getDate()->format('Y-m-d H:i:s');
 $isNotPublishedYet = $this->item->publish_up > $currentDate;
-$isExpired         = $this->item->publish_down < $currentDate && $this->item->publish_down !== Factory::getDbo()->getNullDate();
+$isExpired         = $this->item->publish_down < $currentDate
+	&& $this->item->publish_down !== JFactory::getDbo()->getNullDate()
+	&& $this->item->publish_down !== null;
 
 if ($tplParams->get('swipe')) {
 	// HTMLHelper::_('behavior.caption');
@@ -73,7 +75,7 @@ if ($tplParams->get('swipe')) {
 <div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
 	<meta
 		itemprop="inLanguage"
-		content="<?php echo ($this->item->language === '*') ? Factory::getConfig()->get('language') : $this->item->language; ?>"
+		content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>"
 	/>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
