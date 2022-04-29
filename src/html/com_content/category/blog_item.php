@@ -50,7 +50,7 @@ $isUnpublished = ($this->item->state == 0 || $this->item->publish_up > $currentD
 	|| $assocParam); ?>
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+	<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
 <?php endif; ?>
 
 <?php echo LayoutHelper::render('joomla.content.full_image', $this->item); ?>
@@ -68,7 +68,7 @@ $isUnpublished = ($this->item->state == 0 || $this->item->publish_up > $currentD
 	class="bloglink"><?php echo $this->item->introtext; ?></a>
 
 <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
+	<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 <?php endif; ?>
 
 <?php if ($params->get('show_readmore') && $this->item->readmore) :
