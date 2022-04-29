@@ -17,10 +17,12 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 <dd class="category-name">
 	<?php $title = $this->escape($displayData['item']->category_title); ?>
 	<?php if ($displayData['params']->get('link_category') && !empty($displayData['item']->catid)) : ?>
-		<?php $url = '<a href="' . Route::_(
-			RouteHelper::getCategoryRoute($displayData['item']->catid, $displayData['item']->category_language)
+		<?php
+			$url = '<a href="' . Route::_(
+				RouteHelper::getCategoryRoute($displayData['item']->catid, $displayData['item']->category_language)
 			)
-			. '" itemprop="genre">' . $title . '</a>'; ?>
+			. '" itemprop="genre">' . $title . '</a>';
+		?>
 		<?php echo Text::sprintf($url); ?>
 	<?php else : ?>
 		<?php echo Text::sprintf('<span itemprop="genre">' . $title . '</span>'); ?>
