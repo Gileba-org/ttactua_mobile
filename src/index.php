@@ -122,11 +122,11 @@ if($countBannerModules) {
 					<div class="col-12 col-s-12 col-m-12" id="component_wrapper">
 <?php endif ?>
 						<div id="messages"><jdoc:include type="message" /></div>
-						<div id="cheader"><jdoc:include type="modules" name="content-header" /></div>
+						<div id="cheader"><jdoc:include type="modules" name="content-header" style="ttactua" /></div>
 <?php if (!($this->params->get('componentFreeHome')) || ($menu->getActive() != $menu->getDefault())) : ?>
 						<div id="component"><jdoc:include type="component" /></div>
 <?php endif ?>
-						<div id="cfooter"><jdoc:include type="modules" name="content-footer" /></div>
+						<div id="cfooter"><jdoc:include type="modules" name="content-footer" style="ttactua" /></div>
 					</div>
 <?php if ($this->params->get('hideleft')) : ?>
 					<div class="col-3 col-s-4 col-m-5 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
