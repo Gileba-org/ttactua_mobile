@@ -68,7 +68,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 	|| $assocParam); ?>
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+	<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
 <?php endif; ?>
 
 <?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
@@ -89,7 +89,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 
 <?php if ($info == 1 || $info == 2) : ?>
 	<?php if ($useDefList) : ?>
-		<?php echo LayoutHelper::render('joomla.content.info_block.block',
+		<?php echo LayoutHelper::render('joomla.content.info_block',
 			array('item' => $this->item, 'params' => $params, 'position' => 'below')
 		); ?>
 	<?php endif; ?>
