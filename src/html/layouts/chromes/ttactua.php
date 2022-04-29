@@ -55,6 +55,8 @@ $module->title . '</' . $headerTag . '></div>';
 	<?php if ((bool) $module->showtitle) : ?>
 		<?php echo $header; ?>
 	<?php endif; ?>
+	<div class="modulecontent">
 	<?php echo $module->content; ?>
+	</div>
 </<?php echo $moduleTag; ?>>
 <?php endif;
