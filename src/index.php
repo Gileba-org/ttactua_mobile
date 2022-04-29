@@ -12,9 +12,10 @@
 	$config 	= JFactory::getConfig();
 	$version 	= new JVersion();
 
-	if ($version->isCompatible("4.0.0")) {
-		$wa  		= $this->getWebAssetManager();
-	}
+if ($version->isCompatible("4.0.0")) {
+	$wa  		= $this->getWebAssetManager();
+}
+
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
 
@@ -36,16 +37,17 @@
 		JHtml::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
-		if ($this->params->get('fontsCss') != "") {
-			JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
-		}
-		if ($version->isCompatible("4.0.0")) {
-			$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
-		}
+if ($this->params->get('fontsCss') != "") {
+	JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+}
 
-		if($countBannerModules) {
-			JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
-		}
+if ($version->isCompatible("4.0.0")) {
+	$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
+}
+
+if($countBannerModules) {
+	JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+}
 
 		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
 		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));

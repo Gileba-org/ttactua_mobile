@@ -19,9 +19,9 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 	<?php $title = $this->escape($displayData['item']->category_title); ?>
 	<?php if ($displayData['params']->get('link_category') && !empty($displayData['item']->catid)) : ?>
 		<?php $url = '<a href="' . Route::_(
-	RouteHelper::getCategoryRoute($displayData['item']->catid, $displayData['item']->category_language)
-	)
-	. '" itemprop="genre">' . $title . '</a>'; ?>
+		RouteHelper::getCategoryRoute($displayData['item']->catid, $displayData['item']->category_language)
+		)
+		. '" itemprop="genre">' . $title . '</a>'; ?>
 		<?php echo JText::sprintf($url); ?>
 	<?php else : ?>
 		<?php echo JText::sprintf('<span itemprop="genre">' . $title . '</span>'); ?>
