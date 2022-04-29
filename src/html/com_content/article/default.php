@@ -132,7 +132,7 @@ if ($tplParams->get('swipe')) {
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 
 	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-		<?php echo LayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
+		<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params,
 			'position' => 'above')
 		); ?>
 	<?php endif; ?>
@@ -171,7 +171,7 @@ if ($tplParams->get('swipe')) {
 
 		<?php if ($info == 1 || $info == 2) : ?>
 			<?php if ($useDefList) : ?>
-				<?php echo LayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
+				<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params,
 					'position' => 'below')
 				); ?>
 			<?php endif; ?>

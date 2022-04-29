@@ -10,7 +10,7 @@
 			right: 5px;
 		}
 	}
-	
+
 	.items-row[max-width~="480px"], .items-leading[max-width~="480px"] {
 		.item-image.intro {
 			display:none;
@@ -34,10 +34,13 @@
 	.article-info {
 		margin-top: 0.2em;
 		font-size: 0.8em;
-		dd:nth-child(n+3)::before { content: " • "}
+		dd:nth-child(n+3)::before { content: " • "};
 		dd {
 			margin-left: 0;
 			display: inline;
+			.icon-user, .icon-calendar {
+				display: none;
+			}
 		}
 		.article-info-term {
 			display: none;
