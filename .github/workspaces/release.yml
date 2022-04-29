@@ -1,0 +1,38 @@
+name: Release zipped package
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Zip source
+        uses: papeloto/action-zip@v1
+        with:
+          files: src/
+          dest: package/tpl_ttactua_mobile.zip
+      - name: Download Template Companion (@v1.0.1)
+        run: cd package | curl https://github.com/Gileba-org/plg_system_templatecompanion/releases/download/v1.0.1/plg_system_templatecompanion.zip
+      - name: Zip package
+        uses: papeloto/action-zip@v1
+        with:
+          files: package/
+          dest: pkg_ttactua_mobile.zip
+      - name: Create release with zipped file and package
+        uses: softprops/action-gh-release@v1
+        with:
+          files: pkg_ttactua_mobile.zip package/tpl_ttactua_mobile.zip
+      - name: Deploy update server
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.FTP_HOST }}
+          ftp_username: ${{ secrets.FTP_USERNAME }}
+          ftp_password: ${{ secrets.FTP_PASSWORD }}
+          local_source_dir: "update-server"
+          dist_target_dir: "www/updates"
+          delete: "false"

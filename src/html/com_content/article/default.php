@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Layout\LayoutHelper;
+
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $app      	= JFactory::getApplication();
 $tplParams	= $app->getTemplate(true)->params;
@@ -36,35 +38,35 @@ if ($tplParams->get('swipe')) {
 <script>
 	jQuery.mobile.loading().hide();
 	jQuery.mobile.linkBindingEnabled = false;
-	jQuery(document).on("swipeleft", function(event){    
+	jQuery(document).on("swipeleft", function(event){
 		if(event.handled !== true) // This will prevent event triggering more then once
-		{    
+		{
 			if (jQuery('a[rel="next"]').attr('href') !== undefined)
 			{
 				window.location = jQuery('a[rel="next"]').attr('href');
 			}
 			event.handled = true;
 		}
-		return false;         
+		return false;
 	});
 
-	jQuery(document).on("swiperight", function(event){     
+	jQuery(document).on("swiperight", function(event){
 		if(event.handled !== true) // This will prevent event triggering more then once
-		{      
+		{
 			if (jQuery('a[rel="prev"]').attr('href') !== undefined)
 			{
 				window.location = jQuery('a[rel="prev"]').attr('href');
 			}
 			event.handled = true;
 		}
-		return false;            
+		return false;
 	});
 </script>
 <?php } ?>
 <div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
-	<meta 
-		itemprop="inLanguage" 
-		content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" 
+	<meta
+		itemprop="inLanguage"
+		content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>"
 	/>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -121,9 +123,8 @@ if ($tplParams->get('swipe')) {
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 
 	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-		<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
-			'position' => 'above')
-		); ?>
+		<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+
 	<?php endif; ?>
 
 	<?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
@@ -160,7 +161,7 @@ if ($tplParams->get('swipe')) {
 
 		<?php if ($info == 1 || $info == 2) : ?>
 			<?php if ($useDefList) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params,
+				<?php echo JLayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params,
 					'position' => 'below')
 				); ?>
 			<?php endif; ?>

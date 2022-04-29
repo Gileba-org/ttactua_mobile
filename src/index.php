@@ -10,7 +10,11 @@
 	$params	  	= $app->getTemplate(true)->params;
 	$menu 		= $app->getMenu();
 	$config 	= JFactory::getConfig();
+	$version 	= new JVersion();
 
+	if ($version->isCompatible("4.0.0")) {
+		$wa  		= $this->getWebAssetManager();
+	}
 	JHtml::_('jquery.framework');
 	JHtml::_('bootstrap.framework');
 
@@ -20,7 +24,7 @@
 	$countHeaderModules	= $this->countModules('header');
 	$countFooterModules	= $this->countModules('footer');
 	$countTitleModules	= $this->countModules('title');
-	$countTopModules		= $this->countModules('top');
+	$countTopModules	= $this->countModules('top');
 	$countBannerModules	= $this->countModules('banners');
 ?>
 <!DOCTYPE html>
@@ -32,13 +36,16 @@
 		JHtml::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
 		JHtml::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
-if ($this->params->get('fontsCss') != "") {
-	JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
-}
+		if ($this->params->get('fontsCss') != "") {
+			JHtml::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
+		}
+		if ($version->isCompatible("4.0.0")) {
+			$wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
+		}
 
-if($countBannerModules) {
-	JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
-}
+		if($countBannerModules) {
+			JHTML::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+		}
 
 		JHTML::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
 		JHTML::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
@@ -53,7 +60,7 @@ if($countBannerModules) {
 					googletag.pubads().enableSingleRequest();
 					googletag.enableServices();
 				});
-			</script>		
+			</script>
 <!-- END Google DoubleClick Code -->
 <?php	}	?>
 	</head>
@@ -67,7 +74,7 @@ if($countBannerModules) {
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
-				</button>  
+				</button>
 			</div>
 			<div class="col-p-10 flip-container vertical">
 				<div class="flipper">
@@ -130,7 +137,7 @@ if($countBannerModules) {
 <?php else : ?>
 					<div class="col-3 col-s-0 col-m-0 col-p-0" id="right"><jdoc:include type="modules" name="right" style="ttactua" /></div>
 <?php endif ?>
-				</div>			 
+				</div>
 <?php if($countFooterModules) : ?>
 				<div class="row" id="footer">
 					<div class="col-12 col-s-12 col-m-12"><jdoc:include type="modules" name="footer" /></div>
@@ -144,13 +151,13 @@ if($countBannerModules) {
 			var $mobilemenu = jQuery("#sidemenu");
 			$hamburger.on("click", function(e) {
 				$hamburger.toggleClass("is-active");
-				$mobilemenu.toggleClass("left open");				
+				$mobilemenu.toggleClass("left open");
 			});
 		</script>
 		<!-- Move left menu to mobile space and back -->
 		<script>
 			var $win = jQuery(window);
-			jQuery(document).ready(function(f) {			
+			jQuery(document).ready(function(f) {
 				if ($win.width() < 600) {
 					jQuery("#mainmenu").appendTo("#mobile-menu");
 				}
