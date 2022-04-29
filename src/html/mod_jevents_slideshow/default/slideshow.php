@@ -40,7 +40,6 @@ class DefaultModSlideshowView extends DefaultModLatestView
 
 		$content = "";
 
-
 		if (isset($this->eventsByRelDay) && count($this->eventsByRelDay))
 		{
 			//$this->customFormatStr = '<div class="item active">${imageimg1}<div class="carousel-caption">${title}</div></div>';
@@ -67,9 +66,10 @@ class DefaultModSlideshowView extends DefaultModLatestView
 						{
 							// get all of the events for this day
 							foreach ($daysEvents as $dayEvent) {
-								if (!isset($dayEvent->_imageimg1) || $dayEvent->_imageimg1==""){
+								if (!isset($dayEvent->_imageimg1) || $dayEvent->_imageimg1 == ""){
 									continue;
 								}
+
 								$hasEventsWithImages = true;
 								?>
 								<li data-target="#jevlatestcarousel" data-slide-to="<?php echo $count; ?>" <?php echo ($count == 0) ? 'class="active"' : ''; ?>></li>
@@ -85,35 +85,36 @@ class DefaultModSlideshowView extends DefaultModLatestView
 						$first = true;
 						foreach ($this->eventsByRelDay as $relDay => $daysEvents)
 						{
-
 							reset($daysEvents);
 
 							// get all of the events for this day
 							foreach ($daysEvents as $dayEvent)
 							{
-								if (!isset($dayEvent->_imageimg1) || $dayEvent->_imageimg1==""){
+								if (!isset($dayEvent->_imageimg1) || $dayEvent->_imageimg1 == ""){
 									continue;
 								}
+
 								$html = "";
 								// generate output according custom string
 								foreach ($this->splitCustomFormat as $condtoken)
 								{
-
 									if (isset($condtoken['cond']))
 									{
-										if ($condtoken['cond'] == 'a' && !$dayEvent->alldayevent())
+										if ($condtoken['cond'] == 'a' && !$dayEvent->alldayevent()) {
 											continue;
-										else if ($condtoken['cond'] == '!a' && $dayEvent->alldayevent())
+										} elseif ($condtoken['cond'] == '!a' && $dayEvent->alldayevent()) {
 											continue;
-										else if ($condtoken['cond'] == 'e' && !($dayEvent->noendtime() || $dayEvent->alldayevent()))
+										} elseif ($condtoken['cond'] == 'e' && !($dayEvent->noendtime() || $dayEvent->alldayevent())) {
 											continue;
-										else if ($condtoken['cond'] == '!e' && ($dayEvent->noendtime() || $dayEvent->alldayevent()))
+										} elseif ($condtoken['cond'] == '!e' && ($dayEvent->noendtime() || $dayEvent->alldayevent())) {
 											continue;
-										else if ($condtoken['cond'] == '!m' && $dayEvent->getUnixStartDate() != $dayEvent->getUnixEndDate())
+										} elseif ($condtoken['cond'] == '!m' && $dayEvent->getUnixStartDate() != $dayEvent->getUnixEndDate()) {
 											continue;
-										else if ($condtoken['cond'] == 'm' && $dayEvent->getUnixStartDate() == $dayEvent->getUnixEndDate())
+										} elseif ($condtoken['cond'] == 'm' && $dayEvent->getUnixStartDate() == $dayEvent->getUnixEndDate()) {
 											continue;
+										}
 									}
+
 									foreach ($condtoken['data'] as $token)
 									{
 										if (is_string($token) && strpos($token, "ISACTIVE"))
@@ -128,6 +129,7 @@ class DefaultModSlideshowView extends DefaultModLatestView
 												$token = str_replace("ISACTIVE", "", $token);
 											}
 										}
+
 										unset($match);
 										unset($dateParm);
 										$dateParm = "";
@@ -137,7 +139,7 @@ class DefaultModSlideshowView extends DefaultModLatestView
 											$match = $token['keyword'];
 											$dateParm = isset($token['dateParm']) ? trim($token['dateParm']) : "";
 										}
-										else if (strpos($token, '${') !== false)
+										elseif (strpos($token, '${') !== false)
 										{
 											$match = $token;
 										}
@@ -146,9 +148,11 @@ class DefaultModSlideshowView extends DefaultModLatestView
 											$html .= $token;
 											continue;
 										}
+
 										$this->processMatch($html, $match, $dayEvent, $dateParm, $relDay);
 									}
 								}
+
 								echo $html;
 							}
 						}
@@ -192,6 +196,7 @@ class DefaultModSlideshowView extends DefaultModLatestView
 				$content = "";
 			}
 		}
+
 		return $content;
 
 	}
