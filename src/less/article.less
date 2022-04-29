@@ -35,7 +35,7 @@
 	}
 }
 
-.pagenav {
+.pagenav, .pagenavigation {
 	padding-left: 0;
 	li {
 		list-style-type: none;
@@ -49,13 +49,26 @@
 	}
 }
 
+.visually-hidden {
+	display: none;
+}
+
+span.icon-chevron-left, span.icon-chevron-right {
+	display: none;
+}
+
+// TODO: remove once J3 is no longer supported
+.pagenavigation .pagination li {
+	font-size: 1em;
+}
+
 // Editor
 .btn-toolbar {
 	.btn-group {
 		display: inline-block;
 	}
 }
-	
+
 .icons {
 	text-align: right;
 	margin-top: 0.2em;
