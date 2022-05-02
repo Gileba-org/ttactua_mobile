@@ -5,7 +5,10 @@
 	use Joomla\CMS\HTML\HTMLHelper;
 
 	/** @var JDocumentHtml $this */
-	$app      	= Factory::getApplication();
+	$app = Factory::getApplication();
+	$wa = $app->getDocument()->getWebAssetManager();
+	$wa->useStyle('fontawesome');
+
 
 	/** Output as HTML5 */
 	$this->setHtml5(true);
