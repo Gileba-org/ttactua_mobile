@@ -26,13 +26,13 @@ $params = $this->item->params;
 		</h1>
 	<?php endif; ?>
 
-	<?php if ($this->contact->name && $params->get('show_name')) : ?>
+	<?php if ($this->item->name && $params->get('show_name')) : ?>
 		<div class="page-header">
 			<h2>
 				<?php if ($this->item->published == 0) : ?>
 					<span class="label label-warning"><?php echo Text::_('JUNPUBLISHED'); ?></span>
 				<?php endif; ?>
-				<span class="contact-name" itemprop="name"><?php echo $this->contact->name; ?></span>
+				<span class="contact-name" itemprop="name"><?php echo $this->item->name; ?></span>
 			</h2>
 		</div>
 	<?php endif; ?>
@@ -41,24 +41,24 @@ $params = $this->item->params;
 
 	<?php if ($show_contact_category === 'show_no_link') : ?>
 		<h3>
-			<span class="contact-category"><?php echo $this->contact->category_title; ?></span>
+			<span class="contact-category"><?php echo $this->item->category_title; ?></span>
 		</h3>
 	<?php elseif ($show_contact_category === 'show_with_link') : ?>
-		<?php $contactLink = ContactHelperRoute::getCategoryRoute($this->contact->catid); ?>
+		<?php $contactLink = ContactHelperRoute::getCategoryRoute($this->item->catid); ?>
 		<h3>
 			<span class="contact-category"><a href="<?php echo $contactLink; ?>">
-				<?php echo $this->escape($this->contact->category_title); ?></a>
+				<?php echo $this->escape($this->item->category_title); ?></a>
 			</span>
 		</h3>
 	<?php endif; ?>
 
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 
-	<?php if ($params->get('show_contact_list') && count($this->contacts) > 1) : ?>
+	<?php if ($params->get('show_contact_list') && count($this->items) > 1) : ?>
 		<form action="#" method="get" name="selectForm" id="selectForm">
 			<label for="select_contact"><?php echo Text::_('COM_CONTACT_SELECT_CONTACT'); ?></label>
-			<?php echo HTMLHelper::_('select.genericlist', $this->contacts, 'select_contact',
-				'class="inputbox" onchange="document.location.href = this.value"', 'link', 'name', $this->contact->link
+			<?php echo HTMLHelper::_('select.genericlist', $this->items, 'select_contact',
+				'class="inputbox" onchange="document.location.href = this.value"', 'link', 'name', $this->item->link
 			); ?>
 		</form>
 	<?php endif; ?>
@@ -85,19 +85,19 @@ $params = $this->item->params;
 			<?php echo '<h3>' . Text::_('COM_CONTACT_DETAILS') . '</h3>'; ?>
 		<?php endif; ?>
 
-		<?php if ($this->contact->image && $params->get('show_image')) : ?>
+		<?php if ($this->item->image && $params->get('show_image')) : ?>
 			<div class="thumbnail pull-right">
-				<?php echo HTMLHelper::_('image', $this->contact->image, htmlspecialchars($this->contact->name, ENT_QUOTES, 'UTF_8'),
+				<?php echo HTMLHelper::_('image', $this->item->image, htmlspecialchars($this->item->name, ENT_QUOTES, 'UTF_8'),
 					array('itemprop' => 'image')
 				); ?>
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->contact->con_position && $params->get('show_position')) : ?>
+		<?php if ($this->item->con_position && $params->get('show_position')) : ?>
 			<dl class="contact-position dl-horizontal">
 				<dt><?php echo Text::_('COM_CONTACT_POSITION'); ?>:</dt>
 				<dd itemprop="jobTitle">
-					<?php echo $this->contact->con_position; ?>
+					<?php echo $this->item->con_position; ?>
 				</dd>
 			</dl>
 		<?php endif; ?>
@@ -108,7 +108,7 @@ $params = $this->item->params;
 
 		<?php if ($params->get('allow_vcard')) : ?>
 			<?php echo Text::_('COM_CONTACT_DOWNLOAD_INFORMATION_AS'); ?>
-			<a href="<?php echo Route::_('index.php?option=com_contact&amp;view=contact&amp;id=' . $this->contact->id . '&amp;format=vcf'); ?>">
+			<a href="<?php echo Route::_('index.php?option=com_contact&amp;view=contact&amp;id=' . $this->item->id . '&amp;format=vcf'); ?>">
 			<?php echo Text::_('COM_CONTACT_VCARD'); ?></a>
 		<?php endif; ?>
 
@@ -119,7 +119,7 @@ $params = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($params->get('show_email_form') && ($this->contact->email_to || $this->contact->user_id)) : ?>
+	<?php if ($params->get('show_email_form') && ($this->item->email_to || $this->item->user_id)) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -164,7 +164,7 @@ $params = $this->item->params;
 		<?php echo $this->loadTemplate('links'); ?>
 	<?php endif; ?>
 
-	<?php if ($params->get('show_articles') && $this->contact->user_id && $this->contact->articles) : ?>
+	<?php if ($params->get('show_articles') && $this->item->user_id && $this->item->articles) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -194,7 +194,7 @@ $params = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($params->get('show_profile') && $this->contact->user_id && PluginHelper::isEnabled('user', 'profile')) : ?>
+	<?php if ($params->get('show_profile') && $this->item->user_id && PluginHelper::isEnabled('user', 'profile')) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -224,11 +224,11 @@ $params = $this->item->params;
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ($params->get('show_user_custom_fields') && $this->contactUser) : ?>
+	<?php if ($params->get('show_user_custom_fields') && $this->itemUser) : ?>
 		<?php echo $this->loadTemplate('user_custom_fields'); ?>
 	<?php endif; ?>
 
-	<?php if ($this->contact->misc && $params->get('show_misc')) : ?>
+	<?php if ($this->item->misc && $params->get('show_misc')) : ?>
 		<?php if ($presentation_style === 'sliders') : ?>
 			<?php if (!$accordionStarted)
 			{
@@ -258,7 +258,7 @@ $params = $this->item->params;
 				</dt>
 				<dd>
 					<span class="contact-misc">
-						<?php echo $this->contact->misc; ?>
+						<?php echo $this->item->misc; ?>
 					</span>
 				</dd>
 			</dl>
