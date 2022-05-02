@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "ttactua_mobile",
+  "version": "3.0.0",
+  "description": "This file contains details of the assets used by the template TTactua Mobile.",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+	{
+	  "name": "fontawesome",
+	  "type": "style",
+	  "uri": "system/joomla-fontawesome.min.css"
+	}
+  ]
+}
