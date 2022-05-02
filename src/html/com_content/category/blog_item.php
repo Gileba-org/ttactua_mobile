@@ -13,6 +13,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Administrator\Extension\ContentComponent;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\CMS\Uri\Uri;
 
@@ -26,8 +27,8 @@ $info    = $params->get('info_block_position', 0);
 $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
 
 $currentDate   = Factory::getDate()->format('Y-m-d H:i:s');
-$isUnpublished = ($this->item->state == 0 || $this->item->publish_up > $currentDate)
-	 || ($this->item->publish_down < $currentDate && $this->item->publish_down !== Factory::getDbo()->getNullDate());
+$isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED || $this->item->publish_up > $currentDate)
+|| ($this->item->publish_down < $currentDate && $this->item->publish_down !== null);
 
 ?>
 <?php if ($isUnpublished) : ?>
