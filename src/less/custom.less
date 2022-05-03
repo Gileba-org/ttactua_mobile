@@ -75,7 +75,12 @@
 #jevents {
 	margin: 0 10px;
 	#jevents_body {
-		font-size: 1em;
+		div, p, td, tr {
+			font-size: inherit;
+		}
+		.jev_evdt .jev_evdt_title {
+		font-size: 160%;
+		}
 		a {
 			color: @color-link;
 		}
