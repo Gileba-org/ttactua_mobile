@@ -28,7 +28,7 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 						<span class="mod-articles-category-date">
 								<?php echo $item->displayDate; ?>
 						</span>
-							<?php endif; ?>
+						<?php endif; ?>
 
 					</h4>
 				</a>
