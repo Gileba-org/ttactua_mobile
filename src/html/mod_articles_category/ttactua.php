@@ -22,7 +22,15 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 			<?php if ($params->get("link_titles") == 1): ?>
 				<?php echo LayoutHelper::render("joomla.content.full_image", $item); ?>
 				<a href="<?php echo Route::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catid, $item->language)); ?>">
-					<h4><?php echo $item->title; ?></h4>
+					<h4>
+						<span class="mod-articles-category-title"><?php echo $item->title; ?></span>
+						<?php if ($item->displayDate): ?>
+						<span class="mod-articles-category-date">
+								<?php echo $item->displayDate; ?>
+						</span>
+						<?php endif; ?>
+
+					</h4>
 				</a>
 			<?php else: ?>
 				<?php echo LayoutHelper::render("joomla.content.full_image", $item); ?>
@@ -41,11 +49,6 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 					<?php if ($item->displayCategoryTitle): ?>
 				<span class="mod-articles-category-category">
 					(<?php echo $item->displayCategoryTitle; ?>)
-				</span>
-					<?php endif; ?>
-					<?php if ($item->displayDate): ?>
-				<span class="mod-articles-category-date">
-						<?php echo $item->displayDate; ?>
 				</span>
 					<?php endif; ?>
 					<?php if ($params->get("show_introtext")): ?>
