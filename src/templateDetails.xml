@@ -7,7 +7,7 @@
 	<authorUrl>https://www.gileba.be/</authorUrl>
 	<copyright>(c)2016 by Gileba</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description>Template for Tafeltennisactua.be</description>
 	<files>
 		<filename>index.php</filename>
