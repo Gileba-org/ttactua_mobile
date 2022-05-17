@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-color: @color-bg-site;
+    margin: 0 10px;
+    font-family: @font-body;
+    color: @color-text;
+}
+
+a {
+	color: @color-link;
+	text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#container {
+	margin: auto;
+	margin-top: 0;
+	max-width: 1200px;
+	background-color: @color-bg-component;
+}
+
+#wrapper {
+	.box-shadow(inset 5px 0 5px -5px #333, inset -5px 0 5px -5px #333);
+}
+
+#sticky.stick {
+	.box-shadow(inset 5px 0 5px -5px #333, inset -5px -5px 5px -5px #333);
+	position: fixed;
+	top: 0;
+	max-width: 1200px;
+	margin: auto;
+	left: 10px;
+	right: 10px;
+	z-index: 9999;
+	background-color: @color-bg-component;
+}
+
+#mobile-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	width: 100%;
+	height: 60px;
+	background-color: @color-main;
+	p {
+		margin: 20px 10px;
+	}
+}
+
+#title {
+	div.col-12 {
+		padding: 0 10px;
+	}
+	img {
+		margin: auto;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+	.uppercase();
+	font-family: @font-title;
+	font-weight: normal;
+}
+
+#mobile-menu {
+	.search {
+		margin-left: 10px;
+		padding: 10px;
+	}
+}
+
+.banneritem {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	div, table, img {
+		margin: auto;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	#header {
+		padding: 10px;
+		.search form.form-inline input {
+			float: right;
+			-webkit-appearance: textfield; // Fix for Safari
+		}
+	}
+}
+
+#banners {
+	margin: 10px;
+
+	.col-12 {
+		display: flex;
+
+		not(.modulecontent) .bannergroup {
+			width: 25%;
+		}
+	}
+}
+
+#site {
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	#sitename {
+		color: white;
+		font-family: @font-title;
+		font-size: 8vmin;
+		height: 60px;
+		vertical-align: middle;
+	}
+}
+
+#mobile-header .banneritem {
+	margin: 0;
+	transition: 2s;
+}
+
+#system-message {
+	padding-top: 15px;
+}
+
+.tag-category {
+	margin-top: -8px;
+	margin-left: 10px;
+	fieldset {
+		padding-bottom: 15px;
+	}
+	.category > thead > tr > th {
+		padding-bottom: 10px;
+	}
+	.list-title {
+		padding-right: 20px;
+	}
+	#categorylist_header_title {
+		text-align: left;
+	}
+}

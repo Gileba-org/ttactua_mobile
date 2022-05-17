@@ -1,0 +1,424 @@
+// Wedstrijduitslagen
+.uitslag {
+	clear: right;
+	font-size: 0.65em;
+	border-spacing: 0 0;
+	border-width: 3px;
+	border-color: @color-text;
+	border-style: solid;
+	margin-bottom: 20px;
+	width: 100%;
+	thead td {
+		font-size: 1.2em;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+		background-color: @color-bg-module;
+		font-weight: bold;
+		width: 4%;
+	}
+	td {
+		text-align: center;
+		border-bottom-color: @color-text;
+		border-bottom-width: 1px;
+		border-bottom-style: dashed;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.lastline td {
+		border-bottom-width: 0;
+	}
+	.winner {
+		color: @color-main;
+		font-weight: bold;
+	}
+	.naam {
+		width: 28%;
+	}
+	.details {
+		text-align: left;
+		border-left-color: @color-text;
+		border-left-style: solid;
+		border-left-width: 1px;
+		width: 16%;
+	}
+}
+
+// Tornooiuitslagen
+.tornooiuitslag {
+	font-size: .8em;
+	width: 100%;
+	.round {
+		width: 130px;
+	}
+	.opponent.winner {
+		color: green;
+	}
+	.opponent.loser {
+		color: red;
+	}
+	.score {
+		width: 40px;
+	}
+	.details {
+		width: 170px;
+	}
+}
+
+// Tabs
+.tab-content {
+	ul {
+		margin-top: 0;
+	}
+}
+
+// jEvents
+#jevents {
+	margin: 0 10px;
+	#jevents_body {
+		div, p, td, tr {
+			font-size: inherit;
+		}
+		.jev_evdt .jev_evdt_title {
+		font-size: 160%;
+		}
+		a {
+			color: @color-link;
+		}
+		.jev_edt, .jev_evdt {
+			padding: 0;
+		}
+		.jev_evdt_creator {
+			color: @color-text;
+			font-size: 0.8em;
+			margin-bottom: 20px;
+		}
+		.jev_eventdetails_body {
+			font-size: 0.9em;
+		}
+		.jeveventrow {
+			min-height: 0;
+		}
+		.jev_toprow .jev_header2_container  div.currentmonth {
+			color: @color-text !important;
+		}
+		.jev_listrow {
+			.eventfull {
+				margin-top: 0;
+				a {
+					font-size: 1.5em;
+				}
+			}
+		}
+	}
+	.jevicons {
+		display: none;
+	}
+	.jev_toprow {
+		height: 23px;
+		.jev_header {
+			display: none;
+		}
+	}
+	.event_legend_name {
+		font-weight: normal;
+	}
+	.showntime {
+		display: none;
+	}
+	.jev_daywithevents {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+.jevbootstrap {
+	h2 {
+		font-size: 1.5em;
+		line-height: 1em;
+		font-weight: normal;
+		font-family: @font-title;
+		margin-top: 0.5 em;
+		margin-bottom: 0;
+	}
+}
+
+.mod_events_latest_callink {
+	.readmorebutton();
+	line-height: 1.7em;
+	text-align: center;
+	clear: both;
+}
+
+// Override the behavior of jEvents to show the category image when no image is attached on the Standard Image upload
+.posterimage {
+	.catimage {
+		display:none;
+	}
+}
+
+// mod_login
+#ttactua-login {
+	div {
+		display: inline;
+	}
+	img {
+		display: inline;
+		margin: 0 2px;
+		vertical-align: middle;
+	}
+	#form-login-submit {
+		margin-right: 5px;
+		.btn {
+			height: 25px;
+			// FIX : Text on loginbutton is taken down in FF for Windows
+			padding: 0 12px;
+ 		}
+	}
+	// FIX: Password placeholder is taken down on Safari
+	#modlgn-passwd {
+		-webkit-padding-before: 1px;
+	}
+}
+
+// Media Manager
+ul.manager.thumbnails {
+	padding: 0	;
+	list-style: none;
+	.height-50 {
+		img {
+			margin: auto;
+		}
+	}
+	.small {
+		margin: 4px 0;
+		font-size: 0.6em;
+	}
+}
+
+// Follow us
+.custommainmenu {
+	background-color: @color-main;
+	margin-top: -16px; // TODO: Fix admin-menu to remove this?
+	margin-left: 10px;
+	margin-right: 10px;
+	p {
+		text-align: center;
+		color: white;
+		padding-bottom: 15px;
+		img {
+			display: inline;
+			margin: 5px;
+		}
+	}
+}
+
+.element-invisible {
+	display:none;
+}
+
+// Project Wonderful
+.customsidebanner {
+	width: 234px;
+	margin: auto;
+}
+
+// Cookie Accept
+#footer {
+	div#ca_info_plus {
+		text-transform: none;
+	}
+
+	div#ca_banner {
+		text-transform: none;
+		border: none !important;
+		height: auto;
+
+		p, div.accept {
+			text-transform: none;
+		}
+
+		div.accept {
+			border: 1px solid grey;
+			margin-top: 10px;
+			.border-radius(4px);
+			.box-shadow(0 2px 3px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2));
+			.bglineargradient(to bottom, lighten(@color-main, 30%), @color-main);
+
+			// Hover/focus state
+			&:hover,
+			&:focus {
+				.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+				color: white;
+				border: 1px solid grey;
+			}
+
+			// Active state
+			&.active,
+			&:active {
+				.box-shadow(0 1px 0 @color-main);
+				color: white;
+			}
+		}
+	}
+}
+
+// Twitter
+.front.twitter {
+	background-color: white;
+	.custom.twitter {
+		margin: 0;
+		p {
+			margin: 0;
+		}
+	}
+}
+
+// RSS-feed
+.light-rss-container {
+	margin: 10px;
+	.light-rss-list {
+		list-style: none;
+		font-family: @font-title;
+		.uppercase();
+		a {
+			color: @color-text;
+		}
+		li {
+			margin: 0;
+			font-size: 0.9em;
+			line-height: 1em;
+		}
+		li:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// Ajax Infinity
+.ai-next {
+	float: right;
+	margin-top: 15px;
+	padding: 4px 12px;
+	display: inline-block;
+	border-radius: 4px;
+	width: auto;
+	.bglineargradient(top, lighten(@color-main, 30%), @color-main);
+	border: 1px solid @color-main;
+	color: white;
+	&:hover {
+		.bglineargradient(to bottom, @color-main, lighten(@color-main, 30%));
+	}
+}
+
+// TT Livescore
+#livescore
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+// com_contact
+.contact-position dt {
+	display: none;
+}
+
+// Hamburger
+#mobile-header {
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+		background-color: white;
+	}
+}
+
+// Flip
+/* entire container, keeps perspective */
+/* flip the pane when hovered */
+.flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .mobile-front, .mobile-back {
+	height: 60px;
+	background-color: @color-main;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 2s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.mobile-front, .mobile-back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.mobile-front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.mobile-back {
+	transform: rotateY(180deg);
+}
+
+.vertical.flip-container {
+	position: relative;
+}
+
+.vertical .mobile-back {
+	transform: rotateX(-180deg);
+	width: 100%;
+	margin: auto;
+}
+
+.vertical.flip-container .flipper {
+	transform-origin: 100% 30px; /* half of height */
+}
+
+.vertical.flip-container.hover .flipper {
+	transform: rotateX(180deg);
+}
+
+/* Table for CSV */
+.modulecontent .csvtable {
+	border-collapse: unset;
+	width: 100%;
+	border: none;
+	margin-left: 0;
+	margin-top: -20px;
+
+	tr {
+		line-height: 1.75em;
+		font-size: 0.8em;
+		td:not(:nth-child(2)) {
+			text-align: center;
+		}
+		td:nth-child(2) {
+			padding-left: 5px;
+		}
+		&:first-child {
+			font-weight: bold;
+			padding-left: 5px;
+			font-size: 0.9em;
+		}
+	}
+}
+
+/* error.php */
+#component {
+	margin-right: 10px;
+	.page-header {
+		margin-top: 0;
+		h2 {
+			margin-top: 0;
+		}
+	}
+}

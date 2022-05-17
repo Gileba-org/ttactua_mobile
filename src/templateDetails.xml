@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0.0" type="template" method="upgrade">
+	<name>ttactua_mobile</name>
+	<creationDate>2022-05-17</creationDate>
+	<author>Gijs Lamon</author>
+	<authorEmail>info@gileba.be</authorEmail>
+	<authorUrl>https://www.gileba.be/</authorUrl>
+	<copyright>(c)2016 by Gileba</copyright>
+	<license>GNU/GPL</license>
+	<version>3.0.0</version>
+	<description>Template for Tafeltennisactua.be</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>component.php</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>less</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_ttactua_mobile.ini</language>
+		<language tag="nl-BE">nl-BE/nl-BE.tpl_ttactua_mobile.ini</language>
+		<language tag="nl-NL">nl-NL/nl-NL.tpl_ttactua_mobile.ini</language>
+	</languages>
+	<positions>
+		<position>title</position>
+		<position>top</position>
+		<position>banners</position>
+		<position>header</position>
+		<position>mobile-header</position>
+		<position>mobile-menu</position>
+		<position>left</position>
+		<position>right</position>
+		<position>content-header</position>
+		<position>content-footer</position>
+		<position>footer</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="general">
+				<field name="specificDateFormat" type="textfield" default="" label="TPL_GILEBA_DATEFORMAT" description="TPL_GILEBA_DATEFORMAT_DESC" />
+				<field name="componentFreeHome" type="checkbox" value="1" default="0" label="TPL_GILEBA_COMPONENTFREEHOME" description="TPL_GILEBA_COMPONENTFREEHOME_DESC" />
+				<field name="hideleft" type="list" default="0" label="TPL_GILEBA_HIDELEFTRIGHT" description="TPL_GILEBA_HIDELEFTRIGHT_DESC">
+					<option value="1">TPL_GILEBA_HIDELEFT</option>
+					<option value="0">TPL_GILEBA_HIDERIGHT</option>
+				</field>
+				<field name="showSearchForm" type="radio" default="1" label="TPL_GILEBA_SHOWSEARCHFORM" description="TPL_GILEBA_SHOWSEARCHFORM_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="hamburgerstyle" type="list" default="collapse" label="TPL_GILEBA_HAMBURGERSTYLE" description="TPL_GILEBA_HAMBURGERSTYLE_DESC">
+					<option value="3dx">3DX</option>
+					<option value="3dx-r">3DX Reverse</option>
+					<option value="3dy">3DY</option>
+					<option value="3dy-r">3DY Reverse</option>
+					<option value="3dxy">3DXY</option>
+					<option value="3dxy-r">3DXY Reverse</option>
+					<option value="arrow">Arrow</option>
+					<option value="arrow-r">Arrow Right</option>
+					<option value="arrowalt">Arrow Alt</option>
+					<option value="arrowalt-r">Arrow Alt Right</option>
+					<option value="arrowturn">Arrow Turn</option>
+					<option value="arrowturn-r">Arrow Turn Right</option>
+					<option value="boring">Boring</option>
+					<option value="collapse">Collapse</option>
+					<option value="collapse-r">Collapse Reverse</option>
+					<option value="elastic">Elastic</option>
+					<option value="elastic-r">Elastic Reverse</option>
+					<option value="empathic">Empathic</option>
+					<option value="empathic-r">Empathic Reverse</option>
+					<option value="minus">Minus</option>
+					<option value="slider">Slider</option>
+					<option value="slider-r">Slider Reverse</option>
+					<option value="spin">Spin</option>
+					<option value="spin-r">Spin Reverse</option>
+					<option value="spring">Spring</option>
+					<option value="spring-r">Spring Reverse</option>
+					<option value="stand">Stand</option>
+					<option value="stand-r">Stand Reverse</option>
+					<option value="squeeze">Squeeze</option>
+					<option value="vortex">Vortex</option>
+					<option value="vortex-r">Vortex Reverse</option>
+				</field>
+			</fieldset>
+			<fieldset name="variables">
+				<field name="useLESS" type="hidden" default="true" />
+				<field name="tc_color-main" type="color" default="#145CAE" label="TPL_GILEBA_COLOR_MAIN" description="TPL_GILEBA_COLOR_MAIN_DESC" />
+				<field name="tc_color-bg-site" type="color" default="#DBEFFF" label="TPL_GILEBA_COLOR_BACKGROUND_SITE" description="TPL_GILEBA_COLOR_BACKGROUND_SITE_DESC" />
+				<field name="tc_color-border-site" type="color" default="#224e6b" label="TPL_GILEBA_COLOR_BORDER_SITE" description="TPL_GILEBA_COLOR_BORDER_SITE_DESC" />
+				<field name="tc_color-link" type="color" default="#145CAE" label="TPL_GILEBA_COLOR_LINK" description="TPL_GILEBA_COLOR_LINK_DESC" />
+				<field name="tc_color-link-active" type="color" default="#4B75B8" label="TPL_GILEBA_COLOR_LINK_ACTIVE" description="TPL_GILEBA_COLOR_LINK_ACTIVE_DESC" />
+			</fieldset>
+			<fieldset name="scripts">
+				<field name="swipe" type="radio" default="1" label="TPL_GILEBA_SWIPE" description="TPL_GILEBA_SWIPE_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="google">
+				<field name="analytics" type="textbox" default="" label="TPL_GILEBA_ANALYTICS" description="TPL_GILEBA_ANALYTICS_DESC" />
+				<field name="doubleClick" type="editor" default="" label="TPL_GILEBA_DOUBLECLICK" description="TPL_GILEBA_DOUBLECLICK_DESC" />
+			</fieldset>
+			<fieldset name="fonts">
+				<field name="fontsCss" type="textbox" default="" label="TPL_GILEBA_FONTS" description="TPL_GILEBA_FONTS_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

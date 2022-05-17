@@ -1,0 +1,21 @@
+#footer {
+	.uppercase();
+	color: @color-text-footer;
+	font-size: 0.6em;
+	.custom {
+		padding-right: 10px;
+	}
+	.nav.menu, .nav.mod-menu {
+		padding-left: 10px;
+		li {
+			display: inline-block;
+			padding: 0 3px;
+			a {
+				color: @color-text-footer;
+			}
+		}
+		li:not(:first-child) {
+			border-left: 1px solid @color-text-footer;
+		}
+	}
+}

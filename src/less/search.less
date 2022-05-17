@@ -1,0 +1,53 @@
+#component {
+	#searchForm {
+		margin-left: 10px;
+		margin-right: 10px;
+		border-bottom: 2px darkgrey solid;
+		padding-bottom: 10px;
+		.form-limit, .counter, .searchintro {
+			display: none;
+		}
+		.controls {
+			display: flex;
+			.form-check-inline {
+				display: flex;
+				margin-right: 20px;
+				label {
+					margin-left: 5px;
+				}
+			}
+		}
+		label.ordering {
+			display: inline-block;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.btn-toolbar {
+			margin-bottom: 15px;
+		}
+	}
+	.search-results {
+		margin-left: 10px;
+		margin-right: 10px;
+		.result-title {
+			.uppercase();
+			font-family: @font-title;
+			a {
+				color: @color-text;
+			}
+		}
+		.result-category {
+			font-size: smaller;
+			font-style: italic;
+		}
+		.result-text {
+			margin: 5px 0 5px 40px;
+			font-size: 0.9em;
+		}
+		.result-created {
+			font-size: smaller;
+			font-style: italic;
+			margin-bottom: 15px;
+		}
+	}
+}

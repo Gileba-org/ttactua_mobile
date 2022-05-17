@@ -1,0 +1,142 @@
+.blog, .blog-featured, .item-page {
+	margin-right: 5px;
+	margin-left: 10px;
+	.item, .items-leading [class^="leading-"], .items-leading [class*=" leading-"] {
+		position: relative;
+		.icons {
+			margin-top: -2px;
+			position: absolute;
+			z-index: 1;
+			right: 5px;
+		}
+	}
+
+	.items-row[max-width~="480px"], .items-leading[max-width~="480px"] {
+		.item-image.intro {
+			display:none;
+		}
+		.item-image.full {
+			display:block;
+		}
+	}
+	.items-leading .leading-0, .items-row .item, .blog-items .blog-item {
+		border-bottom: 4px solid @color-main;
+		overflow: hidden;
+		padding-bottom: 10px;
+		margin-bottom: 1em;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		a {
+			color: @color-text;
+		}
+	}
+	.article-info {
+		margin-top: 0.2em;
+		font-size: 0.8em;
+		dd:nth-child(n+3)::before {
+			content: " • ";
+		}
+		dd {
+			margin-left: 0;
+			display: inline;
+			.icon-user {
+				display: none;
+			}
+		}
+		.article-info-term {
+			display: none;
+		}
+		.categoryname {
+			color: @color-link;
+		}
+	}
+	.item-image {
+		border: 4px solid @color-main;
+		margin-right: 10px;
+		.border-radius(5px);
+		margin-bottom: 10px;
+	}
+	p {
+		font-size: 0.9em;
+	}
+	a.bloglink {
+		color: @color-text;
+	}
+}
+
+.blog, .blog-featured {
+	.item-image.intro {
+		float: left;
+		display: block;
+	}
+	.item-image.full {
+		display: none;
+	}
+}
+
+.readmore {
+	float: right;
+	margin: 5px;
+	.btn {
+		.readmorebutton();
+		line-height: 1.1em;
+	}
+}
+
+.pagination {
+	margin: 15px 0;
+	width: 100%;
+	text-align: center;
+	.counter, .disabled {
+		display: none;
+	}
+	.pagination-start, .pagination-end, .pagination-prev, .pagination-next {
+		span.pagenav {
+			display: none;
+		}
+	}
+	ul {
+		margin: auto;
+		padding-left: 0;
+	}
+	li {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 0.6em;
+		margin: 0 3px;
+		a.pagenav {
+			.border-radius(50%);
+			color: @color-main;
+			background-color: lightgrey;
+		}
+		span.pagenav {
+			color: white;
+			.border-radius(50%);
+			background-color: @color-main;
+		}
+		.pagenav {
+			display: block;
+			height: 20px;
+			width: 20px;
+			padding-top: 4px;
+			text-align: center;
+		}
+	}
+	li.disabled {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.pagination {
+		li {
+			font-size: 1em;
+			.pagenav {
+				height: 25px;
+				width: 25px;
+			}
+		}
+	}
+}
