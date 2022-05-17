@@ -12,7 +12,9 @@
 	<files>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
+		<filename>joomla.asset.json</filename>
 		<filename>component.php</filename>
+		<filename>offline.php</filename>
 		<folder>css</folder>
 		<folder>html</folder>
 		<folder>images</folder>
