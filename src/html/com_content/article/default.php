@@ -82,7 +82,7 @@ if ($tplParams->get('swipe')) {
 		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
 	</div>
 	<?php endif;
-	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)
+	if (!empty($this->item->pagination) && !$this->item->paginationposition && $this->item->paginationrelative)
 	{
 		echo $this->item->pagination;
 	}
