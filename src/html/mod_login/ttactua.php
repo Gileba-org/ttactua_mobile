@@ -46,16 +46,6 @@ $path   = Uri::base(true) . '/templates/' . $app->getTemplate() . '/';
 				</div>
 			</div>
 		</div>
-		<?php if (count($twofactormethods) > 1): ?>
-		<div id="form-login-secretkey" class="control-group">
-			<div class="controls">
-				<div class="input-prepend">
-					<input id="modlgn-secretkey" autocomplete="one-time-code" type="text" name="secretkey" class="input-medium" tabindex="0"
-						size="18" placeholder="<?php echo Text::_('JGLOBAL_SECRETKEY') ?>" />
-				</div>
-			</div>
-		</div>
-		<?php endif; ?>
 		<div id="form-login-submit" class="control-group">
 			<div class="controls">
 				<button type="submit" tabindex="0" name="Submit" class="btn login-button"><?php echo Text::_('JLOGIN'); ?></button>

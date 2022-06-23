@@ -1,6 +1,7 @@
 /* Dekstop */
 #mainmenu,
-#adminmenu {
+#adminmenu,
+.custommainmenu {
 	padding: 10px 10px 20px;
 	background-color: @color-main;
 	color: white;
@@ -64,6 +65,24 @@
 	li.parent:not(.accordeonck),
 	li.parent:not(.accordeonck).deeper {
 		padding-left: 0;
+	}
+
+	a.social {
+		color: white;
+		font-size: 2em;
+		opacity: 0.4;
+	}
+}
+
+.custommainmenu {
+	padding-top: 30px;
+
+	.custom {
+		div {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-evenly;
+		}
 	}
 }
 
