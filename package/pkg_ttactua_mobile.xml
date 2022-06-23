@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<extension type="package" version="3.7" method="upgrade">
+<extension type="package" method="upgrade">
 	<name>TTactua Mobile Package</name>
 	<author>Gijs Lamon</author>
 	<creationDate>2022-06-23</creationDate>
