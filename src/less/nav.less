@@ -460,27 +460,25 @@
 // Accordeon CK
 // ------------
 #main .accordeonck, #mobile-menu {
-	#mainmenu, #adminmenu {
-		li.parent, li.parent.deeper {
-			padding-left: 15px;
-			&:before {
-				display: none;
-			}
+	li.parent, li.parent.deeper {
+		padding-left: 15px;
+		&:before {
+			display: none;
 		}
-		li.parent.open > span span.toggler_icon {
-			background: url(modules/mod_accordeonck/assets/minus.png) center center no-repeat !important;
-			width: 20px;
-		}
-		li.parent > span span.toggler_icon {
-			background: url(modules/mod_accordeonck/assets/plus.png) center center no-repeat !important;
-			width: 20px;
-		}
-		li.active.current {
-			a {
-				opacity: 1;
-				&.isactive {
-					opacity: 0.25;
-				}
+	}
+	li.parent.open > span span.toggler_icon {
+		background: url(modules/mod_accordeonck/assets/minus.png) center center no-repeat !important;
+		width: 20px;
+	}
+	li.parent > span span.toggler_icon {
+		background: url(modules/mod_accordeonck/assets/plus.png) center center no-repeat !important;
+		width: 20px;
+	}
+	li.active.current {
+		a {
+			opacity: 1;
+			&.isactive {
+				opacity: 0.25;
 			}
 		}
 	}
