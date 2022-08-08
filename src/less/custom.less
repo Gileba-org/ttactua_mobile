@@ -74,6 +74,10 @@
 // jEvents
 #jevents {
 	margin: 0 10px;
+
+	img {
+		display: inherit;
+	}
 	#jevents_body {
 		div, p, td, tr {
 			font-size: inherit;
@@ -83,6 +87,10 @@
 		}
 		a {
 			color: @color-link;
+
+			&.ev_link_weekday {
+				color: white;
+			}
 		}
 		.jev_edt, .jev_evdt {
 			padding: 0;
