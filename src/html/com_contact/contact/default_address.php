@@ -23,7 +23,7 @@ use Joomla\CMS\String\PunycodeHelper;
 	|| $this->item->state
 	|| $this->item->country
 	|| $this->item->postcode)
-	): ?>
+): ?>
 		<dt>
 			<span class="<?php echo $this->params->get("marker_class"); ?>">
 				<?php echo $this->params->get("marker_address"); ?>
