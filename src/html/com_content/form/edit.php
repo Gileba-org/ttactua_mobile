@@ -17,11 +17,11 @@ use Joomla\CMS\Router\Route;
 // HTMLHelper::_('behavior.tabstate');
 // HTMLHelper::_('behavior.keepalive');
 // HTMLHelper::_('behavior.formvalidator');
-HTMLHelper::_('formbehavior.chosen', '#jform_catid', null, array('disable_search_threshold' => 0));
-HTMLHelper::_('formbehavior.chosen', '#jform_tags', null, array('placeholder_text_multiple' => Text::_('JGLOBAL_TYPE_OR_SELECT_SOME_TAGS')));
+HTMLHelper::_('formbehavior.chosen', '#jform_catid', null, ['disable_search_threshold' => 0]);
+HTMLHelper::_('formbehavior.chosen', '#jform_tags', null, ['placeholder_text_multiple' => Text::_('JGLOBAL_TYPE_OR_SELECT_SOME_TAGS')]);
 HTMLHelper::_('formbehavior.chosen', 'select');
 $this->tab_name = 'com-content-form';
-$this->ignore_fieldsets = array('image-intro', 'image-full', 'jmetadata', 'item_associations');
+$this->ignore_fieldsets = ['image-intro', 'image-full', 'jmetadata', 'item_associations'];
 // Create shortcut to parameters.
 $params = $this->state->get('params');
 // This checks if the editor config options have ever been saved. If they haven't they will fall back to the original settings.
@@ -55,7 +55,7 @@ Factory::getDocument()->addScriptDeclaration("
 	<form action="<?php echo Route::_('index.php?option=com_content&a_id=' . (int) $this->item->id); ?>" method="post" name="adminForm"
 		id="adminForm" class="form-validate form-vertical">
 		<fieldset>
-			<?php echo HTMLHelper::_('bootstrap.startTabSet', $this->tab_name, array('active' => 'editor')); ?>
+			<?php echo HTMLHelper::_('bootstrap.startTabSet', $this->tab_name, ['active' => 'editor']); ?>
 
 			<?php echo HTMLHelper::_('bootstrap.addTab', $this->tab_name, 'editor', Text::_('COM_CONTENT_ARTICLE_CONTENT')); ?>
 				<?php echo $this->form->renderField('title'); ?>

@@ -33,35 +33,35 @@ $fullWidth = 1;
 HTMLHelper::_('bootstrap.framework');
 
 // Add template js
-HTMLHelper::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'template.js', ['version' => 'auto', 'relative' => true]);
 
 // Add html5 shiv
 HTMLHelper::_(
 	'script',
 	'jui/html5.js',
-	array(
-	'version' => 'auto',
-	'relative' => true,
-	'conditional' => 'lt IE 9',
-	)
+	[
+		'version' => 'auto',
+		'relative' => true,
+		'conditional' => 'lt IE 9',
+	]
 );
 
 // Add Stylesheets
 HTMLHelper::_(
 	'stylesheet',
 	'template.css',
-	array(
-	'version' => 'auto',
-	'relative' => true,
-	)
+	[
+		'version' => 'auto',
+		'relative' => true,
+	]
 );
 HTMLHelper::_(
 	'stylesheet',
 	'offline.css',
-	array(
-	'version' => 'auto',
-	'relative' => true,
-	)
+	[
+		'version' => 'auto',
+		'relative' => true,
+	]
 );
 
 // Logo file or site title param

@@ -118,7 +118,7 @@ if ($tplParams->get('swipe')) {
 	<?php endif; ?>
 	<?php if (!$this->print) : ?>
 		<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-			<?php echo LayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
+			<?php echo LayoutHelper::render('joomla.content.icons', ['params' => $params, 'item' => $this->item, 'print' => false]); ?>
 		<?php endif; ?>
 	<?php else : ?>
 		<?php if ($useDefList) : ?>
@@ -132,8 +132,8 @@ if ($tplParams->get('swipe')) {
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 
 	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-		<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params,
-			'position' => 'above')
+		<?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params,
+			'position' => 'above']
 		); ?>
 	<?php endif; ?>
 
@@ -171,8 +171,8 @@ if ($tplParams->get('swipe')) {
 
 		<?php if ($info == 1 || $info == 2) : ?>
 			<?php if ($useDefList) : ?>
-				<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params,
-					'position' => 'below')
+				<?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params,
+					'position' => 'below']
 				); ?>
 			<?php endif; ?>
 			<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>

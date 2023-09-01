@@ -34,20 +34,20 @@
    <head>
 		<jdoc:include type="head" />
 <?php
-		HTMLHelper::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
-		HTMLHelper::_('stylesheet', 'templates/system/css/system.css', array('version' => 'auto'));
-		HTMLHelper::_('stylesheet', 'templates/system/css/general.css', array('version' => 'auto'));
-		HTMLHelper::_('stylesheet', 'media/jui/css/icomoon.css', array('version' => 'auto'));
+		HTMLHelper::_('stylesheet', 'template.css', ['version' => 'auto', 'relative' => true]);
+		HTMLHelper::_('stylesheet', 'templates/system/css/system.css', ['version' => 'auto']);
+		HTMLHelper::_('stylesheet', 'templates/system/css/general.css', ['version' => 'auto']);
+		HTMLHelper::_('stylesheet', 'media/jui/css/icomoon.css', ['version' => 'auto']);
 if ($this->params->get('fontsCss') != "") {
 	HTMLHelper::_('stylesheet', 'https://fast.fonts.net/cssapi/' . $this->params->get('fontsCss'));
 }
 
 if($countBannerModules) {
-	HTMLHelper::_('script', 'sticky.js', array('version' => 'auto', 'relative' => true));
+	HTMLHelper::_('script', 'sticky.js', ['version' => 'auto', 'relative' => true]);
 }
 
-		HTMLHelper::_('script', 'elementQuery.js', array('version' => 'auto', 'relative' => true));
-		HTMLHelper::_('script', 'jquery.sidr.js', array('version' => 'auto', 'relative' => true));
+		HTMLHelper::_('script', 'elementQuery.js', ['version' => 'auto', 'relative' => true]);
+		HTMLHelper::_('script', 'jquery.sidr.js', ['version' => 'auto', 'relative' => true]);
 ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php	if ($this->params->get('doubleClick')) {	?>

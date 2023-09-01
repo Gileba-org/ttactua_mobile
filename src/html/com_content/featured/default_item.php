@@ -59,7 +59,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 <?php endif; ?>
 
 <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-	<?php echo LayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
+	<?php echo LayoutHelper::render('joomla.content.icons', ['params' => $params, 'item' => $this->item, 'print' => false]); ?>
 <?php endif; ?>
 
 <?php // Todo Not that elegant would be nice to group the params ?>
@@ -68,7 +68,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 	|| $assocParam); ?>
 
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.info_block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+	<?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'above']); ?>
 <?php endif; ?>
 
 <?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
@@ -90,7 +90,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 <?php if ($info == 1 || $info == 2) : ?>
 	<?php if ($useDefList) : ?>
 		<?php echo LayoutHelper::render('joomla.content.info_block',
-			array('item' => $this->item, 'params' => $params, 'position' => 'below')
+			['item' => $this->item, 'params' => $params, 'position' => 'below']
 		); ?>
 	<?php endif; ?>
 	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
@@ -111,7 +111,7 @@ $isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired
 		);
 	endif; ?>
 
-	<?php echo LayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+	<?php echo LayoutHelper::render('joomla.content.readmore', ['item' => $this->item, 'params' => $params, 'link' => $link]); ?>
 
 <?php endif; ?>
 

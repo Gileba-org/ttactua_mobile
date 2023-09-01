@@ -47,7 +47,7 @@ class DefaultModSlideshowView extends DefaultModLatestView
 			$this->customFormatStr = $this->modparams->get('modlatest_CustFmtStr', '<div class="item ISACTIVE"><a href="${eventDetailLink}" target="_self">${imageimg1}</a><div class="carousel-caption">${title}<span class="jevcstart"><a href="${eventDetailLink}" target="_self">${startDate(%e %b %Y)}</a></span></div></div>');
 			$this->processFormatString();
 
-			HTMLHelper::_('bootstrap.carousel', 'jevlatestcarousel', array('interval' => '500', 'pause' => 'hover'));
+			HTMLHelper::_('bootstrap.carousel', 'jevlatestcarousel', ['interval' => '500', 'pause' => 'hover']);
 			HTMLHelper::stylesheet("modules/mod_jevents_slideshow/css/mod_jevents_slideshow.css");
 			//Factory::getDocument()->addScript("//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js");
 
