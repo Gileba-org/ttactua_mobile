@@ -7,7 +7,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
+defined("_JEXEC") or die();
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
@@ -17,107 +17,143 @@ use Joomla\CMS\Uri\Uri;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 
 // Create a shortcut for params.
-$params  = &$this->item->params;
-$canEdit = $this->item->params->get('access-edit');
-$info    = $this->item->params->get('info_block_position', 0);
+$params = &$this->item->params;
+$canEdit = $this->item->params->get("access-edit");
+$info = $this->item->params->get("info_block_position", 0);
 
 // Check if associations are implemented. If they are, define the parameter.
-$assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
+$assocParam = JLanguageAssociations::isEnabled() && $params->get("show_associations");
 
-$currentDate       = Factory::getDate()->format('Y-m-d H:i:s');
-$isExpired         = $this->item->publish_down < $currentDate && $this->item->publish_down !== Factory::getDbo()->getNullDate();
+$currentDate = Factory::getDate()->format("Y-m-d H:i:s");
+$isExpired = $this->item->publish_down < $currentDate && $this->item->publish_down !== Factory::getDbo()->getNullDate();
 $isNotPublishedYet = $this->item->publish_up > $currentDate;
-$isUnpublished     = $this->item->state == 0 || $isNotPublishedYet || $isExpired;
-
+$isUnpublished = $this->item->state == 0 || $isNotPublishedYet || $isExpired;
 ?>
 
-<?php if ($isUnpublished) : ?>
+<?php if ($isUnpublished): ?>
 	<div class="system-unpublished">
 <?php endif; ?>
 
-<?php if ($params->get('show_title')) : ?>
+<?php if ($params->get("show_title")): ?>
 	<h2 class="item-title" itemprop="headline">
-	<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
-		<a href="<?php echo Route::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>"
+	<?php if ($params->get("link_titles") && $params->get("access-view")): ?>
+		<a href="<?php echo Route::_(
+  	ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)
+  ); ?>"
 			itemprop="url">
 			<?php echo $this->escape($this->item->title); ?>
 		</a>
-	<?php else : ?>
+	<?php else: ?>
 		<?php echo $this->escape($this->item->title); ?>
 	<?php endif; ?>
 	</h2>
 <?php endif; ?>
 
-<?php if ($this->item->state == 0) : ?>
-	<span class="label label-warning"><?php echo Text::_('JUNPUBLISHED'); ?></span>
+<?php if ($this->item->state == 0): ?>
+	<span class="label label-warning"><?php echo Text::_("JUNPUBLISHED"); ?></span>
 <?php endif; ?>
-<?php if ($isNotPublishedYet) : ?>
-	<span class="label label-warning"><?php echo Text::_('JNOTPUBLISHEDYET'); ?></span>
+<?php if ($isNotPublishedYet): ?>
+	<span class="label label-warning"><?php echo Text::_("JNOTPUBLISHEDYET"); ?></span>
 <?php endif; ?>
-<?php if ($isExpired) : ?>
-	<span class="label label-warning"><?php echo Text::_('JEXPIRED'); ?></span>
-<?php endif; ?>
-
-<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-	<?php echo LayoutHelper::render('joomla.content.icons', ['params' => $params, 'item' => $this->item, 'print' => false]); ?>
+<?php if ($isExpired): ?>
+	<span class="label label-warning"><?php echo Text::_("JEXPIRED"); ?></span>
 <?php endif; ?>
 
-<?php // Todo Not that elegant would be nice to group the params ?>
-<?php $useDefList = ($params->get('show_publish_date') || $params->get('show_modify_date') || $params->get('show_create_date')
-	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author')
-	|| $assocParam); ?>
-
-<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'above']); ?>
+<?php if ($canEdit || $params->get("show_print_icon") || $params->get("show_email_icon")): ?>
+	<?php echo LayoutHelper::render("joomla.content.icons", [
+ 	"params" => $params,
+ 	"item" => $this->item,
+ 	"print" => false,
+ ]); ?>
 <?php endif; ?>
 
-<?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-	<?php echo LayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
+<?php
+// Todo Not that elegant would be nice to group the params
+?>
+<?php $useDefList =
+	$params->get("show_publish_date") ||
+	$params->get("show_modify_date") ||
+	$params->get("show_create_date") ||
+	$params->get("show_hits") ||
+	$params->get("show_category") ||
+	$params->get("show_parent_category") ||
+	$params->get("show_author") ||
+	$assocParam; ?>
+
+<?php if ($useDefList && ($info == 0 || $info == 2)): ?>
+	<?php echo LayoutHelper::render("joomla.content.info_block", [
+ 	"item" => $this->item,
+ 	"params" => $params,
+ 	"position" => "above",
+ ]); ?>
 <?php endif; ?>
 
-<?php echo LayoutHelper::render('joomla.content.full_image', $this->item); ?>
-<?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+<?php if ($info == 0 && $params->get("show_tags", 1) && !empty($this->item->tags->itemTags)): ?>
+	<?php echo LayoutHelper::render("joomla.content.tags", $this->item->tags->itemTags); ?>
+<?php endif; ?>
 
-<?php if (!$params->get('show_intro')) : ?>
-	<?php // Content is generated by content plugin event "onContentAfterTitle" ?>
+<?php echo LayoutHelper::render("joomla.content.intro_image", $this->item); ?>
+
+<?php if (!$params->get("show_intro")): ?>
+	<?php
+	// Content is generated by content plugin event "onContentAfterTitle"
+	?>
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 <?php endif; ?>
-<?php // Content is generated by content plugin event "onContentBeforeDisplay" ?>
+<?php
+// Content is generated by content plugin event "onContentBeforeDisplay"
+?>
 <?php echo $this->item->event->beforeDisplayContent; ?>
 
 <?php echo $this->item->introtext; ?>
 
-<?php if ($info == 1 || $info == 2) : ?>
-	<?php if ($useDefList) : ?>
-		<?php echo LayoutHelper::render('joomla.content.info_block',
-			['item' => $this->item, 'params' => $params, 'position' => 'below']
-		); ?>
+<?php if ($info == 1 || $info == 2): ?>
+	<?php if ($useDefList): ?>
+		<?php echo LayoutHelper::render("joomla.content.info_block", [
+  	"item" => $this->item,
+  	"params" => $params,
+  	"position" => "below",
+  ]); ?>
 	<?php endif; ?>
-	<?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-		<?php echo LayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
+	<?php if ($params->get("show_tags", 1) && !empty($this->item->tags->itemTags)): ?>
+		<?php echo LayoutHelper::render("joomla.content.tags", $this->item->tags->itemTags); ?>
 	<?php endif; ?>
 <?php endif; ?>
 
-<?php if ($params->get('show_readmore') && $this->item->readmore) :
-	if ($params->get('access-view')) :
-		$link = Route::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
-	else :
+<?php if ($params->get("show_readmore") && $this->item->readmore):
+	if ($params->get("access-view")):
+		$link = Route::_(
+			ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)
+		);
+	else:
 		$menu = Factory::getApplication()->getMenu();
 		$active = $menu->getActive();
 		$itemId = $active->id;
-		$link = new Uri(Route::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
-		$link->setVar('return',
-			base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language), false)
+		$link = new Uri(Route::_("index.php?option=com_users&view=login&Itemid=" . $itemId, false));
+
+		$link->setVar(
+			"return",
+			base64_encode(
+				ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language),
+				false
+			)
 		);
 	endif; ?>
 
-	<?php echo LayoutHelper::render('joomla.content.readmore', ['item' => $this->item, 'params' => $params, 'link' => $link]); ?>
+	<?php echo LayoutHelper::render("joomla.content.readmore", [
+ 	"item" => $this->item,
+ 	"params" => $params,
+ 	"link" => $link,
+ ]); ?>
 
-<?php endif; ?>
+<?php
+endif; ?>
 
-<?php if ($isUnpublished) : ?>
+<?php if ($isUnpublished): ?>
 	</div>
 <?php endif; ?>
 
-<?php // Content is generated by content plugin event "onContentAfterDisplay" ?>
+<?php
+// Content is generated by content plugin event "onContentAfterDisplay"
+?>
 <?php echo $this->item->event->afterDisplayContent;
